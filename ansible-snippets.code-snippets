@@ -1,0 +1,17 @@
+{
+
+	"Ansible.BuiltIn.Services":{
+		"prefix": ["ansible.builtin.services"],
+		"body": [
+			"- name: Ensure ${1:servicename} is ${2|started,stopped,restarted,reloaded|}",
+			"  ansible.builtin.services:",
+			"    name: ${1:servicename}",
+			"    state: ${2}",
+			"    enabled: ${3|yes,no|",
+			"$0"
+		],
+		"description": "Used for Ansible Services Module"
+	}
+
+
+}
