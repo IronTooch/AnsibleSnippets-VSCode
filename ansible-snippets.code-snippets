@@ -1,17 +1,295 @@
 {
 
-	"Ansible.BuiltIn.Services":{
-		"prefix": ["ansible.builtin.services"],
+	"Ansible.BuiltIn.Copy":{
+		"prefix": ["ansible.builtin.copy"],
 		"body": [
-			"- name: Ensure ${1:servicename} is ${2|started,stopped,restarted,reloaded|}",
-			"  ansible.builtin.services:",
-			"    name: ${1:servicename}",
-			"    state: ${2}",
-			"    enabled: ${3|yes,no|",
+			"- name: ${1:Description}",
+			"  ansible.builtin.copy:",
+			"    src:  ${2}",
+			"    dest: ${3}",
+			"    remote_src: ${4|yes,no|}",
+			"    force: ${5|yes,no|}",
 			"$0"
 		],
-		"description": "Used for Ansible Services Module"
-	}
+		"description": "Used for Ansible User Module",
+		"scope": "ansible"
+	},
 
+	"Ansible.BuiltIn.Debug":{
+		"prefix": ["ansible.builtin.debug"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.debug:",
+			"    msg: ${2:message}",
+			"    ${3:verbosity: ${4|0,1,2,3,4,5|}}",
+			"$0"
+		],
+		"description": "Used for Ansible Wait_for Module",
+		"scope": "ansible"
+	},	
 
+	"Ansible.BuiltIn.FileDirectory":{
+		"prefix": ["ansible.builtin.file"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.file:",
+			"    path: ${2:path}",
+			"    state: directory",
+			"    mode: '${3:0755}'",
+			"$0"
+		],
+		"description": "Used for Ansible File Module to make directories",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.RpmKey":{
+		"prefix": ["ansible.builtin.rpm_key"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.rpm_key:",
+			"    key: \"${2:key_url}\"",
+			"    state: ${3|present,absent|}",
+			"    validate_certs: ${4|yes,no|}",
+			"$0"
+		],
+		"description": "Used for Ansible File Module to make directories",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.Group":{
+		"prefix": ["ansible.builtin.group"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.group:",
+			"    name: \"${2:Group_Name}\"",
+			"    ${3:gid: \"${4:guid}\"}",
+			"    local: ${5|no,yes|}",
+			"    state: ${6|present,absent|}", 
+			"    system: ${7|no,yes|}",
+			"$0"
+		],
+		"description": "Used for Ansible Group Module to make user groups",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.Hostname":{
+		"prefix": ["ansible.builtin.hostname"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.hostname:",
+			"    name: \"${2:desired_hostname}\"",
+			"    ${3:use: \"${4|alpine,debian,freebsd,generic,macos,macosx,darwin,openbsd,openrc,redhat,sles,solaris,systemd|}\"}",
+			"$0"
+		],
+		"description": "Used for Ansible Hostname Module to change a system hostname",
+		"scope": "ansible"
+	},	
+
+	"Ansible.Posix.IncludeVars":{
+		"prefix": ["ansible.builtin.include_vars"],
+		"body": [
+			"- name: ${1:Description}, loading dynamically at run-time",
+			"  ansible.builtin.include_vars: ",
+			"    file: \"${2:file_name}\"",	
+			"    ${3:new_name_needed: \"name: \"${4:name_of_new_variable}\"}",
+			"$0"
+		],
+		"description": "Used for Ansible Mount Module to add mount points",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.IpTables":{
+		"prefix": ["ansible.builtin.iptables"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.iptables:",
+			"    action: \"${2|append,insert|}\"",
+			"    chain: '${3|INPUT,FORWARD,OUTPUT,PREROUTING,POSTROUTING,SECMARK,CONNSECMARK|}'",
+			"    comment: ${4:comment}",
+			"    destination: ${5:destination}",
+			"    destination_port: ${6:destination_port}",
+			"    dst_range: ${7:destination_range}",	
+			"    flush: ${8|yes,no|}",
+			"    icmp_type: ${9:icmp_type}",
+			"    in_interface: ${10:in_interface}",	
+			"    ip_version: ${11|ipv4,ipv6|}",	
+			"    jump: ${12:jump}",	
+			"    out_interface: ${13:out_interface}",
+			"    policy: ${14|ACCEPT,DROP,QUEUE,RETURN|}",
+			"    protocol: ${15|tcp,udp,udplite,icmp,ipv6-icmp,icmpv6,esp,ah,sctp,all|}",	
+			"    source: ${16:source}",	
+			"    source_port: ${17:source_port}",
+			"    source_range: ${18:source_range}",
+			"    state: ${19|present,absent|}",
+			"    table: ${20|filter,nat,mangle,raw,security|}",			
+			"    to_destination: ${21:to_destination}",	
+			"    to_ports: ${22:to_ports}",
+			"    to_source: ${23:to_source}",	
+			"$0"
+		],
+		"description": "Used for Ansible IPTables Module to make/change IP Tables rules",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.LineInFile":{
+		"prefix": ["ansible.builtin.lineinfile"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.lineinfile:",
+			"    path: ${2:path}",
+			"    state: ${3|present,absent|}",
+			"    line: '${4:myline}'",
+			"$0"
+		],
+		"description": "Used for Ansible File Module to make directories",
+		"scope": "ansible"
+	},	
+
+	"Ansible.Posix.Mount":{
+		"prefix": ["ansible.posix.mount"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.posix.mount:",
+			"    fstype: \"${2:file_system_type}\"",	
+			"    opts: \"${3:file_system_options}\"",
+			"    path: \"${4:file_system_path}\"",
+			"    src: \"${5:file_system_source}\"",
+			"    state: \"${6|present,absent,mounted,unmounted,remounted|}\"",
+			"$0"
+		],
+		"description": "Used for Ansible Mount Module to add mount points",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.Service":{
+		"prefix": ["ansible.builtin.service"],
+		"body": [
+			"- name: Ensure ${1:servicename} is ${2|started,stopped,restarted,reloaded|}",
+			"  ansible.builtin.service:",
+			"    name: ${1:servicename}",
+			"    state: ${2}",
+			"    enabled: ${3|yes,no|}",
+			"$0"
+		],
+		"description": "Used for Ansible Services Module",
+		"scope": "ansible"
+	},
+
+	"Ansible.BuiltIn.SetFact":{
+		"prefix": ["ansible.builtin.set_fact"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.set_fact:",
+			"    ${2:my_fact_name}:  \"${3}\"",
+			"$0"
+		],
+		"description": "Used for Ansible Set Fact Module",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.Shell":{
+		"prefix": ["ansible.builtin.shell"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.shell:",
+			"    cmd:  \"${2}\"",
+			"    ${3:chdir: \"${4}\"}",
+			"$0"
+		],
+		"description": "Used for Ansible Shell Module",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.Template":{
+		"prefix": ["ansible.builtin.template"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.template:",
+			"    src: ${2:local_source}",
+			"    dest: ${3:remote_destination}",
+			"    force: ${4|yes,no|}",
+			"$0"
+		],
+		"description": "Used for Ansible Temmplate Module",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.Unarchive":{
+		"prefix": ["ansible.builtin.unarchive"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.unarchive:",
+			"    src: \"${2:source_path}\"",
+			"    dest: '${3:destination_path}'",
+			"    remote_src: ${4|yes,no|}",
+			"    ${5:creates: \"${6:created_file}\"}",
+			"$0"
+		],
+		"description": "Used for Ansible File Module to make directories",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.User":{
+		"prefix": ["ansible.builtin.user"],
+		"body": [
+			"- name: ${1:Description} ${2:Username}",
+			"  ansible.builtin.userr:",
+			"    name: ${2}",
+			"    commment: ${1}",
+			"    state: ${3|present,absent|}",
+			"    append: ${4|no,yes|}  #Append Groups to user, instead of overwrite",
+			"    create_home: ${5|yes,no|}",
+			"    groups: ${6:groups}",
+			"    system: ${7|no,yes|}",
+			"$0"
+		],
+		"description": "Used for Ansible User Module",
+		"scope": "ansible"
+	},
+
+	"Ansible.BuiltIn.WaitForFile":{
+		"prefix": ["ansible.builtin.wait_for"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.wait_for:",
+			"    path: ${2:filiename}",
+			"    state: ${3|present,absent|}",
+			"    delay: ${5:delayInSeconds}",
+			"$0"
+		],
+		"description": "Used for Ansible Wait_for Module",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.Yum_Repository":{
+		"prefix": ["ansible.builtin.yum_repository"],
+		"body": [
+			"- name: Add Repository for ${1:RepoName}",
+			"  ansible.builtin.yum_repository:",
+			"    name: ${1:RepoName}",
+			"    description: ${2}",
+			"    baseurl: ${3:BaseUrl}",
+			"    state: ${4|present,absent|}",
+			"    enabled: ${5|yes,no|}",
+			"$0"
+		],
+		"description": "Used for Ansible Yum Repository Module",
+		"scope": "ansible"
+	},
+
+	// "Ansible.BuiltIn.URI":{
+	// 	"prefix": ["ansible.builtin.uri"],
+	// 	"body": [
+	// 		"- name: ${1:Description}",
+	// 		"  ansible.builtin.uri:",
+	// 		"    name: \"${2:desired_hostname}\"",
+	// 		"    name: \"${2:desired_hostname}\"",
+	// 		"    name: \"${2:desired_hostname}\"",				
+	// 		"    ${3:use: \"${4|alpine,debian,freebsd,generic,macos,macosx,darwin,openbsd,openrc,redhat,sles,solaris,systemd|}\"}",
+	// 		"$0"
+	// 	],
+	// 	"description": "Used for Ansible Hostname Module to change a system hostname"
+	// },	
+
+	
 }
