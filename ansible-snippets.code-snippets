@@ -42,6 +42,23 @@
 		"scope": "ansible"
 	},	
 
+	"Ansible.BuiltIn.GetUrl":{
+		"prefix": ["ansible.builtin.get_url"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.get_url:",
+			"    url: \"${2:url}\"",
+			"    dest: \"${3:dest}\"",
+			"    force: \"${4|yes,no|}\"",	
+			"    ${5:owner: \"${6:owner}\"}",
+			"    ${7:group: \"${8:owner}\"}",
+			"    ${9:mode: \"${10:owner}\"}",
+			"    ${11:validate_certs: \"${12|yes,no|}\"}",	
+			"$0"
+		],
+		"description": "Used for Ansible Get_url Module to downloads files from HTTP, HTTPS, or FTP to node"
+	},
+
 	"Ansible.BuiltIn.RpmKey":{
 		"prefix": ["ansible.builtin.rpm_key"],
 		"body": [
@@ -277,6 +294,8 @@
 		"scope": "ansible"
 	},
 
+
+	
 	// "Ansible.BuiltIn.URI":{
 	// 	"prefix": ["ansible.builtin.uri"],
 	// 	"body": [

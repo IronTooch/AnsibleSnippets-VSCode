@@ -1,0 +1,51 @@
+{
+
+
+    "Ansible.MakeOptAndUser":{
+        "prefix": ["preinstall"],
+        "body": [
+
+            "- name: Add ${1:AppName} Services User",
+            "  user: ",
+            "    name: \"svc_${1:AppName}\"",
+            "    create_home: no",
+            "    force: yes",
+            "    state: present",
+            "    system: yes",
+            "    shell: /bin/bash",
+            "",
+            "- name: Create ${1:AppName} storage directory",
+            "  file:",
+            "    path: /opt/${1:AppName}",
+            "    state: directory",
+            "    owner: \"svc_${1:AppName}\"",
+            "    group: \"svc_${1:AppName}\"",
+             
+              "$0"
+
+
+        ],
+        "description": "Makes a folder in /opt/, creates a svc user for that opt, and a group for that svc user",
+        "scope": "ansible"
+    },
+
+    "Ansible.StartBlock":{
+        "prefix": ["startblock"],
+        "body": [
+
+
+            "---",
+            "- hosts: all",
+            "  become: true",
+            "  vars:",
+            "     myvar: \"myvar\"",
+            "  tasks: ",
+            "",
+            "     $0"
+
+        ],
+        "description": "Ansible Start Block",
+        "scope": "ansible"
+    },
+	
+}
