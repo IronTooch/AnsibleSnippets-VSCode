@@ -1,5 +1,46 @@
 {
 
+	"Ansible.BuiltIn.Apt_Packages":{
+		"prefix": ["ansible.builtin.apt_packages"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.apt:",
+			"    name:  ${2}",
+			"    state: ${3|present,absent,latest,fixed,build-dep|}",
+			"    update_cache: ${4|yes,no|}",
+			"    force: ${5|no,yes|}",
+			"$0"
+		],
+		"description": "Used for Ansible Apt Module to install packages from repos",
+		"scope": "ansible"
+	},
+
+	"Ansible.BuiltIn.Apt_FullUpdate":{
+		"prefix": ["ansible.builtin.apt_fullupdate"],
+		"body": [
+			"- name: Update all packages to latest version",
+			"  ansible.builtin.apt:",
+			"    name:  \"*\"",
+			"    state: \"latest\"",
+			"$0"
+		],
+		"description": "Used for Ansible Apt Module to update all packages to latest",
+		"scope": "ansible"
+	},
+
+	"Ansible.BuiltIn.Apt_InstallDeb":{
+		"prefix": ["ansible.builtin.apt_deb"],
+		"body": [
+			"- name: Install package from ${1:debfile}",
+			"  ansible.builtin.apt:",
+			"    deb:  \"${2:debpath}/${1}\"",
+			"$0"
+		],
+		"description": "Used for Ansible Apt Module to install a specific deb file",
+		"scope": "ansible"
+	},
+
+
 	"Ansible.BuiltIn.Copy":{
 		"prefix": ["ansible.builtin.copy"],
 		"body": [
