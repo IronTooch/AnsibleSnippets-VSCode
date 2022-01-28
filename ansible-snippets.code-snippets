@@ -83,6 +83,22 @@
 		"scope": "ansible"
 	},	
 
+	"Ansible.BuiltIn.FileChown":{
+		"prefix": ["ansible.builtin.file"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.file:",
+			"    path: ${2:path}",
+			"    state: directory",
+			"    recurse: ${3|yes,no|}",
+			"    owner: '${4:owner}'",
+			"    group: '${5:group}'",
+			"$0"
+		],
+		"description": "Used for Ansible File Module to Chown directories",
+		"scope": "ansible"
+	},	
+
 	"Ansible.BuiltIn.GetUrl":{
 		"prefix": ["ansible.builtin.get_url"],
 		"body": [
@@ -98,6 +114,19 @@
 			"$0"
 		],
 		"description": "Used for Ansible Get_url Module to downloads files from HTTP, HTTPS, or FTP to node"
+	},
+
+	"Ansible.BuiltIn.Git":{
+		"prefix": ["ansible.builtin.git"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.git:",
+			"    repo: \"${2:url}\"",
+			"    dest: \"${3:dest}\"",
+			"    force: \"${4|yes,no|}\"",	
+			"$0"
+		],
+		"description": "Used for Ansible Git Module to download files from Git",
 	},
 
 	"Ansible.BuiltIn.RpmKey":{
