@@ -40,7 +40,6 @@
 		"scope": "ansible"
 	},
 
-
 	"Ansible.BuiltIn.Copy":{
 		"prefix": ["ansible.builtin.copy"],
 		"body": [
@@ -128,20 +127,6 @@
 		],
 		"description": "Used for Ansible Git Module to download files from Git",
 	},
-
-	"Ansible.BuiltIn.RpmKey":{
-		"prefix": ["ansible.builtin.rpm_key"],
-		"body": [
-			"- name: ${1:Description}",
-			"  ansible.builtin.rpm_key:",
-			"    key: \"${2:key_url}\"",
-			"    state: ${3|present,absent|}",
-			"    validate_certs: ${4|yes,no|}",
-			"$0"
-		],
-		"description": "Used for Ansible File Module to make directories",
-		"scope": "ansible"
-	},	
 
 	"Ansible.BuiltIn.Group":{
 		"prefix": ["ansible.builtin.group"],
@@ -245,6 +230,20 @@
 			"$0"
 		],
 		"description": "Used for Ansible Mount Module to add mount points",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.RpmKey":{
+		"prefix": ["ansible.builtin.rpm_key"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.rpm_key:",
+			"    key: \"${2:key_url}\"",
+			"    state: ${3|present,absent|}",
+			"    validate_certs: ${4|yes,no|}",
+			"$0"
+		],
+		"description": "Used for Ansible File Module to make directories",
 		"scope": "ansible"
 	},	
 
