@@ -11,7 +11,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 ![GitHub last commit](https://img.shields.io/github/last-commit/IronTooch/AnsibleSnippets-VSCode)
 ![GitHub Release Date](https://img.shields.io/github/release-date-pre/Irontooch/AnsibleSnippets-VSCode)
 ![GitHub Maintained](https://img.shields.io/maintenance/yes/2022)
-![License](https://img.shields.io/github/license/Irontooch/AnsibleSnippets-VSCode.svg)
+![GitHub](https://img.shields.io/github/license/IronTooch/AnsibleSnippets-VSCode)
 ![Forks](https://img.shields.io/github/forks/Irontooch/AnsibleSnippets-VSCode.svg)
 ![Stars](https://img.shields.io/github/stars/Irontooch/AnsibleSnippets-VSCode.svg)
 ![Watchers](https://img.shields.io/github/watchers/Irontooch/AnsibleSnippets-VSCode.svg)
