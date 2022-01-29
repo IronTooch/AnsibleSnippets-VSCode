@@ -1,0 +1,22 @@
+{
+
+
+   "Community.General.DjangoManage":{
+       "prefix": ["community.general.django_manage"],
+       "body": [
+            "- name: ${1:Description}",
+            "  community.general.django_manage:",
+            "    command: \"${2|cleanup,collectstatic,createcachetable,flush,loaddata,migrate,syncdb,test,validate|}\"",
+            "    project_path: \"${4:project_dir}\"",
+            "    ${5:virtualenv: \"${6:virtenv_path}\"}",
+            "    ${7:database: \"${8:db_name}\"}",                
+            "$0"
+       ],
+        "description": "Used for Ansible Django Manage to do Django functions",
+        "scope": "ansible"
+   },
+
+
+
+
+}

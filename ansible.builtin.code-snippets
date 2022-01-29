@@ -219,6 +219,22 @@
 		"scope": "ansible"
 	},	
 
+
+   "Ansible.BuiltIn.Pip_Requirements":{
+	   "prefix": ["ansible.builtin.pip"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.pip:",
+			"    requirements: \"${2:requirements_location}\"",
+			"    ${3:chdir: \"${4:cd_dir}\"}",
+			"    ${5:virtualenv: \"${6:virtenv_dir}\"}",    
+			"$0"
+	   ],
+		"description": "Used for Ansible Pip to manage packages and virtual environments",
+		"scope": "ansible"
+   },
+
+
 	"Ansible.BuiltIn.RpmKey":{
 		"prefix": ["ansible.builtin.rpm_key"],
 		"body": [
