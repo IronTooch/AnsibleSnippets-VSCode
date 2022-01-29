@@ -1,0 +1,19 @@
+{
+
+	"Community.Postgresql.Postgresql_db":{
+		"prefix": ["community.postgresql.postgresql_db"],
+		"body": [
+
+			"- name: ${1:Description}",
+			"  ansible.builtin.apt:",
+			"    name:  ${2}",
+			"    state: ${3|present,absent,latest,fixed,build-dep|}",
+			"    update_cache: ${4|yes,no|}",
+			"    force: ${5|no,yes|}",
+			"$0"
+		],
+		"description": "Used for Ansible Apt Module to install packages from repos",
+		"scope": "ansible"
+	},
+
+}

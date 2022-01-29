@@ -157,7 +157,7 @@
 		"scope": "ansible"
 	},	
 
-	"Ansible.Posix.IncludeVars":{
+	"Ansible.BuiltIn.IncludeVars":{
 		"prefix": ["ansible.builtin.include_vars"],
 		"body": [
 			"- name: ${1:Description}, loading dynamically at run-time",
@@ -166,7 +166,7 @@
 			"    ${3:new_name_needed: \"name: \"${4:name_of_new_variable}\"}",
 			"$0"
 		],
-		"description": "Used for Ansible Mount Module to add mount points",
+		"description": "Used for Ansible IncludeVars Module to load variables Dynamically at runtime",
 		"scope": "ansible"
 	},	
 
@@ -214,22 +214,6 @@
 			"$0"
 		],
 		"description": "Used for Ansible File Module to make directories",
-		"scope": "ansible"
-	},	
-
-	"Ansible.Posix.Mount":{
-		"prefix": ["ansible.posix.mount"],
-		"body": [
-			"- name: ${1:Description}",
-			"  ansible.posix.mount:",
-			"    fstype: \"${2:file_system_type}\"",	
-			"    opts: \"${3:file_system_options}\"",
-			"    path: \"${4:file_system_path}\"",
-			"    src: \"${5:file_system_source}\"",
-			"    state: \"${6|present,absent,mounted,unmounted,remounted|}\"",
-			"$0"
-		],
-		"description": "Used for Ansible Mount Module to add mount points",
 		"scope": "ansible"
 	},	
 
@@ -363,21 +347,4 @@
 		"scope": "ansible"
 	},
 
-
-	
-	// "Ansible.BuiltIn.URI":{
-	// 	"prefix": ["ansible.builtin.uri"],
-	// 	"body": [
-	// 		"- name: ${1:Description}",
-	// 		"  ansible.builtin.uri:",
-	// 		"    name: \"${2:desired_hostname}\"",
-	// 		"    name: \"${2:desired_hostname}\"",
-	// 		"    name: \"${2:desired_hostname}\"",				
-	// 		"    ${3:use: \"${4|alpine,debian,freebsd,generic,macos,macosx,darwin,openbsd,openrc,redhat,sles,solaris,systemd|}\"}",
-	// 		"$0"
-	// 	],
-	// 	"description": "Used for Ansible Hostname Module to change a system hostname"
-	// },	
-
-	
 }
