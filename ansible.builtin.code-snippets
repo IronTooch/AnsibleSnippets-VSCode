@@ -112,7 +112,8 @@
 			"    ${11:validate_certs: \"${12|yes,no|}\"}",	
 			"$0"
 		],
-		"description": "Used for Ansible Get_url Module to downloads files from HTTP, HTTPS, or FTP to node"
+		"description": "Used for Ansible Get_url Module to downloads files from HTTP, HTTPS, or FTP to node",
+		"scope": "ansible"
 	},
 
 	"Ansible.BuiltIn.Git":{
@@ -126,6 +127,7 @@
 			"$0"
 		],
 		"description": "Used for Ansible Git Module to download files from Git",
+		"scope": "ansible"
 	},
 
 	"Ansible.BuiltIn.Group":{
