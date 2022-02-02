@@ -1,0 +1,13 @@
+{
+
+
+   "Ansible.PasswordHash":{
+       "prefix": ["ansible.small.password"],
+       "body": [
+            "{{'abcd1234' | hash('md5')}}",
+       ],
+        "description": "Used for Ansible to generate hashes for things",
+        "scope": "ansible"
+   },
+
+}
