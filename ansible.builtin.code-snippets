@@ -323,14 +323,14 @@
 		"prefix": ["ansible.builtin.user"],
 		"body": [
 			"- name: ${1:Description} ${2:Username}",
-			"  ansible.builtin.userr:",
+			"  ansible.builtin.user:",
 			"    name: ${2}",
 			"    commment: ${1}",
 			"    state: ${3|present,absent|}",
-			"    append: ${4|no,yes|}  #Append Groups to user, instead of overwrite",
-			"    create_home: ${5|yes,no|}",
+			"    append: ${4|false,true|}  #Append Groups to user, instead of overwrite",
+			"    create_home: ${5|true,false|}",
 			"    groups: ${6:groups}",
-			"    system: ${7|no,yes|}",
+			"    system: ${7|false,true|}",
 			"$0"
 		],
 		"description": "Used for Ansible User Module",
