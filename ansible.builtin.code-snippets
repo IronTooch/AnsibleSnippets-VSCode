@@ -7,8 +7,8 @@
 			"  ansible.builtin.apt:",
 			"    name:  ${2}",
 			"    state: ${3|present,absent,latest,fixed,build-dep|}",
-			"    update_cache: ${4|yes,no|}",
-			"    force: ${5|no,yes|}",
+			"    update_cache: ${4|true,false|}",
+			"    force: ${5|false,true|}",
 			"$0"
 		],
 		"description": "Used for Ansible Apt Module to install packages from repos",
@@ -40,18 +40,83 @@
 		"scope": "ansible"
 	},
 
-	"Ansible.BuiltIn.Copy":{
+
+   "Ansible.BuiltIn.Apt_Key_FromServer":{
+	   "prefix": ["ansible.builtin.apt_key"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.apt_key:",
+			"    keyserver: \"${2:url_of_key}\"",
+			"    state: \"${3|present,absent|}\"",
+			"    validate_certs: \"${4|true,false|}\"",
+			"    ${5:keyring: \"${6:path_to_keyring_file}\"}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Apt_Key",
+		"scope": "ansible"
+   },
+
+   "Ansible.BuiltIn.Apt_Key_FromFile":{
+	"prefix": ["ansible.builtin.apt_key"],
+	"body": [
+		 "- name: ${1:Description}",
+		 "  ansible.builtin.apt_key:",
+		 "    data: \"{{ lookup('file', '${2:file_path_on_server}') }}\"",
+		 "    state: \"${3|present,absent|}\"",
+		 "    ${5:keyring: \"${4:path_to_keyring_file}\"}",
+		 "$0"
+	],
+	 "description": "Used for Ansible Apt_Key",
+	 "scope": "ansible"
+},
+
+	"Ansible.BuiltIn.Command":{
+		"prefix": ["ansible.builtin.command"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.command:",
+			"    cmd: \"${2}\"",
+			"    ${3:chdir: \"${4}\"}",
+			"    ${5:creates: \"${6:file_if_present_dont_run}\"}",
+			"    ${7:removes: \"${8:file_if_present_do_run}\"}",
+			"$0"
+		],
+		"description": "Used for Ansible Command Module (No environmment variables)",
+		"scope": "ansible"
+	},	
+
+	"Ansible.BuiltIn.Copy_Files":{
 		"prefix": ["ansible.builtin.copy"],
 		"body": [
 			"- name: ${1:Description}",
 			"  ansible.builtin.copy:",
 			"    src:  ${2}",
 			"    dest: ${3}",
-			"    remote_src: ${4|yes,no|}",
-			"    force: ${5|yes,no|}",
+			"    remote_src: ${4|true,false|}",
+			"    force: ${5|true,false|}",
+			"    ${6:owner: \"${7:owner}\"}",
+			"    ${8:group: \"${9:owner}\"}",
+			"    ${10:mode: \"${11:0700}\"}",
 			"$0"
 		],
-		"description": "Used for Ansible User Module",
+		"description": "Used for Ansible Copy Module to copy files",
+		"scope": "ansible"
+	},
+
+	"Ansible.BuiltIn.Copy_Content":{
+		"prefix": ["ansible.builtin.copy"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.copy:",
+			"    content:  ${2}",
+			"    dest: ${3}",
+			"    force: ${4|true,false|}",
+			"    ${6:owner: \"${7:owner}\"}",
+			"    ${8:group: \"${9:owner}\"}",
+			"    ${10:mode: \"${11:0700}\"}",
+			"$0"
+		],
+		"description": "Used for Ansible Copy Module to copy files",
 		"scope": "ansible"
 	},
 
@@ -67,6 +132,18 @@
 		"description": "Used for Ansible Wait_for Module",
 		"scope": "ansible"
 	},	
+
+   "Ansible.BuiltIn.Fail":{
+	   "prefix": ["ansible.builtin.fail"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.fail:",
+			"    ${2:msg: \"${3:failure_message}\"}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Fail Module",
+		"scope": "ansible"
+   },
 
 	"Ansible.BuiltIn.FileDirectory":{
 		"prefix": ["ansible.builtin.file"],
@@ -89,7 +166,7 @@
 			"  ansible.builtin.file:",
 			"    path: ${2:path}",
 			"    state: directory",
-			"    recurse: ${3|yes,no|}",
+			"    recurse: ${3|true,false|}",
 			"    owner: '${4:owner}'",
 			"    group: '${5:group}'",
 			"$0"
@@ -105,11 +182,11 @@
 			"  ansible.builtin.get_url:",
 			"    url: \"${2:url}\"",
 			"    dest: \"${3:dest}\"",
-			"    force: \"${4|yes,no|}\"",	
+			"    force: \"${4|true,false|}\"",	
 			"    ${5:owner: \"${6:owner}\"}",
 			"    ${7:group: \"${8:owner}\"}",
-			"    ${9:mode: \"${10:owner}\"}",
-			"    ${11:validate_certs: \"${12|yes,no|}\"}",	
+			"    ${9:mode: \"${10:0700}\"}",
+			"    ${11:validate_certs: \"${12|true,false|}\"}",	
 			"$0"
 		],
 		"description": "Used for Ansible Get_url Module to downloads files from HTTP, HTTPS, or FTP to node",
@@ -123,7 +200,7 @@
 			"  ansible.builtin.git:",
 			"    repo: \"${2:url}\"",
 			"    dest: \"${3:dest}\"",
-			"    force: \"${4|yes,no|}\"",	
+			"    force: \"${4|true,false|}\"",	
 			"$0"
 		],
 		"description": "Used for Ansible Git Module to download files from Git",
@@ -137,9 +214,9 @@
 			"  ansible.builtin.group:",
 			"    name: \"${2:Group_Name}\"",
 			"    ${3:gid: \"${4:guid}\"}",
-			"    local: ${5|no,yes|}",
+			"    local: ${5|false,true|}",
 			"    state: ${6|present,absent|}", 
-			"    system: ${7|no,yes|}",
+			"    system: ${7|false,true|}",
 			"$0"
 		],
 		"description": "Used for Ansible Group Module to make user groups",
@@ -183,7 +260,7 @@
 			"    destination: ${5:destination}",
 			"    destination_port: ${6:destination_port}",
 			"    dst_range: ${7:destination_range}",	
-			"    flush: ${8|yes,no|}",
+			"    flush: ${8|true,false|}",
 			"    icmp_type: ${9:icmp_type}",
 			"    in_interface: ${10:in_interface}",	
 			"    ip_version: ${11|ipv4,ipv6|}",	
@@ -220,6 +297,41 @@
 	},	
 
 
+   "Ansible.BuiltIn.Meta":{
+	   "prefix": ["ansible.builtin.meta"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.meta: ${2:|clear_facts,clear_host_errors,end_host,end_play,flush_handlers,noop,refresh_inventory,reset_connection,end_batch|}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Meta to run internal functions",
+		"scope": "ansible"
+   },
+
+   "Ansible.BuiltIn.Pause_ForInput":{
+	   "prefix": ["ansible.builtin.pause"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.pause:",
+			"    ${2:prompt: \"${3:User_Prompt}\"}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Pause Module to wait for user input",
+		"scope": "ansible"
+   },
+
+   "Ansible.BuiltIn.Pause_ForTime":{
+	"prefix": ["ansible.builtin.pause"],
+	"body": [
+		 "- name: ${1:Description}",
+		 "  ansible.builtin.pause:",
+		 "    ${2|minutes,seconds|}: ${3:amount_to_wait}",
+		 "$0"
+	],
+	 "description": "Used for Ansible Pause Module to wait for a given block of time",
+	 "scope": "ansible"
+},
+
    "Ansible.BuiltIn.Pip_Requirements":{
 	   "prefix": ["ansible.builtin.pip"],
 	   "body": [
@@ -234,6 +346,47 @@
 		"scope": "ansible"
    },
 
+   "Ansible.BuiltIn.Raw":{
+	   "prefix": ["ansible.builtin.raw"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.raw: ${2:commmand_to_run}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Raw command to run straight from SSH",
+		"scope": "ansible"
+   },
+
+   "Ansible.BuiltIn.Reboot":{
+	   "prefix": ["ansible.builtin.reboot"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.reboot:",
+			"    ${2:reboot_timeout: \"${3:seconds_to_wait}\"}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Reboot",
+		"scope": "ansible"
+   },
+
+   "Ansible.BuiltIn.Replace":{
+	   "prefix": ["ansible.builtin.replace"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.replace:",
+			"    path: \"${2:path_to_file}\"",
+			"    regexp: \"${3:text_to_find}\"",
+			"    replace: \"${4:text_do_add}\"",
+			"    ${5:before: \"${6:text_to_stop_search_at}\"}",
+			"    ${7:after: \"${8:text_to_begin_search_at}\"}",
+			"    ${9:owner: \"${10:file_owner}\"}",
+			"    ${11:group: \"${12:file_group}\"}",
+			"    ${13:mode: ${14:'0770'}}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Replace to change the contents of a file",
+		"scope": "ansible"
+   },
 
 	"Ansible.BuiltIn.RpmKey":{
 		"prefix": ["ansible.builtin.rpm_key"],
@@ -242,7 +395,7 @@
 			"  ansible.builtin.rpm_key:",
 			"    key: \"${2:key_url}\"",
 			"    state: ${3|present,absent|}",
-			"    validate_certs: ${4|yes,no|}",
+			"    validate_certs: ${4|true,false|}",
 			"$0"
 		],
 		"description": "Used for Ansible File Module to make directories",
@@ -256,7 +409,7 @@
 			"  ansible.builtin.service:",
 			"    name: ${1:servicename}",
 			"    state: ${2}",
-			"    enabled: ${3|yes,no|}",
+			"    enabled: ${3|true,false|}",
 			"$0"
 		],
 		"description": "Used for Ansible Services Module",
@@ -275,18 +428,48 @@
 		"scope": "ansible"
 	},	
 
+   "Ansible.BuiltIn.SetStats":{
+	   "prefix": ["ansible.builtin.set_stats"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.set_stats:",
+			"    aggregate: \"${2|true,false|}\"",
+			"    per_host: \"${3|false,true|}\"",
+			"    data:",
+			"      ${4:Datakey}: ${5:Datavalue}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Set Stats Task",
+		"scope": "ansible"
+   },
 	"Ansible.BuiltIn.Shell":{
 		"prefix": ["ansible.builtin.shell"],
 		"body": [
 			"- name: ${1:Description}",
 			"  ansible.builtin.shell:",
-			"    cmd:  \"${2}\"",
+			"    cmd: \"${2}\"",
 			"    ${3:chdir: \"${4}\"}",
+			"    ${5:creates: \"${6:file_if_present_dont_run}\"}",
+			"    ${7:removes: \"${8:file_if_present_do_run}\"}",
 			"$0"
 		],
 		"description": "Used for Ansible Shell Module",
 		"scope": "ansible"
 	},	
+
+   "Ansible.BuiltIn.Stat":{
+	   "prefix": ["ansible.builtin.stat"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.stat:",
+			"    path: \"${2:path_to_file}\"",
+			"  register: ${3:variable_for_file_status}",
+			"  #${3:variable_for_file_status}.stat.exists to check file existance",
+			"$0"
+	   ],
+		"description": "Used for Ansible Stat Module to get File details",
+		"scope": "ansible"
+   },
 
 	"Ansible.BuiltIn.Template":{
 		"prefix": ["ansible.builtin.template"],
@@ -296,7 +479,7 @@
 			"    src: ${2:local_source}",
 			"    dest: ${3:remote_destination}",
 			"    force: ${4|true,false|}",
-			"    ${5:mode: ${6:'0770'}}  #Ansible-Lint hates when this isn't set",
+			"    ${5:mode: ${6:'0770'}}  # Ansible-Lint hates when this isn't set",
 			
 			"$0"
 		],
@@ -311,7 +494,7 @@
 			"  ansible.builtin.unarchive:",
 			"    src: \"${2:source_path}\"",
 			"    dest: '${3:destination_path}'",
-			"    remote_src: ${4|yes,no|}",
+			"    remote_src: ${4|true,false|}",
 			"    ${5:creates: \"${6:created_file}\"}",
 			"$0"
 		],
@@ -360,7 +543,7 @@
 			"    description: ${2}",
 			"    baseurl: ${3:BaseUrl}",
 			"    state: ${4|present,absent|}",
-			"    enabled: ${5|yes,no|}",
+			"    enabled: ${5|true,false|}",
 			"$0"
 		],
 		"description": "Used for Ansible Yum Repository Module",

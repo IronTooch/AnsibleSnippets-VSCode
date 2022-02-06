@@ -31,7 +31,7 @@
         "prefix": ["startblock"],
         "body": [
 
-
+            "#!/usr/bin/env ansible-playbook",
             "---",
             "- hosts: all",
             "  become: true",
