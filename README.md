@@ -45,7 +45,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - package – Generic OS package manager
  - ping – Try to connect to host, verify a usable python and return pong on success
  - script – Runs a local script on a remote node after transferring it
- - service_facts – Return service state information as fact data
  - setup – Gathers facts about remote hosts
  - slurp – Slurps a file from remote nodes
  - subversion – Deploys a subversion repository

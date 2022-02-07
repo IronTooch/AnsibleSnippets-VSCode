@@ -350,7 +350,6 @@
 		"scope": "ansible"
    },
 
-
    "Ansible.BuiltIn.Package_Facts":{
 	   "prefix": ["ansible.builtin.package_facts"],
 	   "body": [
@@ -470,6 +469,19 @@
 		"description": "Used for Ansible Services Module",
 		"scope": "ansible"
 	},
+
+
+   "Ansible.BuiltIn.Service_Facts":{
+	   "prefix": ["ansible.builtin.service_facts"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.service_facts:",
+			"  # Returns results in ansible_facts.services",
+			"$0"
+	   ],
+		"description": "Used for Ansible Service Facts",
+		"scope": "ansible"
+   },
 
 	"Ansible.BuiltIn.SetFact":{
 		"prefix": ["ansible.builtin.set_fact"],
