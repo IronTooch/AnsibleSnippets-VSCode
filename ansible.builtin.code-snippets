@@ -70,7 +70,6 @@
 	 "scope": "ansible"
 	},
 
-
    "Ansible.BuiltIn.Apt_Repository":{
 	   "prefix": ["ansible.builtin.apt_repository"],
 	   "body": [
@@ -83,6 +82,21 @@
 			"$0"
 	   ],
 		"description": "Used for Ansible Apt Repository to add repositories",
+		"scope": "ansible"
+   },
+
+   "Ansible.BuiltIn.Assert":{
+	   "prefix": ["ansible.builtin.assert"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.assert:",
+			"    that:",
+			"      - ${2:condition_that_must_be_true}",
+			"    ${3:fail_msg: \"${4:msg_to_print_on_failure}\"}",
+			"    ${5:success_msg: \"${6:msg_to_print_on_success}\"}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Assert Module to establish truth",
 		"scope": "ansible"
    },
 
@@ -251,7 +265,6 @@
 		"description": "Used for Ansible Hostname Module to change a system hostname",
 		"scope": "ansible"
 	},	
-
 
    "Ansible.BuiltIn.IncludeTasks":{
 	   "prefix": ["ansible.builtin.include_tasks"],
