@@ -24,7 +24,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 
 ### ansible.builtin (37 remaining)
  - add_host – Add a host (and alternatively a group) to the ansible-playbook in-memory inventory
- - apt_repository – Add and remove APT repositories
  - assemble – Assemble configuration files from fragments
  - assert – Asserts given expressions are true
  - async_status – Obtain status of asynchronous task

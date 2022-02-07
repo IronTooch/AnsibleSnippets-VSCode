@@ -68,7 +68,23 @@
 	],
 	 "description": "Used for Ansible Apt_Key",
 	 "scope": "ansible"
-},
+	},
+
+
+   "Ansible.BuiltIn.Apt_Repository":{
+	   "prefix": ["ansible.builtin.apt_repository"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.apt_repository:",
+			"    repo: \"${2:repo_source_string}\"",
+			"    state: \"${3|present,absent|}\"",
+			"    ${4:update_cache: \"${5|true,false|}\"}",
+			"    ${6:validate_certs: \"${7|true,false|}\"}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Apt Repository to add repositories",
+		"scope": "ansible"
+   },
 
 	"Ansible.BuiltIn.Command":{
 		"prefix": ["ansible.builtin.command"],
