@@ -216,6 +216,23 @@
 		"scope": "ansible"
 	},	
 
+   "Ansible.BuiltIn.Expect":{
+	   "prefix": ["ansible.builtin.expect"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.expect:",
+			"    command: \"${2:command_to_run}\"",
+			"    ${3:chdir: \"${4}\"}",
+			"    ${5:creates: \"${6:file_if_present_dont_run}\"}",
+			"    ${7:removes: \"${8:file_if_present_do_run}\"}",
+			"    responses:",
+			"      (?i)${9:question_to_answer}:${10:answer_to_question}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Expect Module to answer given questions",
+		"scope": "ansible"
+   },
+
    "Ansible.BuiltIn.Fail":{
 	   "prefix": ["ansible.builtin.fail"],
 	   "body": [
@@ -390,7 +407,6 @@
 		"description": "Used for Ansible File Module to make directories",
 		"scope": "ansible"
 	},	
-
 
    "Ansible.BuiltIn.Meta":{
 	   "prefix": ["ansible.builtin.meta"],

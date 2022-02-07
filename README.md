@@ -28,7 +28,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - debconf – Configure a .deb package
  - dnf – Manages packages with the dnf package manager
  - dpkg_selections – Dpkg package selection selections
- - expect – Executes a command and responds to prompts
  - fetch – Fetch files from remote nodes
  - find – Return a list of files based on specific criteria
  - gather_facts – Gathers facts about remote hosts
