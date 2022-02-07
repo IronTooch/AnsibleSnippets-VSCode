@@ -24,7 +24,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 
 ### ansible.builtin (34 remaining)
  - async_status – Obtain status of asynchronous task
- - blockinfile – Insert/update/remove a text block surrounded by marker lines
  - cron – Manage cron.d and crontab entries
  - debconf – Configure a .deb package
  - dnf – Manages packages with the dnf package manager

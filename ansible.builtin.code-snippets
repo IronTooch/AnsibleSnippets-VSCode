@@ -130,6 +130,29 @@
 		"scope": "ansible"
    },
 
+
+   "Ansible.BuiltIn.BlockInFile":{
+	   "prefix": ["ansible.builtin.blockinfile"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.blockinfile:",
+			"    path: \"${2:file_to_modify}\"",
+			"    create: \"${3|true,false|}\"",
+			"    state: \"${4|present,absent|}\"",
+			"    ${5:insertafter: \"${6:regex_to_start_at}\"}",
+			"    ${7:insertbefore: \"${8:regex_to_end_at}\"}",
+			"    ${9:owner: \"${10:owner}\"}",
+			"    ${11:group: \"${12:owner}\"}",
+			"    ${13:mode: \"${14:0700}\"}",
+			"    block: | ",
+			"      ${15:first_line_to_add}",
+			"      ${16:second_line_to_add}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Block in File Module to add items to block",
+		"scope": "ansible"
+   },
+
 	"Ansible.BuiltIn.Command":{
 		"prefix": ["ansible.builtin.command"],
 		"body": [
