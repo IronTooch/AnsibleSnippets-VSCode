@@ -22,7 +22,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 
 ## Ansible Namespace
 
-### ansible.builtin
+### ansible.builtin (37 remaining)
  - add_host – Add a host (and alternatively a group) to the ansible-playbook in-memory inventory
  - apt_repository – Add and remove APT repositories
  - assemble – Assemble configuration files from fragments
@@ -44,7 +44,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - import_tasks – Import a task list
  - include – Include a play or task list
  - include_role – Load and execute a role
- - include_tasks – Dynamically include a task list
  - known_hosts – Add or remove a host from the known_hosts file
  - package – Generic OS package manager
  - package_facts – Package information as facts
@@ -65,7 +64,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 ### ansible.netcommon
  - telnet – Executes a low-down and dirty telnet command
 
-### ansible.posix
+### ansible.posix (10 remaining)
  - acl – Set and retrieve file ACL information.
  - at – Schedule the execution of a command or script file via the at command
  - authorized_key – Adds or removes an SSH authorized key
@@ -83,7 +82,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - update_fact – Update currently set facts
  - validate – Validate data with provided criteria
 
-### ansible.windows
+### ansible.windows (40 remaining)
  - win_acl – Set file/directory/registry permissions for a system user or group
  - win_acl_inheritance – Change ACL inheritance
  - win_certificate_store – Manages the certificate store
@@ -169,7 +168,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 
 ## Community Namespace
 
-### community.crypto
+### community.crypto (30 remaining)
  - acme_account – Create, modify or delete ACME accounts
  - acme_account_info – Retrieves information on ACME accounts
  - acme_certificate – Create SSL/TLS certificates with the ACME protocol
@@ -201,7 +200,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - x509_crl – Generate Certificate Revocation Lists (CRLs)
  - x509_crl_info – Retrieve information on Certificate Revocation Lists (CRLs)
 
-### community.docker
+### community.docker (27 remaining)
  - current_container_facts – Return facts about whether the module runs in a Docker container
  - docker_compose – Manage multi-container Docker applications with Docker Compose.
  - docker_config – Manage docker configs.
@@ -230,7 +229,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - docker_volume – Manage Docker volumes
  - docker_volume_info – Retrieve facts about Docker volumes
 
-### community.general
+### community.general (135 remaining)
 
  - alternatives – Manages alternative programs for common commands
  - ansible_galaxy_install – Install Ansible roles or collections using ansible-galaxy
@@ -367,7 +366,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - yarn – Manage node.js packages with Yarn
  - yum_versionlock – Locks / unlocks a installed package(s) from being updated by yum package manager
 
-### community.mongodb
+### community.mongodb (17 remaining)
  - mongodb_balancer – Manages the MongoDB Sharded Cluster Balancer.
  - mongodb_index – Creates or drops indexes on MongoDB collections.
  - mongodb_info – Gather information about MongoDB instance.
@@ -386,7 +385,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - mongodb_stepdown – Step down the MongoDB node from a PRIMARY state.
  - mongodb_user – Adds or removes a user from a MongoDB database
 
-### community.mysql
+### community.mysql (7 remaining)
  - mysql_db – Add or remove MySQL databases from a remote host
  - mysql_info – Gather information about MySQL servers
  - mysql_query – Run MySQL queries
@@ -395,7 +394,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - mysql_user – Adds or removes a user from a MySQL database
  - mysql_variables – Manage MySQL global variables
 
-### community.postgresql
+### community.postgresql (20 remaining)
  - postgresql_copy – Copy data between a file/program and a PostgreSQL table
  - postgresql_ext – Add or remove PostgreSQL extensions from a database
  - postgresql_idx – Create or drop indexes from a PostgreSQL database
@@ -417,7 +416,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - postgresql_tablespace – Add or remove PostgreSQL tablespaces from remote hosts
  - postgresql_user_obj_stat_info – Gather statistics about PostgreSQL user objects
 
-### community.windows
+### community.windows (84 remaining)
  - psexec – Runs commands on a remote Windows host based on the PsExec model
  - win_audit_policy_system – Used to make changes to the system wide Audit Policy
  - win_audit_rule – Adds an audit rule to files, folders, or registry keys
@@ -505,7 +504,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 
 ## Netbox Collections
 
-### netbox.netbox
+### netbox.netbox (57 remaining)
  - netbox_aggregate – Creates or removes aggregates from NetBox
  - netbox_cable – Create, update or delete cables within NetBox
  - netbox_circuit – Create, update or delete circuits within NetBox

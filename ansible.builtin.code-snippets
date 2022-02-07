@@ -108,7 +108,7 @@
 		"body": [
 			"- name: ${1:Description}",
 			"  ansible.builtin.copy:",
-			"    content:  ${2}",
+			"    content: ${2}",
 			"    dest: ${3}",
 			"    force: ${4|true,false|}",
 			"    ${6:owner: \"${7:owner}\"}",
@@ -235,6 +235,19 @@
 		"description": "Used for Ansible Hostname Module to change a system hostname",
 		"scope": "ansible"
 	},	
+
+
+   "Ansible.BuiltIn.IncludeTasks":{
+	   "prefix": ["ansible.builtin.include_tasks"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.include_tasks:",
+			"    file: \"${2:file_name}\"",
+			"$0"
+	   ],
+		"description": "Used for Ansible Include TasksModule to Dynamically include a task list",
+		"scope": "ansible"
+   },
 
 	"Ansible.BuiltIn.IncludeVars":{
 		"prefix": ["ansible.builtin.include_vars"],
