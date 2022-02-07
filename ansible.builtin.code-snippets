@@ -350,6 +350,19 @@
 		"scope": "ansible"
    },
 
+
+   "Ansible.BuiltIn.Package_Facts":{
+	   "prefix": ["ansible.builtin.package_facts"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.package_facts:",
+			"    manager: auto  # puts results in ansible_facts.packages",
+			"$0"
+	   ],
+		"description": "Used for Ansible Package Facts Module",
+		"scope": "ansible"
+   },
+
    "Ansible.BuiltIn.Pause_ForInput":{
 	   "prefix": ["ansible.builtin.pause"],
 	   "body": [

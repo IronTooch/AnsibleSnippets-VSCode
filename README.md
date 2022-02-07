@@ -43,7 +43,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - include_role – Load and execute a role
  - known_hosts – Add or remove a host from the known_hosts file
  - package – Generic OS package manager
- - package_facts – Package information as facts
  - ping – Try to connect to host, verify a usable python and return pong on success
  - script – Runs a local script on a remote node after transferring it
  - service_facts – Return service state information as fact data
