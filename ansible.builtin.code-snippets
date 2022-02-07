@@ -1,5 +1,36 @@
 {
 
+   "Ansible.BuiltIn.Add_host":{
+	   "prefix": ["ansible.builtin.add_host"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.add_host:",
+			"    hostname: \"${2:host_or_ip_to_add}\"",
+			"$0"
+	   ],
+		"description": "Used for Ansible Add Host to add a host to the in-memory processing",
+		"scope": "ansible"
+   },
+
+   "Ansible.BuiltIn.Assemble":{
+	   "prefix": ["ansible.builtin.assemble"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.assemble:",
+			"    src: \"${2:source_folder}\"",
+			"    dest: \"${3:destination_location}\"",
+			"    ignore_hidden: \"${4|true,false|}\"",
+			"    ${5:regexp: \"${6:regexp_of_filenames_to_assemble}\"}",
+			"    ${7:remote_src: \"${8|true,false|}\"}",
+			"    ${9:owner: \"${10:owner}\"}",
+			"    ${11:group: \"${12:owner}\"}",
+			"    ${13:mode: \"${14:0700}\"}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Assemble Module to build files",
+		"scope": "ansible"
+   },
+
 	"Ansible.BuiltIn.Apt_Packages":{
 		"prefix": ["ansible.builtin.apt_packages"],
 		"body": [
@@ -39,7 +70,6 @@
 		"description": "Used for Ansible Apt Module to install a specific deb file",
 		"scope": "ansible"
 	},
-
 
    "Ansible.BuiltIn.Apt_Key_FromServer":{
 	   "prefix": ["ansible.builtin.apt_key"],
@@ -469,7 +499,6 @@
 		"description": "Used for Ansible Services Module",
 		"scope": "ansible"
 	},
-
 
    "Ansible.BuiltIn.Service_Facts":{
 	   "prefix": ["ansible.builtin.service_facts"],

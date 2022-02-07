@@ -23,8 +23,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 ## Ansible Namespace
 
 ### ansible.builtin (34 remaining)
- - add_host – Add a host (and alternatively a group) to the ansible-playbook in-memory inventory
- - assemble – Assemble configuration files from fragments
  - async_status – Obtain status of asynchronous task
  - blockinfile – Insert/update/remove a text block surrounded by marker lines
  - cron – Manage cron.d and crontab entries
