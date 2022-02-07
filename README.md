@@ -42,7 +42,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - import_playbook – Import a playbook
  - import_role – Import a role into a play
  - import_tasks – Import a task list
- - include – Include a play or task list
  - include_role – Load and execute a role
  - known_hosts – Add or remove a host from the known_hosts file
  - package – Generic OS package manager
