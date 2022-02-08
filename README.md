@@ -218,7 +218,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - docker_volume – Manage Docker volumes
  - docker_volume_info – Retrieve facts about Docker volumes
 
-### community.general (135 remaining)
+### community.general (134 remaining)
 
  - alternatives – Manages alternative programs for common commands
  - ansible_galaxy_install – Install Ansible roles or collections using ansible-galaxy
@@ -227,7 +227,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - apk – Manages apk packages
  - apt_repo – Manage APT repositories via apt-repo
  - apt_rpm – apt_rpm package manager
- - archive – Creates a compressed archive of one or more files or trees
  - capabilities – Manage Linux capabilities
  - cloudflare_dns – Manage Cloudflare DNS records
  - composer – Dependency Manager for PHP
@@ -236,7 +235,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - crypttab – Encrypted Linux block devices
  - dconf – Modify and read dconf database
  - deploy_helper – Manages some of the steps common in deploying projects.
- - discord – Send Discord messages
  - django_manage – Manages a Django application.
  - dnf_versionlock – Locks package versions in dnf based systems
  - dpkg_divert – Override a debian package’s version of a file

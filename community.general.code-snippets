@@ -1,6 +1,42 @@
 {
 
 
+   "Commmunity.General.Archive":{
+       "prefix": ["community.general.archive"],
+       "body": [
+            "- name: ${1:Description}",
+            "  community.general.archive:",
+            "    dest: \"${2:path_to_save_archive_to}\"",
+            "    force_archive: ${3|true,false|}",
+            "    format: ${4|zip,gz,bz2,tar,zx|}",
+            "    owner: \"${5:owner}\"",
+            "    group: \"${6:group}\"",
+            "    mode: \"${7:0700}\"",
+            "    path:",
+            "      - ${8:file_or_dir_to_archive}",
+            "    ${9:exclude_path}", 
+            "      ${20:- path_to_exclude}}",
+            "$0"
+       ],
+        "description": "Used for Ansible Archive Module to package files together",
+        "scope": "ansible"
+   },
+
+
+   "Commmunity.General.Discord_FromEnv":{
+       "prefix": ["community.general.discord"],
+       "body": [
+            "- name: ${1:Description}",
+            "  community.general.discord:",
+            "    webhook_id: {{ lookup('env', 'DISCORD_ID') }}",
+            "    webhook_token: {{ lookup('env', 'DISCORD_TOKEN') }}",
+            "    content: \"${2:my_message_to_discord}\"",
+            "$0"
+       ],
+        "description": "Used for Ansible Discord Integration",
+        "scope": "ansible"
+   },
+
    "Community.General.DjangoManage":{
        "prefix": ["community.general.django_manage"],
        "body": [
