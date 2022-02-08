@@ -22,13 +22,12 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 
 ## Ansible Namespace
 
-### ansible.builtin (34 remaining)
+### ansible.builtin (26 remaining)
  - async_status – Obtain status of asynchronous task
  - cron – Manage cron.d and crontab entries
  - debconf – Configure a .deb package
  - dnf – Manages packages with the dnf package manager
  - dpkg_selections – Dpkg package selection selections
- - fetch – Fetch files from remote nodes
  - find – Return a list of files based on specific criteria
  - gather_facts – Gathers facts about remote hosts
  - getent – A wrapper to the unix getent utility
@@ -42,7 +41,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - ping – Try to connect to host, verify a usable python and return pong on success
  - script – Runs a local script on a remote node after transferring it
  - setup – Gathers facts about remote hosts
- - slurp – Slurps a file from remote nodes
  - subversion – Deploys a subversion repository
  - systemd – Manage systemd units
  - sysvinit – Manage SysV services.

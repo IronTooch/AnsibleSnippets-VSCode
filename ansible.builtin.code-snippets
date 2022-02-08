@@ -245,6 +245,22 @@
 		"scope": "ansible"
    },
 
+   "Ansible.Builtin.Fetch":{
+	   "prefix": ["ansible.builtin.fetch"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.fetch:",
+			"    src: \"${2:path_on_remote_system}\"",
+			"    dest: \"${3:path_on_control_node}\"",
+			"    ${4:fail_on_missing: ${5|false,true|}}",
+			"    ${6:flat: ${7|false,true|}}",
+			"    ${8:validate_checksum: ${9|false,true|}}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Fetch Module to retrieve file from node",
+		"scope": "ansible"
+   },
+
 	"Ansible.BuiltIn.FileDirectory":{
 		"prefix": ["ansible.builtin.file"],
 		"body": [
@@ -577,6 +593,7 @@
 		"description": "Used for Ansible Set Stats Task",
 		"scope": "ansible"
    },
+
 	"Ansible.BuiltIn.Shell":{
 		"prefix": ["ansible.builtin.shell"],
 		"body": [
@@ -591,6 +608,19 @@
 		"description": "Used for Ansible Shell Module",
 		"scope": "ansible"
 	},	
+
+   "Ansible.BuiltIn.Slurp":{
+	   "prefix": ["ansible.builtin.slurp"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.slurp:",
+			"    src: \"${2:path_to_file}\"",
+			"  register: ${3:file_contents_var}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Slurp Module to read a file into a variable",
+		"scope": "ansible"
+   },
 
    "Ansible.BuiltIn.Stat":{
 	   "prefix": ["ansible.builtin.stat"],
