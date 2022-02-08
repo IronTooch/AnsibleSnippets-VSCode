@@ -75,6 +75,18 @@
         "scope": "ansible"
     },
 
+    //   - name: Ansible check file exists example.
+//     stat:
+//       path: /home/local_admin/.bashrc
+//     register: local_admin
+//   - name: Set /home/local_admin/.bashrc
+//     copy:
+//       dest: /home/local_admin/.bashrc
+//       src: /tmp/user.bashrc
+//       force: yes
+//       remote_src: yes
+//       owner: local_admin
+//     when: local_admin.stat.exists
 
 
 }
