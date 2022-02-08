@@ -1,18 +1,40 @@
 {
-    "Snippet.YesNoKey":{
-        "prefix": ["snippet.yesnokey"],
+    "Snippet.OwnerGroupMode":{
+        "prefix": ["snippet.OwnerGroupMode"],
         "body": [
-            "\"    ${1:keyname}: \\\"${$2|yes,no|}\\\"\",",
+            "\"    owner: \\\"${$1:owner}\\\"\",",
+            "\"    group: \\\"${$2:group}\\\"\",",
+            "\"    mode: \\\"${$3:0700}\\\"\",",
+            "$0"
+        ],
+        "description": "Used to make the owner / group / mode snippet used in file manipulation",
+        "scope": "jsonc"
+    },
+
+    "Snippet.YesNoKey":{
+        "prefix": ["snippet.YesNoKey"],
+        "body": [
+            "\"    ${1:keyname}: \\${$2|yes,no|}\",",
             "$0"
         ],
         "description": "Used to make a key -> Yes / No Snippet",
         "scope": "jsonc"
     },
 
+    "Snippet.TrueFalseKey":{
+        "prefix": ["snippet.TrueFalseKey"],
+        "body": [
+            "\"    ${1:keyname}: \\${$2|true,false|}\",",
+            "$0"
+        ],
+        "description": "Used to make a key -> True / False Snippet",
+        "scope": "jsonc"
+    },
+
     "Snippet.PresentAbsentKey":{
         "prefix": ["snippet.presentabsentkey"],
         "body": [
-            "\"    ${1:keyname}: \\\"${$2|present,absent|}\\\"\",",
+            "\"    ${1:keyname}: \\${$2|present,absent|}\\\",",
             "$0"
         ],
         "description": "Used to make a key -> Present/Absent Snippet",
@@ -69,7 +91,7 @@
             "       \"body\": [",
             "            \"- name: \\${1:Description\}}\",",
             "            \"  ${2}:\",", 
-            "            $0    ",
+            "            $0",
             "            \"\\$0\"",
             "       ],",
             "        \"description\": \"Used for Ansible ${3: Snippet description}\",",
@@ -77,7 +99,7 @@
             "   },"
             
         ],
-        "description": "Used to make a new baseline snippet",
+        "description": "Used to make a new baseline ansible snippet",
         "scope": "jsonc"
     },
 
