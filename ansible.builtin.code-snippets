@@ -19,9 +19,9 @@
 			"  ansible.builtin.assemble:",
 			"    src: \"${2:source_folder}\"",
 			"    dest: \"${3:destination_location}\"",
-			"    ignore_hidden: \"${4|true,false|}\"",
+			"    ignore_hidden: ${4|true,false|}",
 			"    ${5:regexp: \"${6:regexp_of_filenames_to_assemble}\"}",
-			"    ${7:remote_src: \"${8|true,false|}\"}",
+			"    ${7:remote_src: ${8|true,false|}}",
 			"    ${9:owner: \"${10:owner}\"}",
 			"    ${11:group: \"${12:owner}\"}",
 			"    ${13:mode: \"${14:0700}\"}",
@@ -77,8 +77,8 @@
 			"- name: ${1:Description}",
 			"  ansible.builtin.apt_key:",
 			"    keyserver: \"${2:url_of_key}\"",
-			"    state: \"${3|present,absent|}\"",
-			"    validate_certs: \"${4|true,false|}\"",
+			"    state: ${3|present,absent|}",
+			"    validate_certs: ${4|true,false|}",
 			"    ${5:keyring: \"${6:path_to_keyring_file}\"}",
 			"$0"
 	   ],
@@ -92,7 +92,7 @@
 		 "- name: ${1:Description}",
 		 "  ansible.builtin.apt_key:",
 		 "    data: \"{{ lookup('file', '${2:file_path_on_server}') }}\"",
-		 "    state: \"${3|present,absent|}\"",
+		 "    state: ${3|present,absent|}",
 		 "    ${5:keyring: \"${4:path_to_keyring_file}\"}",
 		 "$0"
 	],
@@ -106,9 +106,9 @@
 			"- name: ${1:Description}",
 			"  ansible.builtin.apt_repository:",
 			"    repo: \"${2:repo_source_string}\"",
-			"    state: \"${3|present,absent|}\"",
-			"    ${4:update_cache: \"${5|true,false|}\"}",
-			"    ${6:validate_certs: \"${7|true,false|}\"}",
+			"    state: ${3|present,absent|}",
+			"    ${4:update_cache: ${5|true,false|}}",
+			"    ${6:validate_certs: ${7|true,false|}}",
 			"$0"
 	   ],
 		"description": "Used for Ansible Apt Repository to add repositories",
@@ -137,8 +137,8 @@
 			"- name: ${1:Description}",
 			"  ansible.builtin.blockinfile:",
 			"    path: \"${2:file_to_modify}\"",
-			"    create: \"${3|true,false|}\"",
-			"    state: \"${4|present,absent|}\"",
+			"    create: ${3|true,false|}",
+			"    state: ${4|present,absent|}",
 			"    ${5:insertafter: \"${6:regex_to_start_at}\"}",
 			"    ${7:insertbefore: \"${8:regex_to_end_at}\"}",
 			"    ${9:owner: \"${10:owner}\"}",
@@ -298,11 +298,11 @@
 			"  ansible.builtin.get_url:",
 			"    url: \"${2:url}\"",
 			"    dest: \"${3:dest}\"",
-			"    force: \"${4|true,false|}\"",	
+			"    force: ${4|true,false|}",	
 			"    ${5:owner: \"${6:owner}\"}",
 			"    ${7:group: \"${8:owner}\"}",
 			"    ${9:mode: \"${10:0700}\"}",
-			"    ${11:validate_certs: \"${12|true,false|}\"}",	
+			"    ${11:validate_certs: ${12|true,false|}}",	
 			"$0"
 		],
 		"description": "Used for Ansible Get_url Module to downloads files from HTTP, HTTPS, or FTP to node",
@@ -316,7 +316,7 @@
 			"  ansible.builtin.git:",
 			"    repo: \"${2:url}\"",
 			"    dest: \"${3:dest}\"",
-			"    force: \"${4|true,false|}\"",	
+			"    force: ${4|true,false|}",	
 			"$0"
 		],
 		"description": "Used for Ansible Git Module to download files from Git",
@@ -345,7 +345,7 @@
 			"- name: ${1:Description}",
 			"  ansible.builtin.hostname:",
 			"    name: \"${2:desired_hostname}\"",
-			"    ${3:use: \"${4|alpine,debian,freebsd,generic,macos,macosx,darwin,openbsd,openrc,redhat,sles,solaris,systemd|}\"}",
+			"    ${3:use: ${4|alpine,debian,freebsd,generic,macos,macosx,darwin,openbsd,openrc,redhat,sles,solaris,systemd|}}",
 			"$0"
 		],
 		"description": "Used for Ansible Hostname Module to change a system hostname",
@@ -382,7 +382,7 @@
 		"body": [
 			"- name: ${1:Description}",
 			"  ansible.builtin.iptables:",
-			"    action: \"${2|append,insert|}\"",
+			"    action: ${2|append,insert|}",
 			"    chain: '${3|INPUT,FORWARD,OUTPUT,PREROUTING,POSTROUTING,SECMARK,CONNSECMARK|}'",
 			"    comment: ${4:comment}",
 			"    destination: ${5:destination}",
@@ -450,9 +450,9 @@
    "Ansible.BuiltIn.Pause_ForInput":{
 	   "prefix": ["ansible.builtin.pause"],
 	   "body": [
-			"- name: ${1:Description}",
+			"- name: Waiting for User to press Enter",
 			"  ansible.builtin.pause:",
-			"    ${2:prompt: \"${3:User_Prompt}\"}",
+			"    prompt: 'Waiting for User to press Enter'",
 			"$0"
 	   ],
 		"description": "Used for Ansible Pause Module to wait for user input",
@@ -462,9 +462,9 @@
    "Ansible.BuiltIn.Pause_ForTime":{
 	"prefix": ["ansible.builtin.pause"],
 	"body": [
-		 "- name: ${1:Description}",
+		 "- name: Waiting for ${1} ${2}",
 		 "  ansible.builtin.pause:",
-		 "    ${2|minutes,seconds|}: ${3:amount_to_wait}",
+		 "    ${2|minutes,seconds|}: ${1:amount_to_wait}",
 		 "$0"
 	],
 	 "description": "Used for Ansible Pause Module to wait for a given block of time",
@@ -584,8 +584,8 @@
 	   "body": [
 			"- name: ${1:Description}",
 			"  ansible.builtin.set_stats:",
-			"    aggregate: \"${2|true,false|}\"",
-			"    per_host: \"${3|false,true|}\"",
+			"    aggregate: ${2|true,false|}",
+			"    per_host: ${3|false,true|}",
 			"    data:",
 			"      ${4:Datakey}: ${5:Datavalue}",
 			"$0"
