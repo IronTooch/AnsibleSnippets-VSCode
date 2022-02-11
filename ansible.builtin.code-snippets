@@ -471,6 +471,21 @@
 	 "scope": "ansible"
 },
 
+"Ansible.BuiltIn.Pip_Install":{
+	"prefix": ["ansible.builtin.pip"],
+	"body": [
+		 "- name: ${1:Description}",
+		 "  ansible.builtin.pip:",
+		 "    state: ${2|latest,present,forcereinstall,absent|}",
+		 "    ${3:chdir: \"${4:cd_dir}\"}",
+		 "    name:",
+		 "      - ${5:package_name}",
+		 "$0"
+	],
+	 "description": "Used for Ansible Pip to install specific packages",
+	 "scope": "ansible"
+},
+
    "Ansible.BuiltIn.Pip_Requirements":{
 	   "prefix": ["ansible.builtin.pip"],
 	   "body": [
