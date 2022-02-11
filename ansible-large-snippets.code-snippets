@@ -75,6 +75,21 @@
         "scope": "ansible"
     },
 
+       "Ansible.MakeCommandVariable":{
+           "prefix": ["ansible.large.command_variable"],
+           "body": [
+                "- name: Make command execution for ${1:my_command}",
+                "  set_fact:",
+                "    ${2:my_command}_var: >-",
+                "      ${3:my_command}",
+                "      ${4:raw_param}",
+                "      --${5:param1} ${6:param1_val}",
+                "      --${7:param2} ${8:param2_val}",
+                "$0"
+           ],
+            "description": "Used for Ansible to make more complex commands",
+            "scope": "ansible"
+       },
     //   - name: Ansible check file exists example.
 //     stat:
 //       path: /home/local_admin/.bashrc
