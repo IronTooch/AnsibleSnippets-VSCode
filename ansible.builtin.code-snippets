@@ -36,7 +36,7 @@
 		"body": [
 			"- name: ${1:Description}",
 			"  ansible.builtin.apt:",
-			"    name:  ${2}",
+			"    name: ${2}",
 			"    state: ${3|present,absent,latest,fixed,build-dep|}",
 			"    update_cache: ${4|true,false|}",
 			"    force: ${5|false,true|}",
@@ -51,7 +51,7 @@
 		"body": [
 			"- name: Update all packages to latest version",
 			"  ansible.builtin.apt:",
-			"    name:  \"*\"",
+			"    name: \"*\"",
 			"    state: \"latest\"",
 			"$0"
 		],
@@ -64,7 +64,7 @@
 		"body": [
 			"- name: Install package from ${1:debfile}",
 			"  ansible.builtin.apt:",
-			"    deb:  \"${2:debpath}/${1}\"",
+			"    deb: \"${2:debpath}/${1}\"",
 			"$0"
 		],
 		"description": "Used for Ansible Apt Module to install a specific deb file",
@@ -173,7 +173,7 @@
 		"body": [
 			"- name: ${1:Description}",
 			"  ansible.builtin.copy:",
-			"    src:  ${2}",
+			"    src: ${2}",
 			"    dest: ${3}",
 			"    remote_src: ${4|true,false|}",
 			"    force: ${5|true,false|}",
@@ -587,7 +587,7 @@
 		"body": [
 			"- name: ${1:Description}",
 			"  ansible.builtin.set_fact:",
-			"    ${2:my_fact_name}:  \"${3}\"",
+			"    ${2:my_fact_name}: \"${3}\"",
 			"$0"
 		],
 		"description": "Used for Ansible Set Fact Module",
