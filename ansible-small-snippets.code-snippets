@@ -10,4 +10,14 @@
         "scope": "ansible"
    },
 
+   "Ansible.FileContent":{
+     "prefix": ["ansible.small.file_content"],
+     "body": [
+          "{{lookup('file', '${1:filename}') }}",
+     ],
+      "description": "Used for Ansible to read a file on the host",
+      "scope": "ansible"
+ },
+
+
 }
