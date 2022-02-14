@@ -50,9 +50,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - wait_for_connection – Waits until remote system is reachable/usable
  - yum – Manages packages with the yum package manager
 
-### ansible.netcommon
- - telnet – Executes a low-down and dirty telnet command
-
 ### ansible.posix (10 remaining)
  - acl – Set and retrieve file ACL information.
  - at – Schedule the execution of a command or script file via the at command
@@ -336,7 +333,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - serverless – Manages a Serverless Framework project
  - shutdown – Shut down a machine
  - slack – Send Slack notifications
- - snap – Manages snaps
  - snap_alias – Manages snap aliases
  - snmp_facts – Retrieve facts for a device using SNMP
  - ssh_config – Manage SSH config for user

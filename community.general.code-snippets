@@ -53,6 +53,32 @@
    },
 
 
+   "Community.General.Snap":{
+       "prefix": ["community.general.snap"],
+       "body": [
+            "- name: ${1:Description}",
+            "  community.general.snap:",
+            "    name: \"${2:snap_to_add}\"",
+            "    state: ${3|present,absent,enabled,disabled|}",
+            "    classic: ${4|true,false|}",
+            "    ${5:channel: \"${6:release_version}\"}",            
+            "$0"
+       ],
+        "description": "Used for Ansible Snap Module",
+        "scope": "ansible"
+   },
 
+// Originally I was going to make this selectable, but there are 608 Timezones... so no.
+   "Commmunity.General.Timezone":{
+       "prefix": ["community.general.timezone"],
+       "body": [
+            "- name: ${1:Description}",
+            "  community.general.timezone:",
+            "    name: ${2:America/New_York}",
+            "$0"
+       ],
+        "description": "Used for Ansible Timezone Module to set host timezone",
+        "scope": "ansible"
+   },
 
 }
