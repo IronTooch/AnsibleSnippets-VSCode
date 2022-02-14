@@ -435,6 +435,21 @@
 		"scope": "ansible"
    },
 
+
+   "Ansible.BuiltIn.Package":{
+	   "prefix": ["ansible.builtin.package"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.package:",
+			"    name:",
+			"      - ${2:package_to_manage}",
+			"    state: ${3|present,absent|}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Package generic Package Manager",
+		"scope": "ansible"
+   },
+
    "Ansible.BuiltIn.Package_Facts":{
 	   "prefix": ["ansible.builtin.package_facts"],
 	   "body": [

@@ -37,7 +37,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - import_tasks – Import a task list
  - include_role – Load and execute a role
  - known_hosts – Add or remove a host from the known_hosts file
- - package – Generic OS package manager
  - ping – Try to connect to host, verify a usable python and return pong on success
  - script – Runs a local script on a remote node after transferring it
  - setup – Gathers facts about remote hosts
