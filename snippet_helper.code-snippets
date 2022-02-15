@@ -34,7 +34,7 @@
     "Snippet.PresentAbsentKey":{
         "prefix": ["snippet.presentabsentkey"],
         "body": [
-            "\"    ${1:keyname}: \\${$2|present,absent|}\\\",",
+            "\"    ${1:keyname}: \\${$2|present,absent|}\\,",
             "$0"
         ],
         "description": "Used to make a key -> Present/Absent Snippet",
@@ -89,7 +89,7 @@
             "   \"${1:SnippetName}\":{",
             "       \"prefix\": [\"${2:SnippetPrefix}\"],",
             "       \"body\": [",
-            "            \"- name: \\${1:Description\}}\",",
+            "            \"- name: \\${1:Description}\",",
             "            \"  ${2}:\",", 
             "            $0",
             "            \"\\$0\"",
