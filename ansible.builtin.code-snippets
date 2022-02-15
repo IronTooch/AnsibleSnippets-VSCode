@@ -418,6 +418,7 @@
 			"    path: ${2:path}",
 			"    state: ${3|present,absent|}",
 			"    line: '${4:myline}'",
+			"    create: ${5|true,false|}",
 			"$0"
 		],
 		"description": "Used for Ansible File Module to make directories",
