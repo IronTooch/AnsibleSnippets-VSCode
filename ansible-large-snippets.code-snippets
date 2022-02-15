@@ -106,6 +106,7 @@
           "  ansible.builtin.file:",
           "    path: \"{{ ${2:flag_name}_path }}\"",
           "    state: touch",
+          "    mode: '0700'",
           "  when: not ${2:flag_name}.stat.exists"
         ],
         "description": "Used for Ansible create commands to support idempotence",
