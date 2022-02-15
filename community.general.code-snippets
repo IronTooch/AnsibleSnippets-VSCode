@@ -22,7 +22,6 @@
         "scope": "ansible"
    },
 
-
    "Commmunity.General.Discord_FromEnv":{
        "prefix": ["community.general.discord"],
        "body": [
@@ -52,6 +51,19 @@
         "scope": "ansible"
    },
 
+   "Community.General.Modprobe":{
+       "prefix": ["community.general.modprobe"],
+       "body": [
+            "- name: ${1:Description}",
+            "  community.general.modprobe:",
+            "    name: \"${2:kernel_module}\"",
+            "    state: ${3|present,absent|}",
+            "    ${4:params: \"${5:module_params}\"}",
+            "$0"
+       ],
+        "description": "Used for Ansible ModProbe Module",
+        "scope": "ansible"
+   },
 
    "Community.General.Snap":{
        "prefix": ["community.general.snap"],

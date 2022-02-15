@@ -285,7 +285,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
  - make – Run targets in a Makefile
  - matrix – Send notifications to matrix
  - mattermost – Send Mattermost notifications
- - modprobe – Load or unload kernel modules
  - mssql_db – Add or remove MSSQL databases from a remote host.
  - mssql_script – Execute SQL scripts on a MSSQL database
  - nginx_status_info – Retrieve information on nginx status.
