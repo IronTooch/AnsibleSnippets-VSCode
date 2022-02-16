@@ -23,7 +23,6 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 
 #### ansible.builtin (24 remaining)
 
-- async_status – Obtain status of asynchronous task
 - debconf – Configure a .deb package
 - dnf – Manages packages with the dnf package manager
 - dpkg_selections – Dpkg package selection selections

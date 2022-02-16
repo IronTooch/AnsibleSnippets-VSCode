@@ -130,6 +130,22 @@
 		"scope": "ansible"
    },
 
+// https://docs.ansible.com/ansible/latest/user_guide/playbooks_async.html#playbooks-async
+   "Ansible.BuiltIn.Async_Status":{
+	   "prefix": ["ansible.builtin.async_status"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.async_status:",
+			"    jid: '{{ ${2:variable_of_async_task}.ansible_job_id }}",
+			"  register: job_result",
+			"  until: job_result.finished",
+			"  retries: 100",
+			"  delay: 10",
+			"$0"
+	   ],
+		"description": "Used for Ansible Async Job to wait for a job to complete",
+		"scope": "ansible"
+   },
 
    "Ansible.BuiltIn.BlockInFile":{
 	   "prefix": ["ansible.builtin.blockinfile"],
