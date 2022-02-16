@@ -21,7 +21,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 
 ### Ansible Namespace
 
-#### ansible.builtin (26 remaining)
+#### ansible.builtin (24 remaining)
 
 - async_status – Obtain status of asynchronous task
 - cron – Manage cron.d and crontab entries

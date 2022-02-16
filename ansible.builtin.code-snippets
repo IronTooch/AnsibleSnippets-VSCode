@@ -291,6 +291,22 @@
 		"scope": "ansible"
 	},	
 
+	"Ansible.BuiltIn.FileLink":{
+		"prefix": ["ansible.builtin.file"],
+		"body": [
+			"- name: Make Symbolic Link between ${2:path} and ${3:directory}",
+			"  ansible.builtin.file:",
+			"    src: ${2:path}",
+			"    dest: ${3:directory}",
+			"    owner: ${4:owner}",
+			"    group: ${4:owner}",
+			"    state: link",
+			"$0"
+		],
+		"description": "Used for Ansible File Module to make Symbolic Link",
+		"scope": "ansible"
+	},	
+
 	"Ansible.BuiltIn.GetUrl":{
 		"prefix": ["ansible.builtin.get_url"],
 		"body": [
