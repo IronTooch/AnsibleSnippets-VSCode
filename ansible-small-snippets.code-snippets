@@ -19,5 +19,14 @@
       "scope": "ansible"
  },
 
+ "Ansible.Ipv4":{
+     "prefix": ["ansible.small.ipv4"],
+     "body": [
+          "{{ ansible_default_ipv4.address }}",
+     ],
+      "description": "Used for Ansible to get an IPv4 address",
+      "scope": "ansible"
+ },
+ 
 
 }
