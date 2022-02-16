@@ -90,18 +90,29 @@
             "description": "Used for Ansible to make more complex commands",
             "scope": "ansible"
        },
-    //   - name: Ansible check file exists example.
-//     stat:
-//       path: /home/local_admin/.bashrc
-//     register: local_admin
-//   - name: Set /home/local_admin/.bashrc
-//     copy:
-//       dest: /home/local_admin/.bashrc
-//       src: /tmp/user.bashrc
-//       force: yes
-//       remote_src: yes
-//       owner: local_admin
-//     when: local_admin.stat.exists
+
+       "Ansible.MakeStateCompleteFlag": {
+        "prefix": ["ansible.large.state_complete_flag"],
+        "body": [
+          "- name: Check if ${1:condition_is_true}",
+          "  ansible.builtin.stat:",
+          "    path: \"{{ ${2:flag_name}_path }}\"",
+          "  register: ${2:flag_name}",
+          "",
+          "$0",
+          "  when: not ${2:flag_name}.stat.exists",
+          "",
+          "- name: Touch a file to demonstrate ${1:condition_is_true}",
+          "  ansible.builtin.file:",
+          "    path: \"{{ ${2:flag_name}_path }}\"",
+          "    state: touch",
+          "    mode: '0700'",
+          "  when: not ${2:flag_name}.stat.exists"
+        ],
+        "description": "Used for Ansible create commands to support idempotence",
+        "scope": "ansible"
+      }
+
 
 
 }
