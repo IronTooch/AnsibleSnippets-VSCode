@@ -186,6 +186,27 @@
 		"scope": "ansible"
 	},
 
+   "Ansible.BuiltIn.Cron":{
+	   "prefix": ["ansible.builtin.cron"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.cron:",
+			"    name: \"${2:description_of_job}\"",
+			"    state: ${3|present,absent|}",
+			"    ${5:special_time: \"${6|annually,daily,hourly,monthly,reboot,weekly,yearly|}\"}",
+			"    ${7:minute: \"${8:minute_of_hour}\"}",
+			"    ${9:hour: \"${10:hour_of_day}\"}",
+			"    ${11:day: \"${12:day_of_month}\"}",
+			"    ${13:month: \"${14:month_of_year}\"}",
+			"    ${15:weekday: \"${16:number_day_of_week}\"}",
+			"    ${17:user: \"${18:users_crontab_to_edit}\"}",
+			"    job: \"${19:job_to_run}\"",
+			"$0"
+	   ],
+		"description": "Used for Ansible Cron to make a new scheduled job",
+		"scope": "ansible"
+   },
+
 	"Ansible.BuiltIn.Copy_Content":{
 		"prefix": ["ansible.builtin.copy"],
 		"body": [
