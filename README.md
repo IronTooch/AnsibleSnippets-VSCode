@@ -17,6 +17,13 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 ![Watchers](https://img.shields.io/github/watchers/Irontooch/AnsibleSnippets-VSCode.svg)
 ![Follow](https://img.shields.io/github/followers/IronTooch.svg?style=social&label=Follow&maxAge=2592000)
 
+## Usage
+
+First, clone the repository.
+
+- For Windows, from the root of the new workspace, use `mklink /D ".vscode" "..\AnsibleSnippets-VSCode"`
+- For Linux, from the root of the new workspace, use `ln -sd "..\AnsibleSnippets-VSCode" ".vscode"`
+
 ## To be Snippet-tized
 
 ### Ansible Namespace
