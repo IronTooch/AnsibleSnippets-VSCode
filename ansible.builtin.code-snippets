@@ -352,6 +352,22 @@
 		"scope": "ansible"
 	},	
 
+   "Ansible.BuiltIn.Import_Role":{
+	   "prefix": ["ansible.builtin.import_role"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.import_role:",
+			"    name: \"${2:role_to_import}\"",
+			"    allow_duplicates: ${3|true,false|}",
+			"  vars:",
+			"    ${4:role_var_name}: ${5:role_var_value}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Import Role to use Role for a given function",
+		"scope": "ansible"
+   },
+
+
    "Ansible.BuiltIn.IncludeTasks":{
 	   "prefix": ["ansible.builtin.include_tasks"],
 	   "body": [
