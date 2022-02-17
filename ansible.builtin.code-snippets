@@ -76,7 +76,7 @@
 	   "body": [
 			"- name: ${1:Description}",
 			"  ansible.builtin.apt_key:",
-			"    keyserver: \"${2:url_of_key}\"",
+			"    url: \"${2:url_of_key}\"",
 			"    state: ${3|present,absent|}",
 			"    validate_certs: ${4|true,false|}",
 			"    ${5:keyring: \"${6:path_to_keyring_file}\"}",
