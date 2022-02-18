@@ -326,7 +326,7 @@
 		],
 		"description": "Used for Ansible File Module to Chown directories",
 		"scope": "ansible"
-	},	
+	},
 
 	"Ansible.BuiltIn.FileLink":{
 		"prefix": ["ansible.builtin.file"],
@@ -342,7 +342,21 @@
 		],
 		"description": "Used for Ansible File Module to make Symbolic Link",
 		"scope": "ansible"
-	},	
+	},
+
+
+   "Ansible.BuiltIn.FileTouch":{
+	   "prefix": ["ansible.builtin.file"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.file:",
+			"    path: \"${2:path_to_new_file}\"",
+			"    state: touch",
+			"$0"
+	   ],
+		"description": "Used for Ansible File to Touch new Files",
+		"scope": "ansible"
+   },
 
 	"Ansible.BuiltIn.GetUrl":{
 		"prefix": ["ansible.builtin.get_url"],
@@ -514,6 +528,10 @@
 			"    name:",
 			"      - ${2:package_to_manage}",
 			"    state: ${3|present,absent|}",
+			"  register: apt_status",
+			"  until: apt_status is success",
+			"  delay: 6",
+			"  retries: 10",
 			"$0"
 	   ],
 		"description": "Used for Ansible Package generic Package Manager",
