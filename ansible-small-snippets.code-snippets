@@ -19,14 +19,22 @@
       "scope": "ansible"
  },
 
- "Ansible.Ipv4":{
+"Ansible.Ipv4":{
      "prefix": ["ansible.small.ipv4"],
      "body": [
           "{{ ansible_default_ipv4.address }}",
      ],
-      "description": "Used for Ansible to get an IPv4 address",
-      "scope": "ansible"
- },
- 
+     "description": "Used for Ansible to get an IPv4 address",
+     "scope": "ansible"
+},
+
+"Ansible.RandomString":{
+     "prefix": ["ansible.small.random_string"],
+     "body": [
+          "{{ lookup('password', '/dev/null chars=ascii_letters,digits,punctuation length=${1:string_len}') }}",
+     ],
+     "description": "Used for Ansible to make a random string",
+     "scope": "ansible"
+},
 
 }
