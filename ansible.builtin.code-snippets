@@ -40,6 +40,10 @@
 			"    state: ${3|present,absent,latest,fixed,build-dep|}",
 			"    update_cache: ${4|true,false|}",
 			"    force: ${5|false,true|}",
+			"  register: apt_status",
+			"  until: apt_status is success",
+			"  delay: 6",
+			"  retries: 10",
 			"$0"
 		],
 		"description": "Used for Ansible Apt Module to install packages from repos",
