@@ -2,11 +2,11 @@
 
 
    "Ansible.PasswordHash":{
-       "prefix": ["ansible.small.password"],
+       "prefix": ["ansible.small.md5_password"],
        "body": [
             "{{'abcd1234' | hash('md5')}}",
        ],
-        "description": "Used for Ansible to generate hashes for things",
+        "description": "Used for Ansible to generate md5 passwords hashes for things",
         "scope": "ansible"
    },
 
@@ -15,7 +15,7 @@
      "body": [
           "{{lookup('file', '${1:filename}') }}",
      ],
-      "description": "Used for Ansible to read a file on the host",
+      "description": "Used for Ansible to read a file on the CONTROL NODE Only",
       "scope": "ansible"
  },
 
