@@ -11,7 +11,15 @@
                 "command": "/bin/bash copy_snippets_global.sh"
             },
             "windows": {
-                "command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe copy_snippets_global.ps2"
+                "options": {
+                    "shell": {
+                        "executable": "powershell",
+                        "args": [
+                            "-ExecutionPolicy Bypass", "-File"
+                        ]
+                    }
+                },
+                "command": "copy_snippets_global.ps1"
             },
             "presentation": {
                 "reveal": "always",

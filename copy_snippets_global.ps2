@@ -1,7 +1,0 @@
-
-
-CurrentUser = (Get-ChildItem Env:\USERNAME).Value
-
-# Get all files from current folder with snippet extension
-
-# Copy Each file to C:\Users\CurrentUser\AppData\Roaming\Code\User\snippets with overwrite
