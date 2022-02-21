@@ -19,9 +19,23 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 
 ## Usage
 
-First, clone the repository. Then, in VS Code, go to Terminal -> Run Task, and execute "Install Snippets Globally". Note: You will have to run this task after every new Github update to refresh your snippets. This is tested in Linux Mint and Windows 10, but if you have non-standard file locations, you're on your own.
+First, clone the repository. Then, in VS Code, go to Terminal -> Run Task, and execute "Install Snippets Globally". Note: You will have to run this task after every new Github update to refresh your snippets. This is tested in Linux Mint and Windows 10, but if you have non-standard file locations, you're on your own. Note: This requires the [Red Hat Ansible Extension for VS Code (redhat.ansible)](#required-extension), and that the [Language Mode be set to "ansible"](#setting-language-mode). You can set the language mode on a new file by pressing CTRL-K,M and typing "ansible", or going to the bottom right of the screen and switching from "Plain Text" to "Ansible".
 
-## To be Snippet-tized
+## Comments from Author
+
+This is a work in progress. Pull requests for common patterns are welcome. Items that I (IronTooch) eventually intend to implement myself are listed in [To be Snippetized](#to-be-snippetized). Others either I don't use frequently enough to make worth my while, or don't actually know a common pattern, so that's where a pull request is definitely most welcome.
+
+## Required Extension
+
+![image](https://user-images.githubusercontent.com/27360514/155031172-d9c1c20e-e2f2-4ad9-a109-c2371712abae.png)
+
+
+## Setting Language Mode
+- ![image](https://user-images.githubusercontent.com/27360514/155030919-d00f964e-53fe-4ddc-a163-52af9e0d3ee0.png)
+- ![image](https://user-images.githubusercontent.com/27360514/155030957-94093977-ca72-4c47-9156-3565a72de4e5.png)
+- ![image](https://user-images.githubusercontent.com/27360514/155031033-a6c113b8-0a51-4b83-b668-6dc8b5a30d0c.png)
+
+## To be Snippetized
 
 ### Ansible Namespace
 
