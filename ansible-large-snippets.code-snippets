@@ -1,6 +1,6 @@
 {
     "Ansible.MakeOptAndUser":{
-        "prefix": ["preinstall"],
+        "prefix": ["ansible.large.preinstall"],
         "body": [
 
             "- name: Add ${1:AppName} Services User",
@@ -28,7 +28,7 @@
     },
 
     "Ansible.StartBlock":{
-        "prefix": ["startblock"],
+        "prefix": ["ansible.large.startblock"],
         "body": [
 
             "#!/usr/bin/env ansible-playbook",
@@ -47,7 +47,7 @@
     },
 	
     "Ansible.LatestGitRelease":{
-        "prefix": ["git_latest"],
+        "prefix": ["ansible.large.git_latest"],
         "body": [
 
             " name: Get Github Latest Release asset",
@@ -71,7 +71,7 @@
 
 
         ],
-        "description": "Ansible Start Block",
+        "description": "Ansible Get latest Git Release",
         "scope": "ansible"
     },
 
