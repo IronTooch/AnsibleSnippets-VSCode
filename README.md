@@ -1,6 +1,6 @@
 # AnsibleSnippets-VSCode
 
-A collection of snippets for VS Code to implement common patterns for snippets. Started with just the ansible.builtin namespace, but extending to other namespaces. 
+A collection of snippets for VS Code to implement common patterns for snippets. Started with just the ansible.builtin namespace, but extending to other namespaces. [Screenshots](#screenshots) below
 
 ![Ansible Version](https://img.shields.io/badge/Ansible%20Version-core%202.12.1-red?logo=ansible)
 ![GitHub all releases](https://img.shields.io/github/downloads-pre/irontooch/AnsibleSnippets-VSCode/total)
@@ -570,3 +570,19 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - netbox_vlan_group – Create, update or delete vlans groups within NetBox
 - netbox_vm_interface – Creates or removes interfaces from virtual machines in NetBox
 - netbox_vrf – Create, update or delete vrfs within NetBox
+
+## Screenshots
+
+### Block In File
+
+- ![image](https://user-images.githubusercontent.com/27360514/155032030-bfb091e9-09cb-4324-9bfb-97e203aa7ee8.png)
+- ![image](https://user-images.githubusercontent.com/27360514/155032003-91bfbe28-232c-4f93-8104-b40301229f54.png)
+
+### Start Block
+- ![image](https://user-images.githubusercontent.com/27360514/155032065-7523ccaa-ad99-48a7-8b5c-ffa5a7cc4e28.png)
+- ![image](https://user-images.githubusercontent.com/27360514/155032088-26e4a612-f776-46a9-ab7c-a6fe5b7ffd1c.png)
+
+### MD5 Passwords
+- ![image](https://user-images.githubusercontent.com/27360514/155032427-93f30039-1825-4d89-a549-64de37e53eaa.png)
+- ![image](https://user-images.githubusercontent.com/27360514/155032535-701dfe01-3345-4677-a1ee-0f43a5318df2.png)
+
