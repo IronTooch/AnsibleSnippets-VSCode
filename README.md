@@ -22,7 +22,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 1. Clone the repository. 
 2. In VS Code, go to Terminal -> Run Task, and execute "Install Snippets Globally".  
 
-Note: You will have to run this task after every new Github update to refresh your snippets. This is tested in Linux Mint and Windows 10, but if you have non-standard file locations, you're on your own. Note: This requires the [Red Hat Ansible Extension for VS Code (redhat.ansible)](#required-extension), and that the [Language Mode be set to "ansible"](#setting-language-mode). You can set the language mode on a new file by pressing CTRL-K,M and typing "ansible", or going to the bottom right of the screen and switching from "Plain Text" to "Ansible".
+Note: For updates, just do a Git Pull, and re-run the Install Snippets Globally task. This is tested in Linux Mint and Windows 10, but if you have non-standard file locations, you're on your own. Note: This requires the [Red Hat Ansible Extension for VS Code (redhat.ansible)](#required-extension), and that the [Language Mode be set to "ansible"](#setting-language-mode). You can set the language mode on a new file by pressing CTRL-K,M and typing "ansible", or going to the bottom right of the screen and switching from "Plain Text" to "Ansible".
 
 ## Comments from Author
 
