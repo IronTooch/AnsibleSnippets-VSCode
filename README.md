@@ -19,10 +19,7 @@ A collection of snippets for VS Code to implement common patterns for snippets. 
 
 ## Usage
 
-First, clone the repository.
-
-- For Windows, from the root of the new workspace, use `mklink /D ".vscode" "..\AnsibleSnippets-VSCode"`
-- For Linux, from the root of the new workspace, use `ln -sd "..\AnsibleSnippets-VSCode" ".vscode"`
+First, clone the repository. Then, in VS Code, go to Terminal -> Run Task, and execute "Install Snippets Globally". Note: You will have to run this task after every new Github update to refresh your snippets. This is tested in Linux Mint and Windows 10, but if you have non-standard file locations, you're on your own.
 
 ## To be Snippet-tized
 
