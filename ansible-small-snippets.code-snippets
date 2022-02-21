@@ -4,7 +4,7 @@
    "Ansible.PasswordHash":{
        "prefix": ["ansible.small.md5_password"],
        "body": [
-            "{{'abcd1234' | hash('md5')}}",
+            "\"{{'${1:mypassword}' | hash('md5')}}\"",
        ],
         "description": "Used for Ansible to generate md5 passwords hashes for things",
         "scope": "ansible"
