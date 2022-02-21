@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Install Snippets Globally",
+            "detail": "Deploys to local Linux Global Snippet location",
+            "type": "shell",
+            "linux": {
+                "command": "/bin/bash copy_snippets_global.sh"
+            },
+            "windows": {
+                "command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe copy_snippets_global.ps2"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": [
+                "$lessc"
+            ]
+        }
+    ]
+}
