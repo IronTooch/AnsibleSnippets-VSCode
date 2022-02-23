@@ -42,14 +42,13 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (16 remaining)
+#### ansible.builtin (13 remaining)
 
 - find – Return a list of files based on specific criteria
 - getent – A wrapper to the unix getent utility
 - import_playbook – Import a playbook
 - import_tasks – Import a task list
 - include_role – Load and execute a role
-- known_hosts – Add or remove a host from the known_hosts file
 - script – Runs a local script on a remote node after transferring it
 - setup – Gathers facts about remote hosts
 - subversion – Deploys a subversion repository

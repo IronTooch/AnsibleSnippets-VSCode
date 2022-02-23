@@ -574,6 +574,22 @@
         "scope": "ansible"
     },
 
+    "Ansible.BuiltIn.Known_Hosts":{
+        "prefix": ["ansible.builtin.known_hosts","known_hosts"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.known_hosts:",
+            "    name: \"${2:host_to_add_or_remove}\"",
+            "    state: ${3|present,absent|}${4:",
+            "    key: \"${5:ssh_public_host_key_string}\"}${6:",
+            "    hash_host: ${7|yes,no|}}${8:",
+            "    path: \"${9:known_hosts_file_path}\"}",
+            "$0"
+        ],
+        "description": "Used for Ansible known_hosts",
+        "scope": "ansible"
+    },
+
     "Ansible.BuiltIn.Meta":{
         "prefix": ["ansible.builtin.meta","meta"],
         "body": [
