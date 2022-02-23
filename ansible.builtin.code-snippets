@@ -36,7 +36,8 @@
 		"body": [
 			"- name: ${1:Description}",
 			"  ansible.builtin.apt:",
-			"    name: ${2}",
+			"    name:",
+			"      - ${2}",
 			"    state: ${3|present,absent,latest,fixed,build-dep|}",
 			"    update_cache: ${4|true,false|}",
 			"    force: ${5|false,true|}",
