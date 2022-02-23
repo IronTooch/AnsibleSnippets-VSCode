@@ -944,6 +944,23 @@
         "scope": "ansible"
     },
 
+    "Ansible.BuiltIn.Yum":{
+        "prefix": ["ansible.builtin.yum","yum"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.yum:",
+            "    name:",
+            "      - ${2:package_name}",
+            "    state: ${3|present,absent,latest,installed,removed|}${4:",
+            "    disable_gpg_check: ${5|true,false|}}${6:",
+            "    update_cache: ${7|true,false|}}${8:",
+            "    validate_certs: ${24|true,false|}}",
+            "$0"
+        ],
+        "description": "Used for Ansible Yum to install packages with Yum",
+        "scope": "ansible"
+    },
+
     "Ansible.BuiltIn.Yum_Repository":{
         "prefix": ["ansible.builtin.yum_repository","yum_repository"],
         "body": [
