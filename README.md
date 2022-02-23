@@ -42,7 +42,7 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (19 remaining)
+#### ansible.builtin (18 remaining)
 
 - find – Return a list of files based on specific criteria
 - getent – A wrapper to the unix getent utility
@@ -59,7 +59,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - sysvinit – Manage SysV services.
 - uri – Interacts with webservices
 - validate_argument_spec – Validate role argument specs.
-- wait_for_connection – Waits until remote system is reachable/usable
 - yum – Manages packages with the yum package manager
 
 #### ansible.posix (10 remaining)
