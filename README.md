@@ -42,7 +42,7 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (13 remaining)
+#### ansible.builtin (12 remaining)
 
 - find – Return a list of files based on specific criteria
 - getent – A wrapper to the unix getent utility
@@ -50,7 +50,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - import_tasks – Import a task list
 - include_role – Load and execute a role
 - script – Runs a local script on a remote node after transferring it
-- setup – Gathers facts about remote hosts
 - subversion – Deploys a subversion repository
 - systemd – Manage systemd units
 - sysvinit – Manage SysV services.
