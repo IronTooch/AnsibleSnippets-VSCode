@@ -914,7 +914,8 @@
             "    src: ${2:local_source}",
             "    dest: ${3:remote_destination}",
             "    force: ${4|true,false|}",
-            "    mode: ${6:'0770'}  # Ansible-Lint hates when this isn't set",
+            // Ansible-Lint hates when this isn't set
+            "    mode: ${6:'0770'}",
             "$0"
         ],
         "description": "Used for Ansible Temmplate Module",
