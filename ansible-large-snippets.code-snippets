@@ -93,43 +93,64 @@
         "scope": "ansible"
     },
 
-       "Ansible.MakeCommandVariable":{
-           "prefix": ["ansible.large.command_variable"],
-           "body": [
-                "- name: Make command execution for ${1:my_command}",
-                "  set_fact:",
-                "    ${2:my_command}_var: >-",
-                "      ${3:my_command}",
-                "      ${4:raw_param}",
-                "      --${5:param1} ${6:param1_val}",
-                "      --${7:param2} ${8:param2_val}",
-                "$0"
-           ],
-            "description": "Used for Ansible to make more complex commands",
-            "scope": "ansible"
-       },
-
-       "Ansible.MakeStateCompleteFlag": {
-        "prefix": ["ansible.large.state_complete_flag"],
+    "Ansible.MakeCommandVariable":{
+        "prefix": ["ansible.large.command_variable"],
         "body": [
-          "- name: Check if ${1:condition_is_true}",
-          "  ansible.builtin.stat:",
-          "    path: \"{{ ${2:flag_name}_path }}\"",
-          "  register: ${2:flag_name}",
-          "",
-          "$0",
-          "  when: not ${2:flag_name}.stat.exists",
-          "",
-          "- name: Touch a file to demonstrate ${1:condition_is_true}",
-          "  ansible.builtin.file:",
-          "    path: \"{{ ${2:flag_name}_path }}\"",
-          "    state: touch",
-          "    mode: '0700'",
-          "  when: not ${2:flag_name}.stat.exists"
+            "- name: Make command execution for ${1:my_command}",
+            "  set_fact:",
+            "    ${2:my_command}_var: >-",
+            "      ${3:my_command}",
+            "      ${4:raw_param}",
+            "      --${5:param1} ${6:param1_val}",
+            "      --${7:param2} ${8:param2_val}",
+            "$0"
         ],
-        "description": "Used for Ansible create commands to support idempotence",
+        "description": "Used for Ansible to make more complex commands",
         "scope": "ansible"
-      }
+    },
+
+    "Ansible.MakeStateCompleteFlag": {
+    "prefix": ["ansible.large.state_complete_flag"],
+    "body": [
+        "- name: Check if ${1:condition_is_true}",
+        "  ansible.builtin.stat:",
+        "    path: \"{{ ${2:flag_name}_path }}\"",
+        "  register: ${2:flag_name}",
+        "",
+        "$0",
+        "  when: not ${2:flag_name}.stat.exists",
+        "",
+        "- name: Touch a file to demonstrate ${1:condition_is_true}",
+        "  ansible.builtin.file:",
+        "    path: \"{{ ${2:flag_name}_path }}\"",
+        "    state: touch",
+        "    mode: '0700'",
+        "  when: not ${2:flag_name}.stat.exists"
+    ],
+    "description": "Used for Ansible create commands to support idempotence",
+    "scope": "ansible"
+    },
+
+    "Ansible.RandomStringIfIdentified":{
+        "prefix": ["ansible.large.randomize_undefined_string"],
+        "body": [
+            "- name: Set ${1:key_description} since it was provided",
+            "  ansible.builtin.set_fact:",
+            "    ${3:key_var_to_use}: \"{{ ${2:variable_to_check} }}\"",
+            "  when: ${2:variable_to_check}",
+            "  no_log: true",
+            "",
+            "- name: Create ${1:key_description} since it was not provided",
+            "  ansible.builtin.set_fact:",
+            "    ${3:key_var_to_use}: \"{{ lookup('community.general.random_string', length=24, special=false) }}\"",
+            "  when: not ${2:variable_to_check}",
+            "  no_log: true",
+            "",
+            "$0"
+        ],
+        "description": "A snippet to make a variable if the default was not given",
+        "scope": "ansible"
+    },
 
 
 
