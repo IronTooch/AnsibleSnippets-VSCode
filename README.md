@@ -42,7 +42,7 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (8 remaining)
+#### ansible.builtin (7 remaining)
 
 - find – Return a list of files based on specific criteria
 - getent – A wrapper to the unix getent utility
