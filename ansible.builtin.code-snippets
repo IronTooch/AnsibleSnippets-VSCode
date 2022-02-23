@@ -257,7 +257,7 @@
 			"    value: \"${8:answer_to_question}\"",
 			"$0"
 	   ],
-		"description": "Used for Ansible  Snippet description",
+		"description": "Used for Ansible to configure options for packages using debconf",
 		"scope": "ansible"
    },
 
@@ -273,6 +273,25 @@
 		"description": "Used for Ansible Wait_for Module",
 		"scope": "ansible"
 	},	
+
+	"Ansible.BuiltIn.Dnf":{
+		"prefix": ["ansible.builtin.dnf"],
+		"body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.dnf:",
+			"    name:",
+			"      - ${2}",
+			"    state: ${3|present,absent,installed,removed,latest|}",
+			"    update_cache: ${4|true,false|}",
+			"  register: dnf_status",
+			"  until: dnf_status is success",
+			"  delay: 6",
+			"  retries: 10",
+			"$0"
+		],
+		"description": "Used for Ansible Dnf Module to install packages from repos",
+		"scope": "ansible"
+	},
 
    "Ansible.BuiltIn.Expect":{
 	   "prefix": ["ansible.builtin.expect"],
