@@ -23,7 +23,9 @@
             },
             "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "dedicated",
+                "clear": true,
+                "showReuseMessage": false,
             },
             "problemMatcher": [
                 "$lessc"
