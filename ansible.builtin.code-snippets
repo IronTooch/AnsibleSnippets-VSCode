@@ -244,6 +244,22 @@
 		"scope": "ansible"
 	},
 
+   "Ansible.BuiltIn.Debconf":{
+	   "prefix": ["ansible.builtin.debconf"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.debconf:",
+			"    name: \"${2:package_to_configure}\"",
+			"    ${3:unseen: ${4|no,yes|}}",
+			"    ${5:vtype: ${6|boolean,error,multiselect,note,password,seen,select,string,text,title|}}",
+			"    question: \"${7:debconf_configuration_setting}\"",
+			"    value: \"${8:answer_to_question}\"",
+			"$0"
+	   ],
+		"description": "Used for Ansible  Snippet description",
+		"scope": "ansible"
+   },
+
 	"Ansible.BuiltIn.Debug":{
 		"prefix": ["ansible.builtin.debug"],
 		"body": [
