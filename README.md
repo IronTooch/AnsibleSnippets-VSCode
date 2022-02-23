@@ -42,11 +42,10 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (9 remaining)
+#### ansible.builtin (8 remaining)
 
 - find – Return a list of files based on specific criteria
 - getent – A wrapper to the unix getent utility
-- import_tasks – Import a task list
 - script – Runs a local script on a remote node after transferring it
 - subversion – Deploys a subversion repository
 - systemd – Manage systemd units

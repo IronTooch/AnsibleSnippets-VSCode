@@ -512,6 +512,17 @@
         "scope": "ansible"
     },
 
+    "Ansible.BuiltIn.Import_Tasks":{
+        "prefix": ["ansible.builtin.import_tasks","import_tasks"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.import_tasks: ${2:file_name}",
+            "$0"
+        ],
+        "description": "Used for Ansible Import Tasks Module to Staticly include a task list",
+        "scope": "ansible"
+    },
+
     "Ansible.BuiltIn.Include_Role":{
         "prefix": ["ansible.builtin.include_role","include_role"],
         "body": [
@@ -528,19 +539,18 @@
         "scope": "ansible"
     },
 
-    "Ansible.BuiltIn.IncludeTasks":{
+    "Ansible.BuiltIn.Include_Tasks":{
         "prefix": ["ansible.builtin.include_tasks","include_tasks"],
         "body": [
             "- name: ${1:Description}",
-            "  ansible.builtin.include_tasks:",
-            "    file: \"${2:file_name}\"",
+            "  ansible.builtin.include_tasks: ${2:file_name}",
             "$0"
         ],
-        "description": "Used for Ansible Include TasksModule to Dynamically include a task list",
+        "description": "Used for Ansible Include Tasks Module to Dynamically include a task list",
         "scope": "ansible"
     },
 
-    "Ansible.BuiltIn.IncludeVars":{
+    "Ansible.BuiltIn.Include_Vars":{
         "prefix": ["ansible.builtin.include_vars","include_vars"],
         "body": [
             "- name: ${1:Description}, loading dynamically at run-time",
