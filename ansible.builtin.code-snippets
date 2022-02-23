@@ -292,6 +292,19 @@
 		"scope": "ansible"
 	},
 
+   "Ansible.BuiltIn.Dpkg_Selections":{
+	   "prefix": ["ansible.builtin.dpkg_selections"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.dpkg_selections:",
+			"    name: \"${2:package_to_configure}\"",
+			"    selection: ${3|install,hold,deinstall,purge|}",
+			"$0"
+	   ],
+		"description": "Used for Ansible to set the status for packages via dpkg",
+		"scope": "ansible"
+   },
+
    "Ansible.BuiltIn.Expect":{
 	   "prefix": ["ansible.builtin.expect"],
 	   "body": [

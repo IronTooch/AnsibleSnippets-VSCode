@@ -42,9 +42,8 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (22 remaining)
+#### ansible.builtin (21 remaining)
 
-- dpkg_selections – Dpkg package selection selections
 - find – Return a list of files based on specific criteria
 - gather_facts – Gathers facts about remote hosts
 - getent – A wrapper to the unix getent utility
