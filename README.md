@@ -42,10 +42,9 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (21 remaining)
+#### ansible.builtin (20 remaining)
 
 - find – Return a list of files based on specific criteria
-- gather_facts – Gathers facts about remote hosts
 - getent – A wrapper to the unix getent utility
 - group_by – Create Ansible groups based on facts
 - import_playbook – Import a playbook
