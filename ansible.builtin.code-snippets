@@ -512,6 +512,22 @@
         "scope": "ansible"
     },
 
+    "Ansible.BuiltIn.Include_Role":{
+        "prefix": ["ansible.builtin.include_role","include_role"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.include_role:",
+            "    name: ${2:role_to_include}",
+            "    allow_duplicates: ${3|true,false|}",
+            "    public: ${4|false,true|}${5:",
+            "  vars:",
+            "    ${6:role_var_name}: ${7:role_var_value}}",
+            "$0"
+        ],
+        "description": "Used for Ansible Include Role to use Role Dynamically, at runtime, for a given function",
+        "scope": "ansible"
+    },
+
     "Ansible.BuiltIn.IncludeTasks":{
         "prefix": ["ansible.builtin.include_tasks","include_tasks"],
         "body": [
