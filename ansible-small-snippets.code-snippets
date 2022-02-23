@@ -37,4 +37,13 @@
      "scope": "ansible"
 },
 
+"Ansible.HandyFacts":{
+     "prefix": ["ansible.small.handy_facts"],
+     "body": [
+          "{{ ${1|ansible_lsb.description,ansible_default_ipv4.address,ansible_fqdn,ansible_user_id,ansible_os_family|} }}$0",
+     ],
+     "description": "Used for Ansible to provide the most commonly used facts",
+     "scope": "ansible"
+},
+
 }
