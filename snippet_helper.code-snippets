@@ -65,47 +65,38 @@
         "prefix": ["snippet.keybaseline"],
         "body": [
             "",
-            "   \"${1:SnippetName}\":{",
-            "       \"prefix\": [\"${2:SnippetPrefix}\"],",
-            "       \"body\": [",
-            "        $0",
-            "       ],",
-            "        \"description\": \"${3: Snippet description}\",",
-            "        \"scope\": \"${4: language}\"",
-            "   },"
+            "    \"${1:SnippetName}\":{",
+            "        \"prefix\": [\"${2:SnippetPrefix}\"],",
+            "        \"body\": [",
+            "         $0",
+            "        ],",
+            "         \"description\": \"${3: Snippet description}\",",
+            "         \"scope\": \"${4: language}\"",
+            "    },"
             
         ],
         "description": "Used to make a new baseline snippet",
         "scope": "jsonc"
     },
 
-    
-
-
     "Snippet.AnsibleBaseline":{
         "prefix": ["snippet.ansible_baseline"],
         "body": [
             "",
-            "   \"${1:SnippetName}\":{",
-            "       \"prefix\": [\"${2:SnippetPrefix}\"],",
-            "       \"body\": [",
-            "            \"- name: \\${1:Description}\",",
-            "            \"  ${2}:\",", 
-            "            $0",
-            "            \"\\$0\"",
-            "       ],",
-            "        \"description\": \"Used for Ansible ${3: Snippet description}\",",
-            "        \"scope\": \"ansible\"",
-            "   },"
-            
+            "    \"${1:SnippetName}\":{",
+            "        \"prefix\": [\"${2:SnippetNamespace}.${3:SnippetModule}\",\"${3:SnippetModule}\"],",
+            "        \"body\": [",
+            "             \"- name: \\${1:Description}\",",
+            "             \"  ${2:SnippetNamespace}.${3:SnippetModule}:\",", 
+            "             $0",
+            "             \"\\$0\"",
+            "        ],",
+            "         \"description\": \"Used for Ansible ${3: Snippet description}\",",
+            "         \"scope\": \"ansible\"",
+            "    },"
         ],
         "description": "Used to make a new baseline ansible snippet",
         "scope": "jsonc"
     },
-
-
-
-
-
 
 }
