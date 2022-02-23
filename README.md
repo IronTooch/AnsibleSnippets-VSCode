@@ -54,7 +54,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - systemd – Manage systemd units
 - sysvinit – Manage SysV services.
 - uri – Interacts with webservices
-- validate_argument_spec – Validate role argument specs.
 
 #### ansible.posix (10 remaining)
 
