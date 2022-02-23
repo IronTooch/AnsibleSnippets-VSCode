@@ -806,6 +806,22 @@
 		"scope": "ansible"
    },
 
+   "Ansible.Builtin.Tempfile":{
+	   "prefix": ["ansible.builtin.tempfile"],
+	   "body": [
+			"- name: ${1:Description}",
+			"  ansible.builtin.tempfile:",
+			"    ${2:path: \"${3:file_system_path_for_temp_dir}\"}",
+			"    ${4:prefix: \"${5:prefix_of_file_or_dir_made}\"}",
+			"    ${6:suffix: \"${7:suffix_of_file_or_dir_made}\"}",
+			"    state: ${8|file,directory|}",
+			"  register: ${9:tempfile}_${8}",
+			"$0"
+	   ],
+		"description": "Used for Ansible Tempfile module to make temporary files or directories for use in plays",
+		"scope": "ansible"
+   },
+
 	"Ansible.BuiltIn.Template":{
 		"prefix": ["ansible.builtin.template"],
 		"body": [

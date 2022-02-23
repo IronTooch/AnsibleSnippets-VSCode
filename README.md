@@ -42,7 +42,7 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (20 remaining)
+#### ansible.builtin (19 remaining)
 
 - find – Return a list of files based on specific criteria
 - getent – A wrapper to the unix getent utility
@@ -57,7 +57,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - subversion – Deploys a subversion repository
 - systemd – Manage systemd units
 - sysvinit – Manage SysV services.
-- tempfile – Creates temporary files and directories
 - uri – Interacts with webservices
 - validate_argument_spec – Validate role argument specs.
 - wait_for_connection – Waits until remote system is reachable/usable
