@@ -32,9 +32,9 @@
     },
 
     "Snippet.PresentAbsentKey":{
-        "prefix": ["snippet.presentabsentkey"],
+        "prefix": ["snippet.PresentAbsentKey"],
         "body": [
-            "\"    ${1:keyname}: \\${$2|present,absent|}\\,",
+            "\"    ${1:state}: \\${$2|present,absent|}\",",
             "$0"
         ],
         "description": "Used to make a key -> Present/Absent Snippet",
@@ -86,13 +86,13 @@
             "    \"${1:SnippetName}\":{",
             "        \"prefix\": [\"${2:SnippetNamespace}.${3:SnippetModule}\",\"${3:SnippetModule}\"],",
             "        \"body\": [",
-            "             \"- name: \\${1:Description}\",",
-            "             \"  ${2:SnippetNamespace}.${3:SnippetModule}:\",", 
-            "             $0",
-            "             \"\\$0\"",
+            "            \"- name: \\${1:Description}\",",
+            "            \"  ${2:SnippetNamespace}.${3:SnippetModule}:\",", 
+            "            $0",
+            "            \"\\$0\"",
             "        ],",
-            "         \"description\": \"Used for Ansible ${3: Snippet description}\",",
-            "         \"scope\": \"ansible\"",
+            "        \"description\": \"Used for Ansible ${3: Snippet description}\",",
+            "        \"scope\": \"ansible\"",
             "    },"
         ],
         "description": "Used to make a new baseline ansible snippet",
