@@ -87,11 +87,11 @@
         ],
          "description": "Used for Ansible Apt_Key",
          "scope": "ansible"
-        },
+    },
 
-   "Ansible.BuiltIn.Apt_Key_FromServer":{
-       "prefix": ["ansible.builtin.apt_key","apt_key_fromserver"],
-       "body": [
+    "Ansible.BuiltIn.Apt_Key_FromServer":{
+        "prefix": ["ansible.builtin.apt_key","apt_key_fromserver"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.apt_key:",
             "    url: \"${2:url_of_key}\"",
@@ -99,14 +99,14 @@
             "    validate_certs: ${4|true,false|}${5:",
             "    keyring: \"${6:path_to_keyring_file}\"}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Apt_Key",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Apt_Repository":{
-       "prefix": ["ansible.builtin.apt_repository","apt_repository"],
-       "body": [
+    "Ansible.BuiltIn.Apt_Repository":{
+        "prefix": ["ansible.builtin.apt_repository","apt_repository"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.apt_repository:",
             "    repo: \"${2:repo_source_string}\"",
@@ -114,14 +114,14 @@
             "    update_cache: ${5|true,false|}}${6:",
             "    validate_certs: ${7|true,false|}}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Apt Repository to add repositories",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Assert":{
-       "prefix": ["ansible.builtin.assert","assert"],
-       "body": [
+    "Ansible.BuiltIn.Assert":{
+        "prefix": ["ansible.builtin.assert","assert"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.assert:",
             "    that:",
@@ -129,15 +129,15 @@
             "    fail_msg: \"${4:msg_to_print_on_failure}\"}${5:",
             "    success_msg: \"${6:msg_to_print_on_success}\"}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Assert Module to establish truth",
         "scope": "ansible"
-   },
+    },
 
-// https://docs.ansible.com/ansible/latest/user_guide/playbooks_async.html#playbooks-async
-   "Ansible.BuiltIn.Async_Status":{
-       "prefix": ["ansible.builtin.async_status","async_status"],
-       "body": [
+    "Ansible.BuiltIn.Async_Status":{
+    // https://docs.ansible.com/ansible/latest/user_guide/playbooks_async.html#playbooks-async
+        "prefix": ["ansible.builtin.async_status","async_status"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.async_status:",
             "    jid: '{{ ${2:variable_of_async_task}.ansible_job_id }}",
@@ -146,14 +146,14 @@
             "  retries: 100",
             "  delay: 10",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Async Job to wait for a job to complete",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.BlockInFile":{
-       "prefix": ["ansible.builtin.blockinfile","blockinfile"],
-       "body": [
+    "Ansible.BuiltIn.BlockInFile":{
+        "prefix": ["ansible.builtin.blockinfile","blockinfile"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.blockinfile:",
             "    path: \"${2:file_to_modify}\"",
@@ -162,19 +162,19 @@
             "    insertafter: \"${6:regex_to_start_at}\"}${7:",
             "    insertbefore: \"${8:regex_to_end_at}\"}${9:",
             "    owner: \"${10:owner}\"}${11:",
-            "    group: \"${12:owner}\"}${13:",
+            "    group: \"${12:${10:owner}}\"}${13:",
             "    mode: \"${14:0700}\"}",
             "    block: | ",
             "      ${15:first_line_to_add}",
             "      ${16:second_line_to_add}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Block in File Module to add items to block",
         "scope": "ansible"
-   },
+    },
 
     "Ansible.BuiltIn.Command":{
-        "prefix": ["ansible.builtin.command","command"],
+        "prefix": ["ansible.builtin.command","command","cmd"],
         "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.command:",
@@ -186,15 +186,15 @@
         ],
         "description": "Used for Ansible Command Module (No environmment variables)",
         "scope": "ansible"
-    },	
+    },
 
     "Ansible.BuiltIn.Copy_Files":{
         "prefix": ["ansible.builtin.copy","copy_files"],
         "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.copy:",
-            "    src: ${2}",
-            "    dest: ${3}",
+            "    src: \"${2}\"",
+            "    dest: \"${3}\"",
             "    remote_src: ${4|true,false|}",
             "    force: ${5|true,false|}${6:",
             "    owner: \"${7:owner}\"}${8:",
@@ -211,69 +211,67 @@
         "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.copy:",
-            "    content: ${2}",
-            "    dest: ${3}",
-            "    force: ${4|true,false|}",
-            "    ${6:owner: \"${7:owner}\"}",
-            "    ${8:group: \"${9:owner}\"}",
-            "    ${10:mode: \"${11:0700}\"}",
+            "    content: \"${2}\"",
+            "    dest: \"${3}\"",
+            "    force: ${4|true,false|}${6:",
+            "    owner: \"${7:owner}\"}${8:",
+            "    group: \"${9:${7:owner}}\"}${10:",
+            "    mode: \"${11:0700}\"}",
             "$0"
         ],
         "description": "Used for Ansible Copy Module to copy files",
         "scope": "ansible"
     },
 
-   "Ansible.BuiltIn.Cron":{
-       "prefix": ["ansible.builtin.cron","cron"],
-       "body": [
+    "Ansible.BuiltIn.Cron":{
+        "prefix": ["ansible.builtin.cron","cron"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.cron:",
             "    name: \"${2:description_of_job}\"",
-            "    state: ${3|present,absent|}",
-            "    ${5:special_time: \"${6|annually,daily,hourly,monthly,reboot,weekly,yearly|}\"}",
-            "    ${7:minute: \"${8:minute_of_hour}\"}",
-            "    ${9:hour: \"${10:hour_of_day}\"}",
-            "    ${11:day: \"${12:day_of_month}\"}",
-            "    ${13:month: \"${14:month_of_year}\"}",
-            "    ${15:weekday: \"${16:number_day_of_week}\"}",
-            "    ${17:user: \"${18:users_crontab_to_edit}\"}",
+            "    state: ${3|present,absent|}${5:",
+            "    special_time: \"${6|annually,daily,hourly,monthly,reboot,weekly,yearly|}\"}${7:",
+            "    minute: \"${8:minute_of_hour}\"}${9:",
+            "    hour: \"${10:hour_of_day}\"}${11:",
+            "    day: \"${12:day_of_month}\"}${13:",
+            "    month: \"${14:month_of_year}\"}${15:",
+            "    weekday: \"${16:number_day_of_week}\"}${17:",
+            "    user: \"${18:users_crontab_to_edit}\"}",
             "    job: \"${19:job_to_run}\"",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Cron to make a new scheduled job",
         "scope": "ansible"
-   },
+    },
 
-
-
-   "Ansible.BuiltIn.Debconf":{
-       "prefix": ["ansible.builtin.debconf","debconf"],
-       "body": [
+    "Ansible.BuiltIn.Debconf":{
+        "prefix": ["ansible.builtin.debconf","debconf"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.debconf:",
-            "    name: \"${2:package_to_configure}\"",
-            "    ${3:unseen: ${4|no,yes|}}",
-            "    ${5:vtype: ${6|boolean,error,multiselect,note,password,seen,select,string,text,title|}}",
+            "    name: \"${2:package_to_configure}\"${3:",
+            "    unseen: ${4|no,yes|}}${5:",
+            "    vtype: ${6|boolean,error,multiselect,note,password,seen,select,string,text,title|}}",
             "    question: \"${7:debconf_configuration_setting}\"",
             "    value: \"${8:answer_to_question}\"",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible to configure options for packages using debconf",
         "scope": "ansible"
-   },
+    },
 
     "Ansible.BuiltIn.Debug":{
         "prefix": ["ansible.builtin.debug","debug"],
         "body": [
-            "- name: ${1:Description}",
+            "- name: Print debug message${1:Description}",
             "  ansible.builtin.debug:",
-            "    msg: ${2:message}",
-            "    ${3:verbosity: ${4|0,1,2,3,4,5|}}",
+            "    msg: \"${2:message}\"${3:",
+            "    verbosity: ${4|0,1,2,3,4,5|}}",
             "$0"
         ],
-        "description": "Used for Ansible Wait_for Module",
+        "description": "Used for Ansible Debug Module to print output",
         "scope": "ansible"
-    },	
+    },
 
     "Ansible.BuiltIn.Dnf":{
         "prefix": ["ansible.builtin.dnf","dnf"],
@@ -294,63 +292,63 @@
         "scope": "ansible"
     },
 
-   "Ansible.BuiltIn.Dpkg_Selections":{
-       "prefix": ["ansible.builtin.dpkg_selections","dpkg_selections"],
-       "body": [
+    "Ansible.BuiltIn.Dpkg_Selections":{
+        "prefix": ["ansible.builtin.dpkg_selections","dpkg_selections"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.dpkg_selections:",
             "    name: \"${2:package_to_configure}\"",
             "    selection: ${3|install,hold,deinstall,purge|}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible to set the status for packages via dpkg",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Expect":{
-       "prefix": ["ansible.builtin.expect","expect"],
-       "body": [
+    "Ansible.BuiltIn.Expect":{
+        "prefix": ["ansible.builtin.expect","expect"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.expect:",
-            "    command: \"${2:command_to_run}\"",
-            "    ${3:chdir: \"${4}\"}",
-            "    ${5:creates: \"${6:file_if_present_dont_run}\"}",
-            "    ${7:removes: \"${8:file_if_present_do_run}\"}",
+            "    command: \"${2:command_to_run}\"${3:",
+            "    chdir: \"${4}\"}${5:",
+            "    creates: \"${6:file_if_present_dont_run}\"}${7:",
+            "    removes: \"${8:file_if_present_do_run}\"}",
             "    responses:",
             "      (?i)${9:question_to_answer}:${10:answer_to_question}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Expect Module to answer given questions",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Fail":{
-       "prefix": ["ansible.builtin.fail","fail"],
-       "body": [
+    "Ansible.BuiltIn.Fail":{
+        "prefix": ["ansible.builtin.fail","fail"],
+        "body": [
             "- name: ${1:Description}",
-            "  ansible.builtin.fail:",
-            "    ${2:msg: \"${3:failure_message}\"}",
+            "  ansible.builtin.fail:${2:",
+            "    msg: \"${3:failure_message}\"}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Fail Module",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.Builtin.Fetch":{
-       "prefix": ["ansible.builtin.fetch","fetch"],
-       "body": [
+    "Ansible.Builtin.Fetch":{
+        "prefix": ["ansible.builtin.fetch","fetch"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.fetch:",
             "    src: \"${2:path_on_remote_system}\"",
-            "    dest: \"${3:path_on_control_node}\"",
-            "    ${4:fail_on_missing: ${5|false,true|}}",
-            "    ${6:flat: ${7|false,true|}}",
-            "    ${8:validate_checksum: ${9|false,true|}}",
+            "    dest: \"${3:path_on_control_node}\"${4:",
+            "    fail_on_missing: ${5|false,true|}}${6:",
+            "    flat: ${7|false,true|}}${8:",
+            "    validate_checksum: ${9|false,true|}}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Fetch Module to retrieve file from node",
         "scope": "ansible"
-   },
+    },
 
     "Ansible.BuiltIn.FileDirectory":{
         "prefix": ["ansible.builtin.file","file_mkdir"],
@@ -364,7 +362,7 @@
         ],
         "description": "Used for Ansible File Module to make directories",
         "scope": "ansible"
-    },	
+    },
 
     "Ansible.BuiltIn.FileChown":{
         "prefix": ["ansible.builtin.file","file_chown"],
@@ -398,19 +396,18 @@
         "scope": "ansible"
     },
 
-
-   "Ansible.BuiltIn.FileTouch":{
-       "prefix": ["ansible.builtin.file","file_touch"],
-       "body": [
+    "Ansible.BuiltIn.FileTouch":{
+        "prefix": ["ansible.builtin.file","file_touch"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.file:",
             "    path: \"${2:path_to_new_file}\"",
             "    state: touch",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible File to Touch new Files",
         "scope": "ansible"
-   },
+    },
 
     "Ansible.BuiltIn.GetUrl":{
         "prefix": ["ansible.builtin.get_url","get_url"],
@@ -419,11 +416,11 @@
             "  ansible.builtin.get_url:",
             "    url: \"${2:url}\"",
             "    dest: \"${3:dest}\"",
-            "    force: ${4|true,false|}",	
-            "    ${5:owner: \"${6:owner}\"}",
-            "    ${7:group: \"${8:owner}\"}",
-            "    ${9:mode: \"${10:0700}\"}",
-            "    ${11:validate_certs: ${12|true,false|}}",	
+            "    force: ${4|true,false|}${5:",	
+            "    owner: \"${6:owner}\"}${7:",
+            "    group: \"${8:${6:owner}}\"}${9:",
+            "    mode: \"${10:0700}\"}${11:",
+            "    validate_certs: ${12|true,false|}}",	
             "$0"
         ],
         "description": "Used for Ansible Get_url Module to downloads files from HTTP, HTTPS, or FTP to node",
@@ -449,8 +446,8 @@
         "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.group:",
-            "    name: \"${2:Group_Name}\"",
-            "    ${3:gid: \"${4:guid}\"}",
+            "    name: \"${2:Group_Name}\"${3:",
+            "    gid: \"${4:guid}\"}",
             "    local: ${5|false,true|}",
             "    state: ${6|present,absent|}", 
             "    system: ${7|false,true|}",
@@ -458,61 +455,59 @@
         ],
         "description": "Used for Ansible Group Module to make user groups",
         "scope": "ansible"
-    },	
+    },
 
     "Ansible.BuiltIn.Hostname":{
         "prefix": ["ansible.builtin.hostname","hostname"],
         "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.hostname:",
-            "    name: \"${2:desired_hostname}\"",
-            "    ${3:use: ${4|alpine,debian,freebsd,generic,macos,macosx,darwin,openbsd,openrc,redhat,sles,solaris,systemd|}}",
+            "    name: \"${2:desired_hostname}\"${3:",
+            "    use: ${4|alpine,debian,freebsd,generic,macos,macosx,darwin,openbsd,openrc,redhat,sles,solaris,systemd|}}",
             "$0"
         ],
         "description": "Used for Ansible Hostname Module to change a system hostname",
         "scope": "ansible"
-    },	
+    },
 
-   "Ansible.BuiltIn.Import_Role":{
-       "prefix": ["ansible.builtin.import_role","import_role"],
-       "body": [
+    "Ansible.BuiltIn.Import_Role":{
+        "prefix": ["ansible.builtin.import_role","import_role"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.import_role:",
             "    name: \"${2:role_to_import}\"",
-            "    allow_duplicates: ${3|true,false|}",
+            "    allow_duplicates: ${3|true,false|}${4:",
             "  vars:",
-            "    ${4:role_var_name}: ${5:role_var_value}",
+            "    ${5:role_var_name}: ${6:role_var_value}}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Import Role to use Role for a given function",
         "scope": "ansible"
-   },
+    },
 
-
-   "Ansible.BuiltIn.IncludeTasks":{
-       "prefix": ["ansible.builtin.include_tasks","include_tasks"],
-       "body": [
+    "Ansible.BuiltIn.IncludeTasks":{
+        "prefix": ["ansible.builtin.include_tasks","include_tasks"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.include_tasks:",
             "    file: \"${2:file_name}\"",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Include TasksModule to Dynamically include a task list",
         "scope": "ansible"
-   },
+    },
 
     "Ansible.BuiltIn.IncludeVars":{
         "prefix": ["ansible.builtin.include_vars","include_vars"],
         "body": [
             "- name: ${1:Description}, loading dynamically at run-time",
             "  ansible.builtin.include_vars: ",
-            "    file: \"${2:file_name}\"",	
-            "    ${3:new_name_needed: \"name: \"${4:name_of_new_variable}\"}",
+            "    file: \"${2:file_name}\"",
             "$0"
         ],
         "description": "Used for Ansible IncludeVars Module to load variables Dynamically at runtime",
         "scope": "ansible"
-    },	
+    },
 
     "Ansible.BuiltIn.IpTables":{
         "prefix": ["ansible.builtin.iptables","iptables"],
@@ -524,59 +519,61 @@
             "    comment: ${4:comment}",
             "    destination: ${5:destination}",
             "    destination_port: ${6:destination_port}",
-            "    dst_range: ${7:destination_range}",	
+            "    dst_range: ${7:destination_range}",
             "    flush: ${8|true,false|}",
             "    icmp_type: ${9:icmp_type}",
-            "    in_interface: ${10:in_interface}",	
-            "    ip_version: ${11|ipv4,ipv6|}",	
-            "    jump: ${12:jump}",	
+            "    in_interface: ${10:in_interface}",
+            "    ip_version: ${11|ipv4,ipv6|}",
+            "    jump: ${12:jump}",
             "    out_interface: ${13:out_interface}",
             "    policy: ${14|ACCEPT,DROP,QUEUE,RETURN|}",
-            "    protocol: ${15|tcp,udp,udplite,icmp,ipv6-icmp,icmpv6,esp,ah,sctp,all|}",	
-            "    source: ${16:source}",	
+            "    protocol: ${15|tcp,udp,udplite,icmp,ipv6-icmp,icmpv6,esp,ah,sctp,all|}",
+            "    source: ${16:source}",
             "    source_port: ${17:source_port}",
             "    source_range: ${18:source_range}",
             "    state: ${19|present,absent|}",
-            "    table: ${20|filter,nat,mangle,raw,security|}",			
-            "    to_destination: ${21:to_destination}",	
+            "    table: ${20|filter,nat,mangle,raw,security|}",
+            "    to_destination: ${21:to_destination}",
             "    to_ports: ${22:to_ports}",
-            "    to_source: ${23:to_source}",	
+            "    to_source: ${23:to_source}",
             "$0"
         ],
         "description": "Used for Ansible IPTables Module to make/change IP Tables rules",
         "scope": "ansible"
-    },	
+    },
 
     "Ansible.BuiltIn.LineInFile":{
         "prefix": ["ansible.builtin.lineinfile","lineinfile"],
         "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.lineinfile:",
-            "    path: ${2:path}",
+            "    path: ${2:dest_path}",
             "    state: ${3|present,absent|}",
-            "    line: '${4:myline}'",
-            "    create: ${5|true,false|}",
+            "    line: \"${4:myline}\"",
+            "    create: ${5|true,false|}${6:",
+            "    owner: \"${7:owner}\"}${8:",
+            "    group: \"${9:${7:owner}}\"}${10:",
+            "    mode: \"${11:0700}\"}",
             "$0"
         ],
-        "description": "Used for Ansible File Module to make directories",
+        "description": "Used for Ansible LineInFile Module to add a single line to a file",
         "scope": "ansible"
-    },	
+    },
 
-   "Ansible.BuiltIn.Meta":{
-       "prefix": ["ansible.builtin.meta","meta"],
-       "body": [
+    "Ansible.BuiltIn.Meta":{
+        "prefix": ["ansible.builtin.meta","meta"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.meta: ${2:|clear_facts,clear_host_errors,end_host,end_play,flush_handlers,noop,refresh_inventory,reset_connection,end_batch|}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Meta to run internal functions",
         "scope": "ansible"
-   },
+    },
 
-
-   "Ansible.BuiltIn.Package":{
-       "prefix": ["ansible.builtin.package","package"],
-       "body": [
+    "Ansible.BuiltIn.Package":{
+        "prefix": ["ansible.builtin.package","package"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.package:",
             "    name:",
@@ -587,117 +584,117 @@
             "  delay: 6",
             "  retries: 10",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Package generic Package Manager",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Package_Facts":{
-       "prefix": ["ansible.builtin.package_facts","package_facts"],
-       "body": [
+    "Ansible.BuiltIn.Package_Facts":{
+        "prefix": ["ansible.builtin.package_facts","package_facts"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.package_facts:",
             "    manager: auto  # puts results in ansible_facts.packages",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Package Facts Module",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Pause_ForInput":{
-       "prefix": ["ansible.builtin.pause","pause_foruser"],
-       "body": [
+    "Ansible.BuiltIn.Pause_ForInput":{
+        "prefix": ["ansible.builtin.pause","pause_foruser"],
+        "body": [
             "- name: Waiting for User to press Enter",
             "  ansible.builtin.pause:",
             "    prompt: 'Waiting for User to press Enter'",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Pause Module to wait for user input",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Pause_ForTime":{
+    "Ansible.BuiltIn.Pause_ForTime":{
     "prefix": ["ansible.builtin.pause","pause_fortime"],
     "body": [
-         "- name: Waiting for ${1} ${2}",
-         "  ansible.builtin.pause:",
-         "    ${2|minutes,seconds|}: ${1:amount_to_wait}",
-         "$0"
+            "- name: Waiting for ${1} ${2}",
+            "  ansible.builtin.pause:",
+            "    ${2|minutes,seconds|}: ${1:amount_to_wait}",
+            "$0"
     ],
-     "description": "Used for Ansible Pause Module to wait for a given block of time",
-     "scope": "ansible"
-},
+        "description": "Used for Ansible Pause Module to wait for a given block of time",
+        "scope": "ansible"
+    },
 
-"Ansible.BuiltIn.Pip_Install":{
+    "Ansible.BuiltIn.Pip_Install":{
     "prefix": ["ansible.builtin.pip","pip_install"],
     "body": [
-         "- name: ${1:Description}",
-         "  ansible.builtin.pip:",
-         "    state: ${2|latest,present,forcereinstall,absent|}",
-         "    ${3:chdir: \"${4:cd_dir}\"}",
-         "    name:",
-         "      - ${5:package_name}",
-         "$0"
-    ],
-     "description": "Used for Ansible Pip to install specific packages",
-     "scope": "ansible"
-},
-
-   "Ansible.BuiltIn.Pip_Requirements":{
-       "prefix": ["ansible.builtin.pip","pip_requirements"],
-       "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.pip:",
-            "    requirements: \"${2:requirements_location}\"",
-            "    ${3:chdir: \"${4:cd_dir}\"}",
-            "    ${5:virtualenv: \"${6:virtenv_dir}\"}",    
+            "    state: ${2|latest,present,forcereinstall,absent|}${3:",
+            "    chdir: \"${4:cd_dir}\"}",
+            "    name:",
+            "      - ${5:package_name}",
             "$0"
-       ],
+    ],
+        "description": "Used for Ansible Pip to install specific packages",
+        "scope": "ansible"
+    },
+
+    "Ansible.BuiltIn.Pip_Requirements":{
+        "prefix": ["ansible.builtin.pip","pip_requirements"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.pip:",
+            "    requirements: \"${2:requirements_location}\"${3:",
+            "    chdir: \"${4:cd_dir}\"}${5:",
+            "    virtualenv: \"${6:virtenv_dir}\"}",    
+            "$0"
+        ],
         "description": "Used for Ansible Pip to manage packages and virtual environments",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Raw":{
-       "prefix": ["ansible.builtin.raw","raw"],
-       "body": [
+    "Ansible.BuiltIn.Raw":{
+        "prefix": ["ansible.builtin.raw","raw"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.raw: ${2:commmand_to_run}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Raw command to run straight from SSH",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Reboot":{
-       "prefix": ["ansible.builtin.reboot","reboot"],
-       "body": [
+    "Ansible.BuiltIn.Reboot":{
+        "prefix": ["ansible.builtin.reboot","reboot"],
+        "body": [
             "- name: ${1:Description}",
-            "  ansible.builtin.reboot:",
+            "  ansible.builtin.reboot:${2:",
             "    ${2:reboot_timeout: \"${3:seconds_to_wait}\"}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Reboot",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Replace":{
-       "prefix": ["ansible.builtin.replace","replace"],
-       "body": [
+    "Ansible.BuiltIn.Replace":{
+        "prefix": ["ansible.builtin.replace","replace"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.replace:",
             "    path: \"${2:path_to_file}\"",
             "    regexp: \"${3:text_to_find}\"",
-            "    replace: \"${4:text_do_add}\"",
-            "    ${5:before: \"${6:text_to_stop_search_at}\"}",
-            "    ${7:after: \"${8:text_to_begin_search_at}\"}",
-            "    ${9:owner: \"${10:file_owner}\"}",
-            "    ${11:group: \"${12:file_group}\"}",
-            "    ${13:mode: ${14:'0770'}}",
+            "    replace: \"${4:text_do_add}\"${5:",
+            "    before: \"${6:text_to_stop_search_at}\"}${7:",
+            "    after: \"${8:text_to_begin_search_at}\"}${9:",
+            "    owner: \"${10:file_owner}\"}${11:",
+            "    group: \"${12:${10:file_owner}}\"}${13:",
+            "    mode: ${14:'0770'}}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Replace to change the contents of a file",
         "scope": "ansible"
-   },
+    },
 
     "Ansible.BuiltIn.RpmKey":{
         "prefix": ["ansible.builtin.rpm_key","rpm_key"],
@@ -709,9 +706,9 @@
             "    validate_certs: ${4|true,false|}",
             "$0"
         ],
-        "description": "Used for Ansible File Module to make directories",
+        "description": "Used for Ansible RPM_Key Module to add a key to the keyring",
         "scope": "ansible"
-    },	
+    },
 
     "Ansible.BuiltIn.Service":{
         "prefix": ["ansible.builtin.service","service"],
@@ -727,17 +724,17 @@
         "scope": "ansible"
     },
 
-   "Ansible.BuiltIn.Service_Facts":{
-       "prefix": ["ansible.builtin.service_facts","service_facts"],
-       "body": [
+    "Ansible.BuiltIn.Service_Facts":{
+        "prefix": ["ansible.builtin.service_facts","service_facts"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.service_facts:",
             "  # Returns results in ansible_facts.services",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Service Facts",
         "scope": "ansible"
-   },
+    },
 
     "Ansible.BuiltIn.SetFact":{
         "prefix": ["ansible.builtin.set_fact","set_fact"],
@@ -749,11 +746,11 @@
         ],
         "description": "Used for Ansible Set Fact Module",
         "scope": "ansible"
-    },	
+    },
 
-   "Ansible.BuiltIn.SetStats":{
-       "prefix": ["ansible.builtin.set_stats","set_stats"],
-       "body": [
+    "Ansible.BuiltIn.SetStats":{
+        "prefix": ["ansible.builtin.set_stats","set_stats"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.set_stats:",
             "    aggregate: ${2|true,false|}",
@@ -761,68 +758,68 @@
             "    data:",
             "      ${4:Datakey}: ${5:Datavalue}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Set Stats Task",
         "scope": "ansible"
-   },
+    },
 
     "Ansible.BuiltIn.Shell":{
         "prefix": ["ansible.builtin.shell","shell"],
         "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.shell:",
-            "    cmd: \"${2}\"",
-            "    ${3:chdir: \"${4}\"}",
-            "    ${5:creates: \"${6:file_if_present_dont_run}\"}",
-            "    ${7:removes: \"${8:file_if_present_do_run}\"}",
+            "    cmd: \"${2}\"${3:",
+            "    chdir: \"${4}\"}${5:",
+            "    creates: \"${6:file_if_present_dont_run}\"}${7:",
+            "    removes: \"${8:file_if_present_do_run}\"}",
             "$0"
         ],
         "description": "Used for Ansible Shell Module",
         "scope": "ansible"
-    },	
+    },
 
-   "Ansible.BuiltIn.Slurp":{
-       "prefix": ["ansible.builtin.slurp","slurp"],
-       "body": [
+    "Ansible.BuiltIn.Slurp":{
+        "prefix": ["ansible.builtin.slurp","slurp"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.slurp:",
             "    src: \"${2:path_to_file}\"",
             "  register: ${3:file_contents_var}",
             "$0"
-       ],
-        "description": "Used for Ansible Slurp Module to read a file into a variable",
+        ],
+        "description": "Used for Ansible Slurp Module to read a file on remote host into a variable",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.BuiltIn.Stat":{
-       "prefix": ["ansible.builtin.stat","stat"],
-       "body": [
+    "Ansible.BuiltIn.Stat":{
+        "prefix": ["ansible.builtin.stat","file_exists","stat"],
+        "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.stat:",
             "    path: \"${2:path_to_file}\"",
             "  register: ${3:variable_for_file_status}",
             "  #${3:variable_for_file_status}.stat.exists to check file existance",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Stat Module to get File details",
         "scope": "ansible"
-   },
+    },
 
-   "Ansible.Builtin.Tempfile":{
-       "prefix": ["ansible.builtin.tempfile","tempfile"],
-       "body": [
+    "Ansible.Builtin.Tempfile":{
+        "prefix": ["ansible.builtin.tempfile","tempfile"],
+        "body": [
             "- name: ${1:Description}",
-            "  ansible.builtin.tempfile:",
-            "    ${2:path: \"${3:file_system_path_for_temp_dir}\"}",
-            "    ${4:prefix: \"${5:prefix_of_file_or_dir_made}\"}",
-            "    ${6:suffix: \"${7:suffix_of_file_or_dir_made}\"}",
+            "  ansible.builtin.tempfile:${2:",
+            "    path: \"${3:file_system_path_for_temp_dir}\"}${4:",
+            "    prefix: \"${5:prefix_of_file_or_dir_made}\"}${6:",
+            "    suffix: \"${7:suffix_of_file_or_dir_made}\"}",
             "    state: ${8|file,directory|}",
             "  register: ${9:tempfile}_${8}",
             "$0"
-       ],
+        ],
         "description": "Used for Ansible Tempfile module to make temporary files or directories for use in plays",
         "scope": "ansible"
-   },
+    },
 
     "Ansible.BuiltIn.Template":{
         "prefix": ["ansible.builtin.template","template"],
@@ -832,13 +829,12 @@
             "    src: ${2:local_source}",
             "    dest: ${3:remote_destination}",
             "    force: ${4|true,false|}",
-            "    ${5:mode: ${6:'0770'}}  # Ansible-Lint hates when this isn't set",
-            
+            "    mode: ${6:'0770'}  # Ansible-Lint hates when this isn't set",
             "$0"
         ],
         "description": "Used for Ansible Temmplate Module",
         "scope": "ansible"
-    },	
+    },
 
     "Ansible.BuiltIn.Unarchive":{
         "prefix": ["ansible.builtin.unarchive","unarchive"],
@@ -846,14 +842,14 @@
             "- name: ${1:Description}",
             "  ansible.builtin.unarchive:",
             "    src: \"${2:source_path}\"",
-            "    dest: '${3:destination_path}'",
-            "    remote_src: ${4|true,false|}",
-            "    ${5:creates: \"${6:created_file}\"}",
+            "    dest: \"${3:destination_path}\"",
+            "    remote_src: ${4|true,false|}${5:",
+            "    creates: \"${6:created_file}\"}",
             "$0"
         ],
-        "description": "Used for Ansible File Module to make directories",
+        "description": "Used for Ansible Unarchive module to unzip archives",
         "scope": "ansible"
-    },	
+    },
 
     "Ansible.BuiltIn.User":{
         "prefix": ["ansible.builtin.user","user"],
@@ -863,7 +859,7 @@
             "    name: ${2}",
             "    commment: ${1}",
             "    state: ${3|present,absent|}",
-            "    append: ${4|false,true|}  #Append Groups to user, instead of overwrite",
+            "    append: ${4|false,true|}  # Append Groups to user, instead of overwrite",
             "    create_home: ${5|true,false|}",
             "    groups: ${6:groups}",
             "    system: ${7|false,true|}",
