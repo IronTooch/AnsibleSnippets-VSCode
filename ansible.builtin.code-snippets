@@ -484,6 +484,19 @@
         "scope": "ansible"
     },
 
+    "Ansible.BuiltIn.Import_Playbook":{
+        "prefix": ["ansible.builtin.import_playbook","import_playbook"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.import_playbook: ${2:playbook_to_import}${3:",
+            "  vars:",
+            "    ${4:variable_name}: \"${5:variable_value}\"}",
+            "$0"
+        ],
+        "description": "Used for Ansible import_playbook",
+        "scope": "ansible"
+    },
+
     "Ansible.BuiltIn.Import_Role":{
         "prefix": ["ansible.builtin.import_role","import_role"],
         "body": [
