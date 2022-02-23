@@ -457,6 +457,20 @@
         "scope": "ansible"
     },
 
+    "Ansible.BuiltIn.Group_By":{
+        "prefix": ["ansible.builtin.group_by","group_by"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.group_by:",
+            "    key: ${2:variable_to_identify_group}${3:",
+            "    parents:",
+            "      - ${4:next_key_name}\"}",
+            "$0"
+        ],
+        "description": "Used for Ansible Group By Module to make Ad-Hoc groups",
+        "scope": "ansible"
+    },
+
     "Ansible.BuiltIn.Hostname":{
         "prefix": ["ansible.builtin.hostname","hostname"],
         "body": [

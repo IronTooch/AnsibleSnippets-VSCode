@@ -42,11 +42,10 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (17 remaining)
+#### ansible.builtin (16 remaining)
 
 - find – Return a list of files based on specific criteria
 - getent – A wrapper to the unix getent utility
-- group_by – Create Ansible groups based on facts
 - import_playbook – Import a playbook
 - import_tasks – Import a task list
 - include_role – Load and execute a role
