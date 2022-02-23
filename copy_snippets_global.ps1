@@ -7,8 +7,6 @@ $SnippetDestPath = "C:\Users\$CurrentUser\AppData\Roaming\Code\User\snippets"
 # Get all files from current folder with snippet extension
 $Snippets = Get-ChildItem -Path .\ | Where-Object {$_.Name -like '*.code-snippets'}
 
-$Snippets[1] | gm
-
 foreach ($Snippet in $Snippets)
 {
     if ($Snippet.Name -ne $SnippetHelper)
