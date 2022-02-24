@@ -42,12 +42,11 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (7 remaining)
+#### ansible.builtin (5 remaining)
 
 - find – Return a list of files based on specific criteria
 - getent – A wrapper to the unix getent utility
 - subversion – Deploys a subversion repository
-- systemd – Manage systemd units
 - sysvinit – Manage SysV services.
 - uri – Interacts with webservices
 

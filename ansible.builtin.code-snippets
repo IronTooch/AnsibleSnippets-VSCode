@@ -779,7 +779,6 @@
         "scope": "ansible"
     },
 
-
     "Ansible.BuiltIn.Scripts":{
         "prefix": ["ansible.builtin.scripts","scripts"],
         "body": [
@@ -904,6 +903,24 @@
             "$0"
         ],
         "description": "Used for Ansible Stat Module to get File details",
+        "scope": "ansible"
+    },
+
+    "Ansible.BuiltIn.SystemD":{
+        "prefix": ["ansible.builtin.systemd","systemd"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.systemd:",
+            "    name: \"${2:service_to_change}\"",
+            "    state: ${3|started,stopped,reloaded,restarted|}${4:",
+            "    enabled: ${5|true,false|}}${6:",
+            "    masked: ${7|true,false|}}${8:",
+            "    force: ${9|true,false|}}${10:",
+            "    daemon_reload: ${11|true,false|}}${12:",
+            "    scope: ${13|system,user,global|}}",
+            "$0"
+        ],
+        "description": "Used for Ansible systemd to manage services, timers, etc",
         "scope": "ansible"
     },
 
