@@ -1,18 +1,18 @@
 {
 
    "Ansible.Netcommon.Telnet":{
-       "prefix": ["ansible.netcommon.telnet"],
+       "prefix": ["ansible.netcommon.telnet","telnet"],
        "body": [
             "- name: ${1:Description}",
-            "  ansible.netcommon.telnet:",
-            "    ${2:user: \"${3:user_name}\"}",
-            "    ${4:password: \"${5:password_val}\"}",
-            "    ${6:login_prompt: \"${7:expected_prompt}\"}",
-            "    ${8:host: \"${9:hostname_to_connect}\"}",
+            "  ansible.netcommon.telnet:${2:",
+            "    user: \"${3:user_name}\"}${4:",
+            "    password: \"${5:password_val}\"}${6:",
+            "    login_prompt: \"${7:expected_prompt}\"}${8:",
+            "    host: \"${9:hostname_to_connect}\"}${10:",
             "    prompts:",
-            "      - ${10:Prompt_before_sending_command}",
+            "      - ${11:Prompt_before_sending_command}}${12:",
             "    command:",
-            "      - ${11:Command_to_run}",
+            "      - ${13:Command_to_run}}",
             "$0"
        ],
         "description": "Used for Ansible Telnet Module",
