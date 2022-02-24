@@ -779,6 +779,23 @@
         "scope": "ansible"
     },
 
+
+    "Ansible.BuiltIn.Scripts":{
+        "prefix": ["ansible.builtin.scripts","scripts"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.scripts:",
+            "    cmd: ${2:path_to_local_script}${3:",
+            "    executables: ${4:remote_executable_to_use}}${5:",
+            "    chdir: \"${6:dir_on_remote_node}\"}${7:",
+            "    creates: \"${8:if_present_dont_run}\"}${9:",
+            "    removes: \"${10:if_missing_dont_run}\"}",
+            "$0"
+        ],
+        "description": "Used for Ansible scripts module to run a script on remote host",
+        "scope": "ansible"
+    },
+
     "Ansible.BuiltIn.Service":{
         "prefix": ["ansible.builtin.service","service"],
         "body": [

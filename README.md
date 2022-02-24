@@ -46,7 +46,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 - find – Return a list of files based on specific criteria
 - getent – A wrapper to the unix getent utility
-- script – Runs a local script on a remote node after transferring it
 - subversion – Deploys a subversion repository
 - systemd – Manage systemd units
 - sysvinit – Manage SysV services.
