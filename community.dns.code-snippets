@@ -1,6 +1,4 @@
 {
-
-    
        "Community.DNS.WaitForText":{
            "prefix": ["community.dns.wait_for_txt"],
            "body": [
@@ -15,7 +13,4 @@
             "description": "Used for Ansible Wait for Text for DNS records",
             "scope": "ansible"
        },
-
-
-
 }
