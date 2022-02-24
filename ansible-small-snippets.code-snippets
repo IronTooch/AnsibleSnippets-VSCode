@@ -46,4 +46,13 @@
      "scope": "ansible"
 },
 
+"Ansible.Environment":{
+     "prefix": ["ansible.small.environment"],
+     "body": [
+     "{{ lookup('env', '${1:environment_variable_name}') }}"
+     ],
+     "description": "Used for Ansible to look at the Environment variables on the CONTROLLER to feed values",
+     "scope": "ansible"
+},
+
 }
