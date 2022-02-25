@@ -22,7 +22,7 @@
     },
 
     "Snippet.TrueFalseKey":{
-        "prefix": ["snippet.TrueFalseKey"],
+        "prefix": ["snippet.TrueFalseKey","trueFalse_key"],
         "body": [
             "\"    ${1:keyname}: \\${$2|true,false|}\",",
             "$0"
@@ -32,7 +32,7 @@
     },
 
     "Snippet.PresentAbsentKey":{
-        "prefix": ["snippet.PresentAbsentKey"],
+        "prefix": ["snippet.PresentAbsentKey","absentPresent_key"],
         "body": [
             "\"    ${1:state}: \\${$2|present,absent|}\",",
             "$0"
@@ -41,8 +41,18 @@
         "scope": "jsonc"
     },
 
+    "Snippet.ChoiceKey":{
+        "prefix": ["snippet.ChoiceKey","choice_key"],
+        "body": [
+            "\"    ${1:keyname}: \\${${2}|${3:choices}|\",",
+            "$0"
+        ],
+        "description": "Used to make a key -> True / False Snippet",
+        "scope": "jsonc"
+    },
+
     "Snippet.KeyToFreeText":{
-        "prefix": ["snippet.keytofreetext"],
+        "prefix": ["snippet.KeyToFreeText","keytofreetext"],
         "body": [
             "\"    ${1:keyname}: \\\"${$2:${3:keyname}}\\\"\",",
             "$0"
@@ -51,13 +61,23 @@
         "scope": "jsonc"
     },
 
-    "Snippet.OptionalKey":{
-        "prefix": ["snippet.optionalkey"],
+    "Snippet.OptionalTextKey":{
+        "prefix": ["snippet.OptionalTextKey","optional_text_key"],
         "body": [
             "\"    ${${1:keynumber}:${2:keyname}: \\\"${${3:next_key_number}:${4:next_key_name}}\\\"}\",",
             "$0"
         ],
         "description": "Used to make an optional snippet with a text key",
+        "scope": "jsonc"
+    },
+
+    "Snippet.OptionalChoiceKey":{
+        "prefix": ["snippet.OptionalChoiceKey","optional_choice_key"],
+        "body": [
+            "\"    ${${1:keynumber}:${2:keyname}: \\\"${${3:next_key_number}|${4:options}}|\\\"}\",",
+            "$0"
+        ],
+        "description": "Used to make an optional snippet with a choice key",
         "scope": "jsonc"
     },
 
