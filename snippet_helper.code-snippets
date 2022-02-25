@@ -44,7 +44,7 @@
     "Snippet.ChoiceKey":{
         "prefix": ["snippet.ChoiceKey","choice_key"],
         "body": [
-            "\"    ${1:keyname}: \\${${2}|${3:choices}|\",",
+            "\"    ${1:keyname}: \\${${2}|${3:choices}|}\",",
             "$0"
         ],
         "description": "Used to make a key -> True / False Snippet",
