@@ -42,9 +42,8 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (5 remaining)
+#### ansible.builtin (4 remaining)
 
-- find – Return a list of files based on specific criteria
 - getent – A wrapper to the unix getent utility
 - subversion – Deploys a subversion repository
 - sysvinit – Manage SysV services.

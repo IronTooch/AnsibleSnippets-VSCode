@@ -350,6 +350,63 @@
         "scope": "ansible"
     },
 
+    "Ansible.BuiltIn.Find_ByAge":{
+        "prefix": ["ansible.builtin.find","find_byage"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.find:",
+            "    paths: \"${2:path_to_search}\"",
+            "    age: \"${4:age_number}${5|a,m,h,d,w|}\"${6:",
+            "    age_stamp: ${7|mtime,atime,ctime|}}${8:",
+            "    file_type: ${9|file,any,directory,link|}}${10:",
+            "    hidden: ${11|false,true|}}${12:",
+            "    recurse: ${13|true,false|}}${14:",
+            "    patterns: \"${15:regex_to_match}\"}${16:",
+            "    excludes: \"${17:regex_to_exclude}\"}",
+            "  register: find_results",
+            "$0"
+        ],
+        "description": "Used for Ansible find a file or directory by age",
+        "scope": "ansible"
+    },
+
+    "Ansible.BuiltIn.Find_ByContent":{
+        "prefix": ["ansible.builtin.find","find_bycontent"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.find:",
+            "    paths: \"${2:path_to_search}\"",
+            "    contains: \"${3:data_in_file}\"",
+            "    file_type: file${10:",
+            "    hidden: ${11|false,true|}}${12:",
+            "    recurse: ${13|true,false|}}${14:",
+            "    patterns: \"${15:regex_to_match}\"}${16:",
+            "    excludes: \"${17:regex_to_exclude}\"}",
+            "  register: find_results",
+            "$0"
+        ],
+        "description": "Used for Ansible find to find content inside a file",
+        "scope": "ansible"
+    },
+
+    "Ansible.BuiltIn.Find_ByName":{
+        "prefix": ["ansible.builtin.find","find_byname"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.find:",
+            "    paths: \"${2:path_to_search}\"",
+            "    patterns: \"${3:regex_to_match}\"}${4:",
+            "    file_type: \"${9|file,any,directory,link|}\"}${10:",
+            "    hidden: \"${11|false,true|}\"}${12:",
+            "    recurse: \"${13|true,false|}\"}${14:",
+            "    excludes: \"${17:regex_to_exclude}\"}",
+            "  register: find_results",
+            "$0"
+        ],
+        "description": "Used for Ansible find a file or directory by name",
+        "scope": "ansible"
+    },
+
     "Ansible.BuiltIn.FileDirectory":{
         "prefix": ["ansible.builtin.file","file_mkdir"],
         "body": [
