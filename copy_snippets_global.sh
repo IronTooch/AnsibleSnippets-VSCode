@@ -7,7 +7,6 @@ echo "Copying snippets to $SNIPPET_HOME..."
 
 for snippet_filename in ./*.code-snippets
 do
-    
 
     # # Don't copy Snippet Helper, that's a development tool
     if [ "${snippet_filename:2}" != "$SNIPPET_HELPER_NAME" ]
