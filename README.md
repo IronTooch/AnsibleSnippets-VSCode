@@ -42,9 +42,8 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (4 remaining)
+#### ansible.builtin (3 remaining)
 
-- getent – A wrapper to the unix getent utility
 - subversion – Deploys a subversion repository
 - sysvinit – Manage SysV services.
 - uri – Interacts with webservices

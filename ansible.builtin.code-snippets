@@ -466,6 +466,21 @@
         "scope": "ansible"
     },
 
+    "Ansible.BuiltIn.GetEnt":{
+        "prefix": ["ansible.builtin.getent","getent"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.getent:",
+            "    database: ${2|ahosts,ahostsv4,ahostsv6,aliases,ethers,group,gshadow,hosts,initgroups,netgroup,networks,passwd,protocols,rpc,services,shadow|}",
+            "    key: \"${3:key_to_search_for}\"${4:",
+            "    fail_key: ${5|false,true|}}${6:",
+            "    split: '${7:split_characters}'}",
+            "$0"
+        ],
+        "description": "Used for Ansible getent to read system databases",
+        "scope": "ansible"
+    },
+
     "Ansible.BuiltIn.GetUrl":{
         "prefix": ["ansible.builtin.get_url","get_url"],
         "body": [
