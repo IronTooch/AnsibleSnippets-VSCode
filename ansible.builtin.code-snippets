@@ -1122,39 +1122,5 @@
         "description": "Used for Ansible Yum Repository Module",
         "scope": "ansible"
     },
-    "Community.General.Zypper":{
-        "prefix": ["community.general.zypper"],
-        "body": [
-            "- name: ${1:Description}",
-            "  community.general.zypper:",
-            "    name:",
-            "      - ${2:package_name}",
-            "    state: ${3|present,absent,latest,installed,removed|}",
-            "    disable_gpg_check: ${5|true,false|}",
-            "    update_cache: ${7|true,false|}",
-            "    validate_certs: ${24|true,false|}",
-            "$0"
-        ],
-        "description": "Used for Ansible Community General Zypper module to manage packages with Zypper",
-        "scope": "ansible"
-    },
-
-    "Community.General.Zypper_Repository":{
-        "prefix": ["community.general.zypper_repository"],
-        "body": [
-            "- name: Add Repository for ${1:RepoName}",
-            "  community.general.zypper_repository:",
-            "    name: ${1:RepoName}",
-            "    description: ${2}",
-            "    repo: ${3:RepoUrl}",
-            "    state: ${4|present,absent|}",
-            "    enabled: ${5|true,false|}",
-			"    autorefresh: ${6|true,false|}",
-			"    auto_import_keys: $(7|true,false|)",
-            "$0"
-        ],
-        "description": "Used for Ansible Community General Zypper module to manage repositories with Zypper",
-        "scope": "ansible"
-    },
 
 }
