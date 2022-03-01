@@ -299,13 +299,26 @@
             "debug"
         ],
         "body": [
-            "- name: Print debug message${1:Description}",
+            "- name: ${1:Description}",
             "  ansible.builtin.debug:",
-            "    msg: \"${2:message}\"${3:",
-            "    verbosity: ${4|0,1,2,3,4,5|}}",
+            "    msg: \"${2:message}\"",
             "$0"
         ],
         "description": "Used for Ansible Debug Module to print output",
+        "scope": "ansible"
+    },
+    "Ansible.BuiltIn.Debug_Var": {
+        "prefix": [
+            "ansible.builtin.debug_var",
+            "debug_var"
+        ],
+        "body": [
+            "- name: Print the value of the variable $TM_SELECTED_TEXT",
+            "  ansible.builtin.debug:",
+            "    msg: \"$TM_SELECTED_TEXT: {{ $TM_SELECTED_TEXT }} \"",
+            "$0"
+        ],
+        "description": "Used for Ansible Debug Module to print a selected variable",
         "scope": "ansible"
     },
     "Ansible.BuiltIn.Dnf": {
