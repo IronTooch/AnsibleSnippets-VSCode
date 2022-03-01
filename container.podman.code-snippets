@@ -81,5 +81,4 @@
 		"description": "Used for Ansible Podman Containers module to work with multiple podman containers in one task",
 		"scope": "ansible"
 	},
-
 }
