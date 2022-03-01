@@ -1,13 +1,4 @@
 {
-	// "Print to console": {
-	// 	"scope": "javascript,typescript",
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
 	"Containers.Podman.Podman_Login":{
 		"prefix": ["containers.podman.podman_login"],
 		"body": [
