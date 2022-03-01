@@ -1,58 +1,62 @@
 {
-
-
-   "Ansible.PasswordHash":{
-       "prefix": ["ansible.small.md5_password"],
-       "body": [
-            "\"{{'${1:mypassword}' | hash('md5')}}\"",
-       ],
-        "description": "Used for Ansible to generate md5 passwords hashes for things",
-        "scope": "ansible"
-   },
-
-   "Ansible.FileContent":{
-     "prefix": ["ansible.small.file_content"],
-     "body": [
-          "{{lookup('file', '${1:filename}') }}",
-     ],
-      "description": "Used for Ansible to read a file on the CONTROL NODE Only",
-      "scope": "ansible"
- },
-
-"Ansible.Ipv4":{
-     "prefix": ["ansible.small.ipv4"],
-     "body": [
-          "{{ ansible_default_ipv4.address }}",
-     ],
-     "description": "Used for Ansible to get an IPv4 address",
-     "scope": "ansible"
-},
-
-"Ansible.RandomString":{
-     "prefix": ["ansible.small.random_string"],
-     "body": [
-          "{{ lookup('password', '/dev/null chars=ascii_letters,digits,punctuation length=${1:string_len}') }}",
-     ],
-     "description": "Used for Ansible to make a random string",
-     "scope": "ansible"
-},
-
-"Ansible.HandyFacts":{
-     "prefix": ["ansible.small.handy_facts"],
-     "body": [
-          "{{ ${1|ansible_lsb.description,ansible_default_ipv4.address,ansible_fqdn,ansible_user_id,ansible_os_family|} }}$0",
-     ],
-     "description": "Used for Ansible to provide the most commonly used facts",
-     "scope": "ansible"
-},
-
-"Ansible.Environment":{
-     "prefix": ["ansible.small.environment"],
-     "body": [
-     "{{ lookup('env', '${1:environment_variable_name}') }}"
-     ],
-     "description": "Used for Ansible to look at the Environment variables on the CONTROLLER to feed values",
-     "scope": "ansible"
-},
-
+     "Ansible.PasswordHash": {
+          "prefix": [
+               "ansible.small.md5_password"
+          ],
+          "body": [
+               "\"{{'${1:mypassword}' | hash('md5')}}\"",
+          ],
+          "description": "Used for Ansible to generate md5 passwords hashes for things",
+          "scope": "ansible"
+     },
+     "Ansible.FileContent": {
+          "prefix": [
+               "ansible.small.file_content"
+          ],
+          "body": [
+               "{{lookup('file', '${1:filename}') }}",
+          ],
+          "description": "Used for Ansible to read a file on the CONTROL NODE Only",
+          "scope": "ansible"
+     },
+     "Ansible.Ipv4": {
+          "prefix": [
+               "ansible.small.ipv4"
+          ],
+          "body": [
+               "{{ ansible_default_ipv4.address }}",
+          ],
+          "description": "Used for Ansible to get an IPv4 address",
+          "scope": "ansible"
+     },
+     "Ansible.RandomString": {
+          "prefix": [
+               "ansible.small.random_string"
+          ],
+          "body": [
+               "{{ lookup('password', '/dev/null chars=ascii_letters,digits,punctuation length=${1:string_len}') }}",
+          ],
+          "description": "Used for Ansible to make a random string",
+          "scope": "ansible"
+     },
+     "Ansible.HandyFacts": {
+          "prefix": [
+               "ansible.small.handy_facts"
+          ],
+          "body": [
+               "{{ ${1|ansible_lsb.description,ansible_default_ipv4.address,ansible_fqdn,ansible_user_id,ansible_os_family|} }}$0",
+          ],
+          "description": "Used for Ansible to provide the most commonly used facts",
+          "scope": "ansible"
+     },
+     "Ansible.Environment": {
+          "prefix": [
+               "ansible.small.environment"
+          ],
+          "body": [
+               "{{ lookup('env', '${1:environment_variable_name}') }}"
+          ],
+          "description": "Used for Ansible to look at the Environment variables on the CONTROLLER to feed values",
+          "scope": "ansible"
+     },
 }

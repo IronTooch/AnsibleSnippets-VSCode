@@ -1,8 +1,9 @@
 {
-    "Ansible.MakeOptAndUser":{
-        "prefix": ["ansible.large.preinstall"],
+    "Ansible.MakeOptAndUser": {
+        "prefix": [
+            "ansible.large.preinstall"
+        ],
         "body": [
-
             "- name: Add ${1:AppName} Services User",
             "  user: ",
             "    name: \"svc_${1:AppName}\"",
@@ -18,19 +19,16 @@
             "    state: directory",
             "    owner: \"svc_${1:AppName}\"",
             "    group: \"svc_${1:AppName}\"",
-             
-              "$0"
-
-
+            "$0"
         ],
         "description": "Makes a folder in /opt/, creates a svc user for that opt, and a group for that svc user",
         "scope": "ansible"
     },
-
-    "Ansible.StartBlock":{
-        "prefix": ["ansible.large.startblock"],
+    "Ansible.StartBlock": {
+        "prefix": [
+            "ansible.large.startblock"
+        ],
         "body": [
-
             "#!/usr/bin/env ansible-playbook",
             "---",
             "- hosts: all",
@@ -40,18 +38,17 @@
             "  tasks: ",
             "",
             "     $0"
-
         ],
         "description": "Ansible Start Block",
         "scope": "ansible"
     },
-	
-    "Ansible.LatestGitRelease":{
-        "prefix": ["ansible.large.git_latest"],
+    "Ansible.LatestGitRelease": {
+        "prefix": [
+            "ansible.large.git_latest"
+        ],
         "body": [
-
             "- name: Get Github Latest Release asset",
-            "  block:" ,
+            "  block:",
             "    - name: Set fact for API target for ${1:Github_repo}",
             "      ansible.builtin.set_fact:",
             "        ${3:myapp_api_target}: \"https://api.github.com/repos/{{ ${2:myapp_owner_repo_var} }}/releases/latest\"",
@@ -96,9 +93,10 @@
         "description": "Ansible Get latest Git Release",
         "scope": "ansible"
     },
-
-    "Ansible.MakeCommandVariable":{
-        "prefix": ["ansible.large.command_variable"],
+    "Ansible.MakeCommandVariable": {
+        "prefix": [
+            "ansible.large.command_variable"
+        ],
         "body": [
             "- name: Make command execution for ${1:my_command}",
             "  set_fact:",
@@ -112,31 +110,33 @@
         "description": "Used for Ansible to make more complex commands",
         "scope": "ansible"
     },
-
     "Ansible.MakeStateCompleteFlag": {
-    "prefix": ["ansible.large.state_complete_flag"],
-    "body": [
-        "- name: Check if ${1:condition_is_true}",
-        "  ansible.builtin.stat:",
-        "    path: \"{{ ${2:flag_name}_path }}\"",
-        "  register: ${2:flag_name}",
-        "",
-        "$0",
-        "  when: not ${2:flag_name}.stat.exists",
-        "",
-        "- name: Touch a file to demonstrate ${1:condition_is_true}",
-        "  ansible.builtin.file:",
-        "    path: \"{{ ${2:flag_name}_path }}\"",
-        "    state: touch",
-        "    mode: '0700'",
-        "  when: not ${2:flag_name}.stat.exists"
-    ],
-    "description": "Used for Ansible create commands to support idempotence",
-    "scope": "ansible"
+        "prefix": [
+            "ansible.large.state_complete_flag"
+        ],
+        "body": [
+            "- name: Check if ${1:condition_is_true}",
+            "  ansible.builtin.stat:",
+            "    path: \"{{ ${2:flag_name}_path }}\"",
+            "  register: ${2:flag_name}",
+            "",
+            "$0",
+            "  when: not ${2:flag_name}.stat.exists",
+            "",
+            "- name: Touch a file to demonstrate ${1:condition_is_true}",
+            "  ansible.builtin.file:",
+            "    path: \"{{ ${2:flag_name}_path }}\"",
+            "    state: touch",
+            "    mode: '0700'",
+            "  when: not ${2:flag_name}.stat.exists"
+        ],
+        "description": "Used for Ansible create commands to support idempotence",
+        "scope": "ansible"
     },
-
-    "Ansible.RandomStringIfIdentified":{
-        "prefix": ["ansible.large.randomize_undefined_string"],
+    "Ansible.RandomStringIfIdentified": {
+        "prefix": [
+            "ansible.large.randomize_undefined_string"
+        ],
         "body": [
             "- name: Set ${1:key_description} since it was provided",
             "  ansible.builtin.set_fact:",
@@ -155,7 +155,4 @@
         "description": "A snippet to make a variable if the default was not given",
         "scope": "ansible"
     },
-
-
-
 }

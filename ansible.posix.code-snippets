@@ -1,11 +1,12 @@
 {
-
-    "Ansible.Posix.Mount":{
-        "prefix": ["ansible.posix.mount"],
+    "Ansible.Posix.Mount": {
+        "prefix": [
+            "ansible.posix.mount"
+        ],
         "body": [
             "- name: ${1:Description}",
             "  ansible.posix.mount:",
-            "    fstype: \"${2:file_system_type}\"",	
+            "    fstype: \"${2:file_system_type}\"",
             "    opts: \"${3:file_system_options}\"",
             "    path: \"${4:file_system_path}\"",
             "    src: \"${5:file_system_source}\"",
@@ -14,7 +15,5 @@
         ],
         "description": "Used for Ansible Mount Module to add mount points",
         "scope": "ansible"
-    },	
-
-
+    }
 }

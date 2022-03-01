@@ -1,38 +1,33 @@
 {
-
-	"Community.Postgresql.Postgresql_db":{
-		"prefix": ["community.postgresql.postgresql_db"],
-		"body": [
-
-			"- name: ${1:Description}",
-			"  community.postgresql.postgresql_db:",
-			"    name: \"${2:database_name}\"",
-			"    ${3:owner: \"${4:owner_name}\"}",
-			"    ${5:template: \"${6:template_name}\"}",
-			"    ${7:encoding: \"${8:UTF8}\"}",			
-			"$0"
-		],
-		"description": "Used for Ansible Postgresql_db Module to make a new Postgresql Database",
-		"scope": "ansible"
-	},
-
-	
-	"Community.Postgresql.Postgresql_user":{
-		"prefix": ["community.postgresql.postgresql_user"],
-		"body": [
-			"- name: ${1:Description}",
-			"  community.postgresql.postgresql_user:",
-			"    name: \"${2:user_name}\"",
-			"    state: \"${3|present,absent|}\"",
-			"    role_attr_flags: \"${4:CREATEDB}\"",
-			"$0"
-		],
-		"description": "Used for Ansible Postgresql User module to make a new user",
-		"scope": "ansible"
-	},
-
-	   
-
-
-
+    "Community.Postgresql.Postgresql_db": {
+        "prefix": [
+            "community.postgresql.postgresql_db"
+        ],
+        "body": [
+            "- name: ${1:Description}",
+            "  community.postgresql.postgresql_db:",
+            "    name: \"${2:database_name}\"",
+            "    ${3:owner: \"${4:owner_name}\"}",
+            "    ${5:template: \"${6:template_name}\"}",
+            "    ${7:encoding: \"${8:UTF8}\"}",
+            "$0"
+        ],
+        "description": "Used for Ansible Postgresql_db Module to make a new Postgresql Database",
+        "scope": "ansible"
+    },
+    "Community.Postgresql.Postgresql_user": {
+        "prefix": [
+            "community.postgresql.postgresql_user"
+        ],
+        "body": [
+            "- name: ${1:Description}",
+            "  community.postgresql.postgresql_user:",
+            "    name: \"${2:user_name}\"",
+            "    state: \"${3|present,absent|}\"",
+            "    role_attr_flags: \"${4:CREATEDB}\"",
+            "$0"
+        ],
+        "description": "Used for Ansible Postgresql User module to make a new user",
+        "scope": "ansible"
+    },
 }

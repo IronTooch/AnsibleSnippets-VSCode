@@ -1,16 +1,18 @@
 {
-       "Community.DNS.WaitForText":{
-           "prefix": ["community.dns.wait_for_txt"],
-           "body": [
-                "- name: ${1:Description}",
-                "  community.dns.wait_for_txt:",
-                "    records:",
-                "      - name: \"${2:domain_value}\"",
-                "        values: \"${3:value_to_wait_for}\"",
-                "        mode: \"${4|subset,superset,superset_not_empty,equals,equals_ordered|}\"", 
-                "$0"
-           ],
-            "description": "Used for Ansible Wait for Text for DNS records",
-            "scope": "ansible"
-       },
+     "Community.DNS.WaitForText": {
+          "prefix": [
+               "community.dns.wait_for_txt"
+          ],
+          "body": [
+               "- name: ${1:Description}",
+               "  community.dns.wait_for_txt:",
+               "    records:",
+               "      - name: \"${2:domain_value}\"",
+               "        values: \"${3:value_to_wait_for}\"",
+               "        mode: \"${4|subset,superset,superset_not_empty,equals,equals_ordered|}\"",
+               "$0"
+          ],
+          "description": "Used for Ansible Wait for Text for DNS records",
+          "scope": "ansible"
+     },
 }

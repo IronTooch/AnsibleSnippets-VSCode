@@ -1,130 +1,137 @@
 {
-
-
-   "Commmunity.General.Archive":{
-       "prefix": ["community.general.archive"],
-       "body": [
-            "- name: ${1:Description}",
-            "  community.general.archive:",
-            "    dest: \"${2:path_to_save_archive_to}\"",
-            "    force_archive: ${3|true,false|}",
-            "    format: ${4|zip,gz,bz2,tar,zx|}",
-            "    owner: \"${5:owner}\"",
-            "    group: \"${6:group}\"",
-            "    mode: \"${7:0700}\"",
-            "    path:",
-            "      - ${8:file_or_dir_to_archive}",
-            "    ${9:exclude_path}", 
-            "      ${20:- path_to_exclude}}",
-            "$0"
-       ],
-        "description": "Used for Ansible Archive Module to package files together",
-        "scope": "ansible"
-   },
-
-   "Commmunity.General.Discord_FromEnv":{
-       "prefix": ["community.general.discord"],
-       "body": [
-            "- name: ${1:Description}",
-            "  community.general.discord:",
-            "    webhook_id: {{ lookup('env', 'DISCORD_ID') }}",
-            "    webhook_token: {{ lookup('env', 'DISCORD_TOKEN') }}",
-            "    content: \"${2:my_message_to_discord}\"",
-            "$0"
-       ],
-        "description": "Used for Ansible Discord Integration",
-        "scope": "ansible"
-   },
-
-   "Community.General.DjangoManage":{
-       "prefix": ["community.general.django_manage"],
-       "body": [
-            "- name: ${1:Description}",
-            "  community.general.django_manage:",
-            "    command: \"${2|cleanup,collectstatic,createcachetable,flush,loaddata,migrate,syncdb,test,validate|}\"",
-            "    project_path: \"${4:project_dir}\"",
-            "    ${5:virtualenv: \"${6:virtenv_path}\"}",
-            "    ${7:database: \"${8:db_name}\"}",
-            "$0"
-       ],
-        "description": "Used for Ansible Django Manage to do Django functions",
-        "scope": "ansible"
-   },
-
-   "Community.General.Modprobe":{
-       "prefix": ["community.general.modprobe"],
-       "body": [
-            "- name: ${1:Description}",
-            "  community.general.modprobe:",
-            "    name: \"${2:kernel_module}\"",
-            "    state: ${3|present,absent|}",
-            "    ${4:params: \"${5:module_params}\"}",
-            "$0"
-       ],
-        "description": "Used for Ansible ModProbe Module",
-        "scope": "ansible"
-   },
-
-   "Community.General.Snap":{
-       "prefix": ["community.general.snap"],
-       "body": [
-            "- name: ${1:Description}",
-            "  community.general.snap:",
-            "    name: \"${2:snap_to_add}\"",
-            "    state: ${3|present,absent,enabled,disabled|}",
-            "    classic: ${4|true,false|}",
-            "    ${5:channel: \"${6:release_version}\"}",            
-            "$0"
-       ],
-        "description": "Used for Ansible Snap Module",
-        "scope": "ansible"
-   },
-
-// Originally I was going to make this selectable, but there are 608 Timezones... so no.
-   "Commmunity.General.Timezone":{
-       "prefix": ["community.general.timezone"],
-       "body": [
-            "- name: ${1:Description}",
-            "  community.general.timezone:",
-            "    name: ${2:America/New_York}",
-            "$0"
-       ],
-        "description": "Used for Ansible Timezone Module to set host timezone",
-        "scope": "ansible"
-   },
-
-   "Community.General.Zypper":{
-       "prefix": ["community.general.zypper"],
-       "body": [
-            "- name: ${1:Description}",
-            "  community.general.zypper:",
-            "    name:",
-            "      - ${2:package_name}",
-            "    state: ${3|present,absent,latest,installed,removed|}",
-            "    disable_gpg_check: ${5|true,false|}",
-            "    update_cache: ${7|true,false|}",
-            "    validate_certs: ${8|true,false|}",
-            "$0"
-     ],
-        "description": "Used for Ansible Community General Zypper module to manage packages with Zypper",
-        "scope": "ansible"
- },
-
-   "Community.General.Zypper_Repository":{
-       "prefix": ["community.general.zypper_repository"],
-       "body": [
-            "- name: Add Repository for ${1:RepoName}",
-            "  community.general.zypper_repository:",
-            "    name: ${1:RepoName}",
-            "    description: ${2:Description}",
-            "    repo: ${3:RepoUrl}",
-            "    state: ${4|present,absent|}",
-            "    enabled: ${5|true,false|}",
-            "    autorefresh: ${6|true,false|}",
-            "    auto_import_keys: $(7|true,false|)",
-            "$0"
-     ],
-        "description": "Used for Ansible Community General Zypper module to manage repositories with Zypper",
-        "scope": "ansible"
- },
+     "Commmunity.General.Archive": {
+          "prefix": [
+               "community.general.archive"
+          ],
+          "body": [
+               "- name: ${1:Description}",
+               "  community.general.archive:",
+               "    dest: \"${2:path_to_save_archive_to}\"",
+               "    force_archive: ${3|true,false|}",
+               "    format: ${4|zip,gz,bz2,tar,zx|}",
+               "    owner: \"${5:owner}\"",
+               "    group: \"${6:group}\"",
+               "    mode: \"${7:0700}\"",
+               "    path:",
+               "      - ${8:file_or_dir_to_archive}",
+               "    ${9:exclude_path}",
+               "      ${20:- path_to_exclude}}",
+               "$0"
+          ],
+          "description": "Used for Ansible Archive Module to package files together",
+          "scope": "ansible"
+     },
+     "Commmunity.General.Discord_FromEnv": {
+          "prefix": [
+               "community.general.discord"
+          ],
+          "body": [
+               "- name: ${1:Description}",
+               "  community.general.discord:",
+               "    webhook_id: {{ lookup('env', 'DISCORD_ID') }}",
+               "    webhook_token: {{ lookup('env', 'DISCORD_TOKEN') }}",
+               "    content: \"${2:my_message_to_discord}\"",
+               "$0"
+          ],
+          "description": "Used for Ansible Discord Integration",
+          "scope": "ansible"
+     },
+     "Community.General.DjangoManage": {
+          "prefix": [
+               "community.general.django_manage"
+          ],
+          "body": [
+               "- name: ${1:Description}",
+               "  community.general.django_manage:",
+               "    command: \"${2|cleanup,collectstatic,createcachetable,flush,loaddata,migrate,syncdb,test,validate|}\"",
+               "    project_path: \"${4:project_dir}\"",
+               "    ${5:virtualenv: \"${6:virtenv_path}\"}",
+               "    ${7:database: \"${8:db_name}\"}",
+               "$0"
+          ],
+          "description": "Used for Ansible Django Manage to do Django functions",
+          "scope": "ansible"
+     },
+     "Community.General.Modprobe": {
+          "prefix": [
+               "community.general.modprobe"
+          ],
+          "body": [
+               "- name: ${1:Description}",
+               "  community.general.modprobe:",
+               "    name: \"${2:kernel_module}\"",
+               "    state: ${3|present,absent|}",
+               "    ${4:params: \"${5:module_params}\"}",
+               "$0"
+          ],
+          "description": "Used for Ansible ModProbe Module",
+          "scope": "ansible"
+     },
+     "Community.General.Snap": {
+          "prefix": [
+               "community.general.snap"
+          ],
+          "body": [
+               "- name: ${1:Description}",
+               "  community.general.snap:",
+               "    name: \"${2:snap_to_add}\"",
+               "    state: ${3|present,absent,enabled,disabled|}",
+               "    classic: ${4|true,false|}",
+               "    ${5:channel: \"${6:release_version}\"}",
+               "$0"
+          ],
+          "description": "Used for Ansible Snap Module",
+          "scope": "ansible"
+     },
+     // Originally I was going to make this selectable, but there are 608 Timezones... so no.
+     "Commmunity.General.Timezone": {
+          "prefix": [
+               "community.general.timezone"
+          ],
+          "body": [
+               "- name: ${1:Description}",
+               "  community.general.timezone:",
+               "    name: ${2:America/New_York}",
+               "$0"
+          ],
+          "description": "Used for Ansible Timezone Module to set host timezone",
+          "scope": "ansible"
+     },
+     "Community.General.Zypper": {
+          "prefix": [
+               "community.general.zypper"
+          ],
+          "body": [
+               "- name: ${1:Description}",
+               "  community.general.zypper:",
+               "    name:",
+               "      - ${2:package_name}",
+               "    state: ${3|present,absent,latest,installed,removed|}",
+               "    disable_gpg_check: ${5|true,false|}",
+               "    update_cache: ${7|true,false|}",
+               "    validate_certs: ${8|true,false|}",
+               "$0"
+          ],
+          "description": "Used for Ansible Community General Zypper module to manage packages with Zypper",
+          "scope": "ansible"
+     },
+     "Community.General.Zypper_Repository": {
+          "prefix": [
+               "community.general.zypper_repository"
+          ],
+          "body": [
+               "- name: Add Repository for ${1:RepoName}",
+               "  community.general.zypper_repository:",
+               "    name: ${1:RepoName}",
+               "    description: ${2:Description}",
+               "    repo: ${3:RepoUrl}",
+               "    state: ${4|present,absent|}",
+               "    enabled: ${5|true,false|}",
+               "    autorefresh: ${6|true,false|}",
+               "    auto_import_keys: $(7|true,false|)",
+               "$0"
+          ],
+          "description": "Used for Ansible Community General Zypper module to manage repositories with Zypper",
+          "scope": "ansible"
+     }
 }

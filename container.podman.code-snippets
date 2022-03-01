@@ -1,6 +1,8 @@
 {
-    "Containers.Podman.Podman_Login":{
-        "prefix": ["containers.podman.podman_login"],
+    "Containers.Podman.Podman_Login": {
+        "prefix": [
+            "containers.podman.podman_login"
+        ],
         "body": [
             "- name: ${1:Description}",
             "  containers.podman.podman_login:",
@@ -12,9 +14,10 @@
         "description": "Used for Ansible Podman Container module to log in to an image registry",
         "scope": "ansible"
     },
-
-    "Containers.Podman.Podman_Container":{
-        "prefix": ["containers.podman.podman_container"],
+    "Containers.Podman.Podman_Container": {
+        "prefix": [
+            "containers.podman.podman_container"
+        ],
         "body": [
             "- name: ${1:Description}",
             "  containers.podman.podman_container:",
@@ -35,8 +38,7 @@
         "description": "Used for Ansible Podman Container module to manage container images",
         "scope": "ansible"
     },
-
-    "Containers.Podman.Podman_Image":{
+    "Containers.Podman.Podman_Image": {
         "prefix": "[containers.podman.podman_image]",
         "body": [
             "- name: ${1:Description}",
@@ -48,8 +50,7 @@
         "description": "Used for Ansible Podman Image module to pull/delete container images",
         "scope": "ansible"
     },
-
-    "Containers.Podman.Podman_Image_Build":{
+    "Containers.Podman.Podman_Image_Build": {
         "prefix": "[containers.podman.podman_image_build]",
         "body": [
             "- name: ${1:Description}",
@@ -63,8 +64,7 @@
         "description": "Used for Ansible Podman Image module to build container images",
         "scope": "ansible"
     },
-
-    "Container.Podman.Podman_Containers":{
+    "Container.Podman.Podman_Containers": {
         "prefix": "[container.podman.podman_containers]",
         "body": [
             "- name: ${1:Description}",
@@ -84,5 +84,4 @@
         "description": "Used for Ansible Podman Containers module to work with multiple podman containers in one task",
         "scope": "ansible"
     },
-
 }
