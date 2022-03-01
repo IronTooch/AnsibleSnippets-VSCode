@@ -15,5 +15,5 @@
         ],
         "description": "Used for Ansible Mount Module to add mount points",
         "scope": "ansible"
-    }
+    },
 }

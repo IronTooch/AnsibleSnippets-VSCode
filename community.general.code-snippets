@@ -128,10 +128,10 @@
                "    state: ${4|present,absent|}",
                "    enabled: ${5|true,false|}",
                "    autorefresh: ${6|true,false|}",
-               "    auto_import_keys: $(7|true,false|)",
+               "    auto_import_keys: ${7|true,false|}",
                "$0"
           ],
           "description": "Used for Ansible Community General Zypper module to manage repositories with Zypper",
           "scope": "ansible"
-     }
+     },
 }
