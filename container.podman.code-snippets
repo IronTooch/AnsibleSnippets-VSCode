@@ -44,7 +44,7 @@
             "- name: ${1:Description}",
             "  containers.podman.podman_image:",
             "    name: ${2:image_name}",
-            "    state: ${3:|present,absent|}",
+            "    state: ${3|present,absent|}",
             "$0"
         ],
         "description": "Used for Ansible Podman Image module to pull/delete container images",
