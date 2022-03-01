@@ -14,7 +14,7 @@
 			"- name: ${1:Description}",
 			"  containers.podman.podman_login:",
 			"    username: ${2:user_name}",
-			"    password; ${3:'registry_password'}",
+			"    password: ${3:'registry_password'}",
 			"    registry: ${4:container_registry}",
 			"$0"
 		],
