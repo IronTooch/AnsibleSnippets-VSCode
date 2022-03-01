@@ -7,7 +7,7 @@
             "- name: ${1:Description}",
             "  containers.podman.podman_login:",
             "    username: ${2:user_name}",
-            "    password: \"{3:registry_password}\"",
+            "    password: \"${3:registry_password}\"",
             "    registry: ${4:container_registry}",
             "$0"
         ],
@@ -23,13 +23,13 @@
             "  containers.podman.podman_container:",
             "    name: ${2:container_name}",
             "    image: ${3:container_image}",
-            "    authfile: ${4: XDG_RUNTIME_DIR}/containers/auth.json)",
-            "    state: ${5 |started,present,stopped,absent,created|}",
+            "    authfile: \"${4:XDG_RUNTIME_DIR}/containers/auth.json\"",
+            "    state: ${5|started,present,stopped,absent,created|}",
             "    volume:",
             "      - ${6:podman_container_volume}",
             "    generate_systemd:",
-            "      path: ${7:/path/to/unit/file}",
-            "      names: ${8:/path/to/unit/file}",
+            "      path: \"${7:/path/to/unit/file}\"",
+            "      names: \"${8:/path/to/unit/file}\"",
             "      new: ${9|true,false|}",
             "      restart_policy: ${10|always,no,on-success,on-failure,on-abnormal,on-watchdog,on-abort|}",
             "      time: ${11:stop_timeout}",
@@ -39,7 +39,9 @@
         "scope": "ansible"
     },
     "Containers.Podman.Podman_Image": {
-        "prefix": "[containers.podman.podman_image]",
+        "prefix": [
+            "containers.podman.podman_image"
+        ],
         "body": [
             "- name: ${1:Description}",
             "  containers.podman.podman_image:",
@@ -51,21 +53,25 @@
         "scope": "ansible"
     },
     "Containers.Podman.Podman_Image_Build": {
-        "prefix": "[containers.podman.podman_image_build]",
+        "prefix": [
+            "containers.podman.podman_image_build"
+        ],
         "body": [
             "- name: ${1:Description}",
             "  containers.podman.podman_image:",
             "    name: ${2:image_name}",
-            "    path: ${3:/path/to/build/dir}",
+            "    path: \"${3:/path/to/build/dir}\"",
             "    build:",
-            "      format: ${4:|docker,oci|}",
+            "      format: ${4|docker,oci|}",
             "$0"
         ],
         "description": "Used for Ansible Podman Image module to build container images",
         "scope": "ansible"
     },
     "Container.Podman.Podman_Containers": {
-        "prefix": "[container.podman.podman_containers]",
+        "prefix": [
+            "container.podman.podman_containers"
+        ],
         "body": [
             "- name: ${1:Description}",
             "  podman_containers:",
