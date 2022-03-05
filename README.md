@@ -60,10 +60,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - synchronize – A wrapper around rsync to make common tasks in your playbooks quick and easy
 - sysctl – Manage entries in sysctl.conf.
 
-#### ansible.utils (1 remaining)
-
-- validate – Validate data with provided criteria
-
 #### ansible.windows (40 remaining)
 
 - win_acl – Set file/directory/registry permissions for a system user or group
