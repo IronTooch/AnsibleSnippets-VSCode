@@ -1,0 +1,14 @@
+{
+    "Ansible.Utils.Fact_Diff":{
+        "prefix": ["ansible.utils.fact_diff","fact_diff"],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.utils.fact_diff:",
+            "    before: \"${2:first_fact_to_compare}\"",
+            "    after: \"${3:second_fact_to_compare}\"",
+            "$0"
+        ],
+        "description": "Used for Ansible fact_diff",
+        "scope": "ansible"
+    },
+}
