@@ -42,7 +42,7 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (3 remaining)
+#### ansible.builtin (2 remaining)
 
 - subversion – Deploys a subversion repository
 - sysvinit – Manage SysV services
@@ -60,9 +60,8 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - synchronize – A wrapper around rsync to make common tasks in your playbooks quick and easy
 - sysctl – Manage entries in sysctl.conf.
 
-#### ansible.utils (4 remaining)
+#### ansible.utils (1 remaining)
 
-- update_fact – Update currently set facts
 - validate – Validate data with provided criteria
 
 #### ansible.windows (40 remaining)
