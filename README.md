@@ -212,9 +212,8 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - docker_volume – Manage Docker volumes
 - docker_volume_info – Retrieve facts about Docker volumes
 
-#### community.general (134 remaining)
+#### community.general (127 remaining)
 
-- alternatives – Manages alternative programs for common commands
 - ansible_galaxy_install – Install Ansible roles or collections using ansible-galaxy
 - apache2_mod_proxy – Set and/or get members’ attributes of an Apache httpd 2.4 mod_proxy balancer pool
 - apache2_module – Enables/disables a module of the Apache2 webserver.
@@ -229,7 +228,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - crypttab – Encrypted Linux block devices
 - dconf – Modify and read dconf database
 - deploy_helper – Manages some of the steps common in deploying projects.
-- django_manage – Manages a Django application.
 - dnf_versionlock – Locks package versions in dnf based systems
 - dpkg_divert – Override a debian package’s version of a file
 - easy_install – Installs Python libraries
@@ -337,7 +335,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - syslogger – Log messages in the syslog
 - telegram – module for sending notifications via telegram
 - terraform – Manages a Terraform deployment (and plans)
-- timezone – Configure timezone setting
 - ufw – Manage firewall with UFW
 - wakeonlan – Send a magic Wake-on-LAN (WoL) broadcast packet
 - xattr – Manage user defined extended attributes

@@ -1,4 +1,20 @@
 {
+     "Community.General.Alternatives": {
+          "prefix": [
+               "community.general.alternatives",
+               "alternatives"
+          ],
+          "body": [
+               "- name: ${1:Description}",
+               "  community.general.alternatives:",
+               "    name: \"${2:generic_link_name}\"",
+               "    path: \"${3:path_to_real_executable}\"${4:",
+               "    link: \"${5:path_to_symllink_for_real_executable}\"}",
+               "$0"
+          ],
+          "description": "Used for Ansible alternatives",
+          "scope": "ansible"
+     },
      "Commmunity.General.Archive": {
           "prefix": [
                "community.general.archive"
