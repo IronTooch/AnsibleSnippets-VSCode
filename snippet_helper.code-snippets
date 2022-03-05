@@ -74,10 +74,20 @@
     "Snippet.OptionalChoiceKey":{
         "prefix": ["snippet.OptionalChoiceKey","optional_choice_key"],
         "body": [
-            "\"    ${${1:keynumber}:${2:keyname}: \\\"${${3:next_key_number}|${4:options}}|\\\"}\",",
+            "\"    ${${1:keynumber}:${2:keyname}: \\${${3:next_key_number}|${4:options}|}\\}\",",
             "$0"
         ],
         "description": "Used to make an optional snippet with a choice key",
+        "scope": "jsonc"
+    },
+
+    "Snippet.OptionalTrueFalseKey":{
+        "prefix": ["snippet.OptionalTrueFalseKey","optional_truefalse_key"],
+        "body": [
+            "\"    ${${1:keynumber}:${2:keyname}: \\${${3:next_key_number}|true,false|}\\}\",",
+            "$0"
+        ],
+        "description": "Used to make an optional snippet with a true/false key",
         "scope": "jsonc"
     },
 

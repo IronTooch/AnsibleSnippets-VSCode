@@ -86,7 +86,8 @@
      // Originally I was going to make this selectable, but there are 608 Timezones... so no.
      "Commmunity.General.Timezone": {
           "prefix": [
-               "community.general.timezone"
+               "community.general.timezone",
+               "timezone"
           ],
           "body": [
                "- name: ${1:Description}",
@@ -99,7 +100,8 @@
      },
      "Community.General.Zypper": {
           "prefix": [
-               "community.general.zypper"
+               "community.general.zypper",
+               "zypper"
           ],
           "body": [
                "- name: ${1:Description}",
@@ -117,7 +119,8 @@
      },
      "Community.General.Zypper_Repository": {
           "prefix": [
-               "community.general.zypper_repository"
+               "community.general.zypper_repository",
+               "zypper_repository"
           ],
           "body": [
                "- name: Add Repository for ${1:RepoName}",

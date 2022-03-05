@@ -1,7 +1,8 @@
 {
     "Community.Postgresql.Postgresql_db": {
         "prefix": [
-            "community.postgresql.postgresql_db"
+            "community.postgresql.postgresql_db",
+            "postgresql_db"
         ],
         "body": [
             "- name: ${1:Description}",
@@ -17,7 +18,8 @@
     },
     "Community.Postgresql.Postgresql_user": {
         "prefix": [
-            "community.postgresql.postgresql_user"
+            "community.postgresql.postgresql_user",
+            "postgresql_user"
         ],
         "body": [
             "- name: ${1:Description}",

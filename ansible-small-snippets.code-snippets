@@ -41,7 +41,8 @@
      },
      "Ansible.HandyFacts": {
           "prefix": [
-               "ansible.small.handy_facts"
+               "ansible.small.handy_facts",
+               "handy_facts"
           ],
           "body": [
                "{{ ${1|ansible_lsb.description,ansible_default_ipv4.address,ansible_fqdn,ansible_user_id,ansible_os_family|} }}$0",
@@ -51,7 +52,8 @@
      },
      "Ansible.Environment": {
           "prefix": [
-               "ansible.small.environment"
+               "ansible.small.environment",
+               "env"
           ],
           "body": [
                "{{ lookup('env', '${1:environment_variable_name}') }}"

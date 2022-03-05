@@ -1,7 +1,8 @@
 {
     "Containers.Podman.Podman_Login": {
         "prefix": [
-            "containers.podman.podman_login"
+            "containers.podman.podman_login",
+            "podman_login"
         ],
         "body": [
             "- name: ${1:Description}",
@@ -16,7 +17,8 @@
     },
     "Containers.Podman.Podman_Container": {
         "prefix": [
-            "containers.podman.podman_container"
+            "containers.podman.podman_container",
+            "podman_container"
         ],
         "body": [
             "- name: ${1:Description}",
@@ -40,7 +42,8 @@
     },
     "Containers.Podman.Podman_Image": {
         "prefix": [
-            "containers.podman.podman_image"
+            "containers.podman.podman_image",
+            "podman_image"
         ],
         "body": [
             "- name: ${1:Description}",
@@ -54,7 +57,8 @@
     },
     "Containers.Podman.Podman_Image_Build": {
         "prefix": [
-            "containers.podman.podman_image_build"
+            "containers.podman.podman_image_build",
+            "podman_image_build"
         ],
         "body": [
             "- name: ${1:Description}",
@@ -70,7 +74,8 @@
     },
     "Container.Podman.Podman_Containers": {
         "prefix": [
-            "container.podman.podman_containers"
+            "container.podman.podman_containers",
+            "podman_image_build"
         ],
         "body": [
             "- name: ${1:Description}",
