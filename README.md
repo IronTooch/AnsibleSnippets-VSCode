@@ -62,7 +62,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 #### ansible.utils (4 remaining)
 
-- cli_parse – Parse cli output or text using a variety of parsers
 - update_fact – Update currently set facts
 - validate – Validate data with provided criteria
 
