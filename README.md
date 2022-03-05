@@ -45,8 +45,7 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 #### ansible.builtin (3 remaining)
 
 - subversion – Deploys a subversion repository
-- sysvinit – Manage SysV services.
-- uri – Interacts with webservices
+- sysvinit – Manage SysV services
 
 #### ansible.posix (10 remaining)
 
@@ -61,7 +60,7 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - synchronize – A wrapper around rsync to make common tasks in your playbooks quick and easy
 - sysctl – Manage entries in sysctl.conf.
 
-#### ansible.utils
+#### ansible.utils (4 remaining)
 
 - cli_parse – Parse cli output or text using a variety of parsers
 - fact_diff – Find the difference between currently set facts
@@ -113,7 +112,7 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### AWX Namespace
 
-#### awx.awx
+#### awx.awx (39 remaining)
 
 - ad_hoc_command – create, update, or destroy Automation Platform Controller ad hoc commands.
 - ad_hoc_command_cancel – Cancel an Ad Hoc Command.

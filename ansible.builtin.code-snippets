@@ -1194,6 +1194,51 @@
         "description": "Used for Ansible Unarchive module to unzip archives",
         "scope": "ansible"
     },
+    "Ansible.Builin.URI": {
+        "prefix": [
+            "ansible.builtin.uri",
+            "uri"
+        ],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.uri:",
+            "    url: \"${2|http://,https://|}${3:url_host_domain_port_path}\"",
+            "    method: \"${4|GET,POST,PUT,DELETE,CONNECT,HEAD,OPTIONS,TRACE|}\"",
+            "    ${5:force_basic_auth: ${6|true,false|}}",
+            "    ${7:url_username: \"${8:username_for_auth}\"}",
+            "    ${9:url_password: \"${10:password_for_auth}\"}",
+            "    ${11:attributes: \"${12:file_attributes}\"}",
+            "    ${13:body: \"${14:web_request_body}\"}",
+            "    ${15:body_format: \"${16|raw,form-urlencoded,json,form-multipart|}\"}",
+            "    ${17:ca_path: \"${18:ca_pem_path}\"}",
+            "    ${19:client_cert : \"${20:client_pem_path}\"}",
+            "    ${21:client_key: \"${22:client_key_pem_path}\"}",
+            "    ${23:creates: \"${24:created_file_path}\"}",
+            "    ${25:removes: \"${26:file_thats_removed}\"}",
+            "    ${27:src: \"${28:path_to_remote_file}\"}",
+            "    ${29:dest: \"${30:path_to_download_to}\"}",
+            "    ${31:follow_redirects: ${32|safe,all,no,none,urllib2,yes|}}",
+            "    ${33:force: ${34|true,false|}}",
+            "    ${35:owner: \"${36:owner}\"}",
+            "    ${37:group: \"${38:${36:owner}}\"}",
+            "    ${39:mode: \"${40:0700}\"}",
+            "    ${41:headers:",
+            "      - ${42:HEADER1}}",
+            "    ${43:http_agent: \"${44:http_agent_str}\"}",
+            "    ${45:remote_src: ${46|true,false|}}",
+            "    ${47:return_content: ${48|true,false|}}",
+            "    ${49:status_code: ${50:[200, other_success_codes]}}",
+            "    ${51:timeout: ${52:timeout_in_seconds}}",
+            "    ${53:unix_socket: \"${54:connection_socket_path}\"}",
+            "    ${55:unsafe_writes: ${56|true,false|}}",
+            "    ${57:use_gssapi: ${58|true,false|}}",
+            "    ${59:use_proxy: ${60|true,false|}}",
+            "    ${61:validate_certs: ${62|true,false|}}",
+            "$0"
+        ],
+        "description": "Used for Ansible URI module to make a web request",
+        "scope": "ansible"
+    },
     "Ansible.BuiltIn.User": {
         "prefix": [
             "ansible.builtin.user",
