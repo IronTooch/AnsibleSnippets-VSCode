@@ -66,7 +66,7 @@
             "",
             "    - name: Set variable for latest release tag",
             "      set_fact:",
-            "        latest_release_tag: \"{{ latest_release.tag_name }}\"",
+            "        latest_release_tag: \"{{ latest_release.json.tag_name }}\"",
             "",
             "    - name: Set variable for latest release tag without 'v'",
             "      set_fact:",
