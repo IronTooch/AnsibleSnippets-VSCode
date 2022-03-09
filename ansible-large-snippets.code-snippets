@@ -159,6 +159,7 @@
             "    group: \"root\"",
             "    mode: '0700'",
             "  when: ${4:my_app}_password_path",
+            "  no_log: true",
             "",
             "$0"
         ],
