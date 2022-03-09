@@ -155,4 +155,43 @@
         "description": "A snippet to make a variable if the default was not given",
         "scope": "ansible"
     },
+
+        "Ansible.FindSingleFile":{
+            "prefix": ["ansible.large.findFile","findFile"],
+            "body": [
+                "- name: Find the ${1:file_description}",
+                "  ansible.builtin.find:",
+                "    paths: \"{{ ${2:search_dir_var} }}\"",
+                "    patterns: \"*${3:regex_to_find}*\"",
+                "    file_type: file",
+                "  register: find_results",
+                "",
+                "- name: Set fact to found file",
+                "  ansible.builtin.set_fact:",
+                "    found_file: \"{{ (find_results.files | first).path }}\"",
+                "$0"
+            ],
+            "description": "Used to locate a single file with an unclear name",
+            "scope": "ansible"
+        },
+
+        "Ansible.FindSingleDir":{
+            "prefix": ["ansible.large.findDir","findDir"],
+            "body": [
+                "- name: Find the ${1:file_description}",
+                "  ansible.builtin.find:",
+                "    paths: \"{{ ${2:search_dir_var} }}\"",
+                "    patterns: \"*${3:regex_to_find}*\"",
+                "    file_type: directory",
+                "  register: find_results",
+                "",
+                "- name: Set fact to found file",
+                "  ansible.builtin.set_fact:",
+                "    found_dir: \"{{ (find_results.files | first).path }}\"",
+                "$0"
+            ],
+            "description": "Used to locate a single directory with an unclear name",
+            "scope": "ansible"
+        },
+
 }
