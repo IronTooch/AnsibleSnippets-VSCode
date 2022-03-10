@@ -932,7 +932,7 @@
         "body": [
             "- name: ${1:Description}",
             "  ansible.builtin.reboot:${2:",
-            "    ${2:reboot_timeout: \"${3:seconds_to_wait}\"}",
+            "    reboot_timeout: \"${3:seconds_to_wait}\"}}",
             "$0"
         ],
         "description": "Used for Ansible Reboot",
