@@ -42,9 +42,6 @@
                 "options": {
                     "shell": {
                         "executable": "powershell",
-                        // "args": [
-                        //     "-ExecutionPolicy Bypass", "-Include_Helpers $True", "-File"
-                        // ]
                     }
                 },
                 "command": "-ExecutionPolicy Bypass -File copy_snippets_global.ps1  -Include_Helpers"
