@@ -1121,6 +1121,32 @@
         "description": "Used for Ansible Stat Module to get File details",
         "scope": "ansible"
     },
+    "Ansible.BuiltIn.Subversion": {
+        "prefix": [
+            "ansible.builtin.subversion",
+            "subversion"
+        ],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.subversion:",
+            "    repo: \"${2:url_to_repo}\"",
+            "    dest: \"${3:path_to_destination}\"${4:",
+            "    username: \"${5:my_username}\"}${6:",
+            "    password: \"${7:my_password}\"}${8:",
+            "    checkout: ${9|true,false|}}${10:",
+            "    executable: \"${11:path_to_subversion_exe}\"}${12:",
+            "    export: ${13|true,false|}}${14:",
+            "    force: ${15|true,false|}}${16:",
+            "    in_place: ${17|true,false|}}${18:",
+            "    revision: \"${19:HEAD}\"}${20:",
+            "    switch: ${21|true,false|}}${22:",
+            "    update: ${23|true,false|}}${24:",
+            "    validate_certs: ${25|true,false|}}",
+            "$0"
+        ],
+        "description": "Used for Ansible subversion",
+        "scope": "ansible"
+    },
     "Ansible.BuiltIn.SystemD": {
         "prefix": [
             "ansible.builtin.systemd",

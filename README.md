@@ -42,10 +42,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (1 remaining)
-
-- subversion – Deploys a subversion repository
-
 #### ansible.posix (10 remaining)
 
 - acl – Set and retrieve file ACL information.
