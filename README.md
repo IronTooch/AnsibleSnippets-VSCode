@@ -42,10 +42,9 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (2 remaining)
+#### ansible.builtin (1 remaining)
 
 - subversion – Deploys a subversion repository
-- sysvinit – Manage SysV services
 
 #### ansible.posix (10 remaining)
 

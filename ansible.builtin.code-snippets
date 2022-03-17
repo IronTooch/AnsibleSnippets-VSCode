@@ -1141,6 +1141,25 @@
         "description": "Used for Ansible systemd to manage services, timers, etc",
         "scope": "ansible"
     },
+    "Ansible.BuiltIn.SysVInit": {
+        "prefix": [
+            "ansible.builtin.sysvinit",
+            "sysvinit"
+        ],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.sysvinit:",
+            "    name: \"${2:name_of_service}\"${3:",
+            "    state: ${4|started,stopped,restarted,reloaded|}}${5:",
+            "    enabled: ${6|true,false|}}${7:",
+            "    runlevels:",
+            "      - ${8|1 # Single User,2 # Multi-User,3 # Multi-User with Network,4 # User Defined,5 # Level 3 plus Display (X)|}${9:",
+            "      - ${10|1 # Single User,2 # Multi-User,3 # Multi-User with Network,4 # User Defined,5 # Level 3 plus Display (X)|}}}",
+            "$0"
+        ],
+        "description": "Used for Ansible sysvinit to control services on a host",
+        "scope": "ansible"
+    },
     "Ansible.Builtin.Tempfile": {
         "prefix": [
             "ansible.builtin.tempfile",
