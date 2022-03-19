@@ -1099,6 +1099,7 @@
             "  ansible.builtin.slurp:",
             "    src: \"${2:path_to_file}\"",
             "  register: ${3:file_contents_var}",
+            "  # Contents at \"${3}['content'] | b64decode\"",
             "$0"
         ],
         "description": "Used for Ansible Slurp Module to read a file on remote host into a variable",
