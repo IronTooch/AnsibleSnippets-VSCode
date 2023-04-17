@@ -1,0 +1,132 @@
+{
+	"Snippet.OwnerGroupMode":{
+			"prefix": ["snippet.OwnerGroupMode"],
+			"body": [
+					"\"    owner: \\\"${$1:owner}\\\"\",",
+					"\"    group: \\\"${$2:group}\\\"\",",
+					"\"    mode: \\\"${$3:0700}\\\"\",",
+					"$0"
+			],
+			"description": "Used to make the owner / group / mode snippet used in file manipulation",
+			"scope": "jsonc"
+	},
+
+	"Snippet.YesNoKey":{
+			"prefix": ["snippet.YesNoKey"],
+			"body": [
+					"\"    ${1:keyname}: \\${$2|yes,no|}\",",
+					"$0"
+			],
+			"description": "Used to make a key -> Yes / No Snippet",
+			"scope": "jsonc"
+	},
+
+	"Snippet.TrueFalseKey":{
+			"prefix": ["snippet.TrueFalseKey","trueFalse_key"],
+			"body": [
+					"\"    ${1:keyname}: \\${$2|true,false|}\",",
+					"$0"
+			],
+			"description": "Used to make a key -> True / False Snippet",
+			"scope": "jsonc"
+	},
+
+	"Snippet.PresentAbsentKey":{
+			"prefix": ["snippet.PresentAbsentKey","absentPresent_key"],
+			"body": [
+					"\"    ${1:state}: \\${$2|present,absent|}\",",
+					"$0"
+			],
+			"description": "Used to make a key -> Present/Absent Snippet",
+			"scope": "jsonc"
+	},
+
+	"Snippet.ChoiceKey":{
+			"prefix": ["snippet.ChoiceKey","choice_key"],
+			"body": [
+					"\"    ${1:keyname}: \\${${2}|${3:choices}|}\",",
+					"$0"
+			],
+			"description": "Used to make a key -> True / False Snippet",
+			"scope": "jsonc"
+	},
+
+	"Snippet.KeyToFreeText":{
+			"prefix": ["snippet.KeyToFreeText","keytofreetext"],
+			"body": [
+					"\"    ${1:keyname}: \\\"${$2:${3:keyname}}\\\"\",",
+					"$0"
+			],
+			"description": "Used to make a key -> Free Text Snippet",
+			"scope": "jsonc"
+	},
+
+	"Snippet.OptionalTextKey":{
+			"prefix": ["snippet.OptionalTextKey","optional_text_key"],
+			"body": [
+					"\"    ${${1:keynumber}:${2:keyname}: \\\"${${3:next_key_number}:${4:next_key_name}}\\\"}\",",
+					"$0"
+			],
+			"description": "Used to make an optional snippet with a text key",
+			"scope": "jsonc"
+	},
+
+	"Snippet.OptionalChoiceKey":{
+			"prefix": ["snippet.OptionalChoiceKey","optional_choice_key"],
+			"body": [
+					"\"    ${${1:keynumber}:${2:keyname}: \\${${3:next_key_number}|${4:options}|}\\}\",",
+					"$0"
+			],
+			"description": "Used to make an optional snippet with a choice key",
+			"scope": "jsonc"
+	},
+
+	"Snippet.OptionalTrueFalseKey":{
+			"prefix": ["snippet.OptionalTrueFalseKey","optional_truefalse_key"],
+			"body": [
+					"\"    ${${1:keynumber}:${2:keyname}: \\${${3:next_key_number}|true,false|}\\}\",",
+					"$0"
+			],
+			"description": "Used to make an optional snippet with a true/false key",
+			"scope": "jsonc"
+	},
+
+	"Snippet.KeyBaseline":{
+			"prefix": ["snippet.keybaseline"],
+			"body": [
+					"",
+					"    \"${1:SnippetName}\":{",
+					"        \"prefix\": [\"${2:SnippetPrefix}\"],",
+					"        \"body\": [",
+					"         $0",
+					"        ],",
+					"         \"description\": \"${3: Snippet description}\",",
+					"         \"scope\": \"${4: language}\"",
+					"    },"
+					
+			],
+			"description": "Used to make a new baseline snippet",
+			"scope": "jsonc"
+	},
+
+	"Snippet.AnsibleBaseline":{
+			"prefix": ["snippet.ansible_baseline"],
+			"body": [
+					"",
+					"    \"${1:SnippetName}\":{",
+					"        \"prefix\": [\"${2:SnippetNamespace}.${3:SnippetModule}\",\"${3:SnippetModule}\"],",
+					"        \"body\": [",
+					"            \"- name: \\${1:Description}\",",
+					"            \"  ${2:SnippetNamespace}.${3:SnippetModule}:\",", 
+					"            $0",
+					"            \"\\$0\"",
+					"        ],",
+					"        \"description\": \"Used for Ansible ${3: Snippet description}\",",
+					"        \"scope\": \"ansible\"",
+					"    },"
+			],
+			"description": "Used to make a new baseline ansible snippet",
+			"scope": "jsonc"
+	},
+
+}

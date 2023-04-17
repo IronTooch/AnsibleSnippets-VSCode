@@ -30,34 +30,6 @@
             "problemMatcher": [
                 "$lessc"
             ]
-        },
-        {
-            "label": "Install Snippets Globally (Include Development Snippet Helper)",
-            "detail": "Deploys to local Linux Global Snippet location",
-            "type": "shell",
-            "linux": {
-                "command": "/bin/bash copy_snippets_global.sh INCLUDE_HELPERS"
-            },
-            "windows": {
-                "options": {
-                    "shell": {
-                        "executable": "powershell",
-                        // "args": [
-                        //     "-ExecutionPolicy Bypass", "-Include_Helpers $True", "-File"
-                        // ]
-                    }
-                },
-                "command": "-ExecutionPolicy Bypass -File copy_snippets_global.ps1  -Include_Helpers"
-            },
-            "presentation": {
-                "reveal": "always",
-                "panel": "dedicated",
-                "clear": true,
-                "showReuseMessage": false,
-            },
-            "problemMatcher": [
-                "$lessc"
-            ]
         }
     ]
 }
