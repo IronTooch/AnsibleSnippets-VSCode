@@ -1099,6 +1099,7 @@
             "  ansible.builtin.slurp:",
             "    src: \"${2:path_to_file}\"",
             "  register: ${3:file_contents_var}",
+            "  # Contents at \"${3}['content'] | b64decode\"",
             "$0"
         ],
         "description": "Used for Ansible Slurp Module to read a file on remote host into a variable",
@@ -1121,6 +1122,32 @@
         "description": "Used for Ansible Stat Module to get File details",
         "scope": "ansible"
     },
+    "Ansible.BuiltIn.Subversion": {
+        "prefix": [
+            "ansible.builtin.subversion",
+            "subversion"
+        ],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.subversion:",
+            "    repo: \"${2:url_to_repo}\"",
+            "    dest: \"${3:path_to_destination}\"${4:",
+            "    username: \"${5:my_username}\"}${6:",
+            "    password: \"${7:my_password}\"}${8:",
+            "    checkout: ${9|true,false|}}${10:",
+            "    executable: \"${11:path_to_subversion_exe}\"}${12:",
+            "    export: ${13|true,false|}}${14:",
+            "    force: ${15|true,false|}}${16:",
+            "    in_place: ${17|true,false|}}${18:",
+            "    revision: \"${19:HEAD}\"}${20:",
+            "    switch: ${21|true,false|}}${22:",
+            "    update: ${23|true,false|}}${24:",
+            "    validate_certs: ${25|true,false|}}",
+            "$0"
+        ],
+        "description": "Used for Ansible subversion",
+        "scope": "ansible"
+    },
     "Ansible.BuiltIn.SystemD": {
         "prefix": [
             "ansible.builtin.systemd",
@@ -1139,6 +1166,25 @@
             "$0"
         ],
         "description": "Used for Ansible systemd to manage services, timers, etc",
+        "scope": "ansible"
+    },
+    "Ansible.BuiltIn.SysVInit": {
+        "prefix": [
+            "ansible.builtin.sysvinit",
+            "sysvinit"
+        ],
+        "body": [
+            "- name: ${1:Description}",
+            "  ansible.builtin.sysvinit:",
+            "    name: \"${2:name_of_service}\"${3:",
+            "    state: ${4|started,stopped,restarted,reloaded|}}${5:",
+            "    enabled: ${6|true,false|}}${7:",
+            "    runlevels:",
+            "      - ${8|1 # Single User,2 # Multi-User,3 # Multi-User with Network,4 # User Defined,5 # Level 3 plus Display (X)|}${9:",
+            "      - ${10|1 # Single User,2 # Multi-User,3 # Multi-User with Network,4 # User Defined,5 # Level 3 plus Display (X)|}}}",
+            "$0"
+        ],
+        "description": "Used for Ansible sysvinit to control services on a host",
         "scope": "ansible"
     },
     "Ansible.Builtin.Tempfile": {

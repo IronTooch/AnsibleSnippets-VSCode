@@ -42,11 +42,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 
 ### Ansible Namespace
 
-#### ansible.builtin (2 remaining)
-
-- subversion – Deploys a subversion repository
-- sysvinit – Manage SysV services
-
 #### ansible.posix (10 remaining)
 
 - acl – Set and retrieve file ACL information.
@@ -102,50 +97,6 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - win_user_right – Manage Windows User Rights
 - win_wait_for – Waits for a condition before continuing
 - win_whoami – Get information about the current user and process
-
-### AWX Namespace
-
-#### awx.awx (39 remaining)
-
-- ad_hoc_command – create, update, or destroy Automation Platform Controller ad hoc commands.
-- ad_hoc_command_cancel – Cancel an Ad Hoc Command.
-- ad_hoc_command_wait – Wait for Automation Platform Controller Ad Hoc Command to finish.
-- application – create, update, or destroy Automation Platform Controller applications
-- controller_meta – Returns metadata about the collection this module lives in.
-- credential – create, update, or destroy Automation Platform Controller credential.
-- credential_input_source – create, update, or destroy Automation Platform Controller credential input sources.
-- credential_type – Create, update, or destroy custom Automation Platform Controller credential type.
-- execution_environment – create, update, or destroy Execution Environments in Automation Platform Controller.
-- export – export resources from Automation Platform Controller.
-- group – create, update, or destroy Automation Platform Controller group.
-- host – create, update, or destroy Automation Platform Controller host.
-- import – import resources into Automation Platform Controller.
-- instance_group – create, update, or destroy Automation Platform Controller instance groups.
-- inventory – create, update, or destroy Automation Platform Controller inventory.
-- inventory_source – create, update, or destroy Automation Platform Controller inventory source.
-- inventory_source_update – Update inventory source(s).
-- job_cancel – Cancel an Automation Platform Controller Job.
-- job_launch – Launch an Ansible Job.
-- job_list – List Automation Platform Controller jobs.
-- job_template – create, update, or destroy Automation Platform Controller job templates.
-- job_wait – Wait for Automation Platform Controller job to finish.
-- label – create, update, or destroy Automation Platform Controller labels.
-- license – Set the license for Automation Platform Controller
-- notification_template – create, update, or destroy Automation Platform Controller notification.
-- organization – create, update, or destroy Automation Platform Controller organizations
-- project – create, update, or destroy Automation Platform Controller projects
-- project_update – Update a Project in Automation Platform Controller
-- role – grant or revoke an Automation Platform Controller role.
-- schedule – create, update, or destroy Automation Platform Controller schedules.
-- settings – Modify Automation Platform Controller settings.
-- team – create, update, or destroy Automation Platform Controller team.
-- token – create, update, or destroy Automation Platform Controller tokens.
-- user – create, update, or destroy Automation Platform Controller users.
-- workflow_approval – Approve an approval node in a workflow job.
-- workflow_job_template – create, update, or destroy Automation Platform Controller workflow job templates.
-- workflow_job_template_node – create, update, or destroy Automation Platform Controller workflow job template nodes.
-- workflow_launch – Run a workflow in Automation Platform Controller
-- workflow_node_wait – Approve an approval node in a workflow job.
 
 ### Community Namespace
 
@@ -395,71 +346,24 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - postgresql_tablespace – Add or remove PostgreSQL tablespaces from remote hosts
 - postgresql_user_obj_stat_info – Gather statistics about PostgreSQL user objects
 
-#### community.windows (84 remaining)
+#### community.windows (33 remaining)
 
-- psexec – Runs commands on a remote Windows host based on the PsExec model
-- win_audit_policy_system – Used to make changes to the system wide Audit Policy
-- win_audit_rule – Adds an audit rule to files, folders, or registry keys
-- win_auto_logon – Adds or Sets auto logon registry keys.
-- win_certificate_info – Get information on certificates from a Windows Certificate Store
-- win_computer_description – Set windows description, owner and organization
-- win_credential – Manages Windows Credentials in the Credential Manager
-- win_data_deduplication – Module to enable Data Deduplication on a volume.
-- win_defrag – Consolidate fragmented files on local volumes
-- win_dhcp_lease – Manage Windows Server DHCP Leases
-- win_disk_facts – Show the attached disks and disk information of the target host
-- win_disk_image – Manage ISO/VHD/VHDX mounts on Windows hosts
-- win_dns_record – Manage Windows Server DNS records
-- win_dns_zone – Manage Windows Server DNS Zones
-- win_domain_computer – Manage computers in Active Directory
-- win_domain_group – Creates, modifies or removes domain groups
-- win_domain_group_membership – Manage Windows domain group membership
-- win_domain_object_info – Gather information an Active Directory object
-- win_domain_ou – Manage Active Directory Organizational Units
-- win_domain_user – Manages Windows Active Directory user accounts
-- win_dotnet_ngen – Runs ngen to recompile DLLs after .NET updates
-- win_eventlog – Manage Windows event logs
-- win_eventlog_entry – Write entries to Windows event logs
-- win_feature_info – Gather information about Windows features
-- win_file_compression – Alters the compression of files and directories on NTFS partitions.
-- win_file_version – Get DLL or EXE file build version
 - win_firewall – Enable or disable the Windows Firewall
 - win_firewall_rule – Windows firewall automation
 - win_format – Formats an existing volume or a new volume on an existing partition on Windows
 - win_hosts – Manages hosts file entries on Windows.
-- win_hotfix – Install and uninstalls Windows hotfixes
-- win_http_proxy – Manages proxy settings for WinHTTP
-- win_iis_virtualdirectory – Configures a virtual directory in IIS
-- win_iis_webapplication – Configures IIS web applications
-- win_iis_webapppool – Configure IIS Web Application Pools
-- win_iis_webbinding – Configures a IIS Web site binding
-- win_iis_website – Configures a IIS Web site
-- win_inet_proxy – Manages proxy settings for WinINet and Internet Explorer
-- win_initialize_disk – Initializes disks on Windows Server
 - win_lineinfile – Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression
 - win_mapped_drive – Map network drives for users
 - win_msg – Sends a message to logged in users on Windows hosts
-- win_net_adapter_feature – Enable or disable certain network adapters.
-- win_netbios – Manage NetBIOS over TCP/IP settings on Windows.
-- win_nssm – Install a service using NSSM
-- win_pagefile – Query or change pagefile configuration
-- win_partition – Creates, changes and removes partitions on Windows Server
-- win_pester – Run Pester tests on Windows hosts
 - win_power_plan – Changes the power plan of a Windows system
 - win_product_facts – Provides Windows product and license information
 - win_psexec – Runs commands (remotely) as another (privileged) user
 - win_psmodule – Adds or removes a Windows PowerShell module
 - win_psmodule_info – Gather information about PowerShell Modules
 - win_psrepository – Adds, removes or updates a Windows PowerShell repository.
-- win_psrepository_copy – Copies registered PSRepositories to other user profiles
-- win_psrepository_info – Gather information about PSRepositories
 - win_psscript – Install and manage PowerShell scripts from a PSRepository
 - win_psscript_info – Gather information about installed PowerShell Scripts
 - win_pssession_configuration – Manage PSSession Configurations
-- win_rabbitmq_plugin – Manage RabbitMQ plugins
-- win_rds_cap – Manage Connection Authorization Policies (CAP) on a Remote Desktop Gateway server
-- win_rds_rap – Manage Resource Authorization Policies (RAP) on a Remote Desktop Gateway server
-- win_rds_settings – Manage main settings of a Remote Desktop Gateway server
 - win_region – Set the region and format settings
 - win_regmerge – Merges the contents of a registry file into the Windows registry
 - win_robocopy – Synchronizes the contents of two directories using Robocopy
@@ -467,18 +371,14 @@ This is a work in progress. Pull requests for common patterns are welcome. Items
 - win_say – Text to speech module for Windows to speak messages and optionally play sounds
 - win_scheduled_task – Manage scheduled tasks
 - win_scheduled_task_stat – Get information about Windows Scheduled Tasks
-- win_scoop – Manage packages using Scoop
-- win_scoop_bucket – Manage Scoop buckets
 - win_security_policy – Change local security policy settings
 - win_shortcut – Manage shortcuts on Windows
-- win_snmp – Configures the Windows SNMP service
 - win_timezone – Sets Windows machine timezone
 - win_toast – Sends Toast windows notification to logged in users on Windows 10 or later hosts
 - win_unzip – Unzips compressed files and archives on the Windows node
 - win_user_profile – Manages the Windows user profiles.
 - win_wait_for_process – Waits for a process to exist or not exist before continuing.
 - win_wakeonlan – Send a magic Wake-on-LAN (WoL) broadcast packet
-- win_webpicmd – Installs packages using Web Platform Installer command-line
 - win_xml – Manages XML file content on Windows hosts
 - win_zip – Compress file or directory as zip archive on the Windows node
 
